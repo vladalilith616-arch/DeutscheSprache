@@ -1,0 +1,2694 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тема 1: Wie heißen Sie? - Уровень A1 - DeutscheSprache</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        /* Дополнительные стили для упражнений */
+        .input-correct {
+            border: 2px solid var(--green) !important;
+            background-color: #f8fff8;
+        }
+        
+        .input-incorrect {
+            border: 2px solid var(--red) !important;
+            background-color: #fff8f8;
+        }
+        
+        .option-correct {
+            background-color: #e8f5e9;
+            border-left: 4px solid var(--green);
+        }
+        
+        .option-incorrect {
+            background-color: #ffebee;
+            border-left: 4px solid var(--red);
+        }
+        
+        .match-correct {
+            background-color: #e8f5e9 !important;
+            border: 2px solid var(--green) !important;
+        }
+        
+        .match-incorrect {
+            background-color: #ffebee !important;
+            border: 2px solid var(--red) !important;
+        }
+        
+        .drag-item {
+            padding: 10px;
+            margin: 5px;
+            background-color: var(--light-gray);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: move;
+        }
+        
+        .drag-container {
+            min-height: 100px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .drag-over {
+            background-color: #f0f8ff;
+            border-color: #2196F3;
+        }
+        
+        .audio-exercise {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .audio-btn {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        .translation-hint {
+            font-style: italic;
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .difficulty-easy { border-left: 4px solid var(--green); }
+        .difficulty-medium { border-left: 4px solid #FF9800; }
+        .difficulty-hard { border-left: 4px solid var(--red); }
+        
+        .timer {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2196F3;
+            margin: 10px 0;
+        }
+        
+        .conjugation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .conjugation-table th,
+        .conjugation-table td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: left;
+        }
+        
+        .conjugation-table th {
+            background-color: var(--light-gray);
+            font-weight: bold;
+        }
+        
+        .dropdown-input {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin: 0 5px;
+        }
+        
+        .word-grid {
+            font-family: monospace;
+            white-space: pre;
+            background-color: var(--light-gray);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            line-height: 1.5;
+        }
+        
+        .scenario-options {
+            margin: 1rem 0;
+        }
+        
+        .scenario {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        
+        .text-with-errors {
+            background-color: #fff0f0;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--red);
+        }
+        
+        .text-with-gaps {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        
+        .final-test {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <svg viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+        </svg>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../../index.html" class="logo-link">
+                    <div class="logo">DeutscheSprache</div>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="../../index.html">Главная</a></li>
+                        <li><a href="../../about.html">О сайте</a></li>
+                        <li class="auth-section">
+                            <div id="userInfo" class="user-info" style="display: none;">
+                                <div class="user-avatar" id="userAvatar">U</div>
+                                <span id="userName">Пользователь</span>
+                            </div>
+                            <button id="authButton" class="auth-btn">Войти</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="topics">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <a href="../../index.html">Главная</a> › 
+                <a href="../level-a1.html">Уровень A1</a> › 
+                <span>Тема 1: Wie heißen Sie?</span>
+            </div>
+
+            <h2 class="section-title">Тема 1: Wie heißen Sie? (Как Вас зовут?)</h2>
+            
+            <div class="topic-content">
+                <!-- Подробные правила -->
+                <div class="rules">
+                    <h3>📚 Правила и объяснения</h3>
+                    <p><strong>В этой теме мы изучаем основы знакомства и представления на немецком языке:</strong></p>
+                    
+                    <h4>🔤 Основные фразы для знакомства:</h4>
+                    <ul>
+                        <li><strong>Wie heißen Sie?</strong> - Как Вас зовут? (формальное обращение)</li>
+                        <li><strong>Wie heißt du?</strong> - Как тебя зовут? (неформальное обращение)</li>
+                        <li><strong>Ich heiße...</strong> - Меня зовут...</li>
+                        <li><strong>Mein Name ist...</strong> - Мое имя...</li>
+                        <li><strong>Freut mich!</strong> - Рад познакомиться!</li>
+                        <li><strong>Woher kommen Sie?</strong> - Откуда Вы?</li>
+                        <li><strong>Ich komme aus...</strong> - Я из...</li>
+                    </ul>
+
+                    <h4>🎯 Грамматические правила:</h4>
+                    <ul>
+                        <li><strong>Заглавные буквы:</strong> Все существительные, имена и начало предложений пишутся с заглавной буквы</li>
+                        <li><strong>Формальное обращение:</strong> "Sie" используется для формального общения, "du" - для неформального</li>
+                        <li><strong>Порядок слов:</strong> В повествовательных предложениях глагол стоит на 2-й позиции</li>
+                        <li><strong>Вопросительные предложения:</strong> Глагол стоит на 1-й позиции, заканчиваются знаком "?"</li>
+                    </ul>
+
+                    <h4>⚠️ Частые ошибки:</h4>
+                    <ul>
+                        <li>Неправильное использование Sie/du</li>
+                        <li>Забывают заглавные буквы у существительных</li>
+                        <li>Неправильный порядок слов в предложении</li>
+                        <li>Отсутствие пунктуации в конце предложений</li>
+                    </ul>
+                </div>
+
+                <!-- Упражнение 1 -->
+                <div class="exercise difficulty-easy">
+                    <h3>Упражнение 1: Заполните пропуски в диалоге</h3>
+                    <div class="question">
+                        <p>Заполните диалог подходящими словами:</p>
+                        <div class="fill-blank">
+                            <p><strong>Herr Schmidt:</strong> Guten Tag! Wie <input type="text" class="blank-input" id="ex1-1" placeholder="..."> Sie?</p>
+                            <p><strong>Frau Müller:</strong> Guten Tag! Ich <input type="text" class="blank-input" id="ex1-2" placeholder="..."> Anna Müller. Und Sie?</p>
+                            <p><strong>Herr Schmidt:</strong> Ich heiße Thomas Schmidt. <input type="text" class="blank-input" id="ex1-3" placeholder="..."> mich!</p>
+                            <p><strong>Frau Müller:</strong> Freut mich auch! <input type="text" class="blank-input" id="ex1-4" placeholder="..."> kommen Sie?</p>
+                            <p><strong>Herr Schmidt:</strong> Ich komme <input type="text" class="blank-input" id="ex1-5" placeholder="..."> Berlin.</p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex1')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex1')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex1-result"></div>
+                    <div class="correct-answer" id="correct-answer-ex1">
+                        <strong>Правильные ответы:</strong><br>
+                        1. heißen<br>
+                        2. heiße<br>
+                        3. Freut<br>
+                        4. Woher<br>
+                        5. aus
+                    </div>
+                </div>
+
+                <!-- Упражнение 2 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 2: Составьте правильные предложения</h3>
+                    <div class="question">
+                        <p>Составьте предложения из данных слов (обратите внимание на порядок слов и пунктуацию):</p>
+                        <div class="fill-blank">
+                            <p>1. heiße / Ich / Maria <input type="text" class="sentence-input" id="ex2-1" placeholder="Напишите предложение"></p>
+                            <p>2. du / Wie / heißt ? <input type="text" class="sentence-input" id="ex2-2" placeholder="Напишите предложение"></p>
+                            <p>3. aus / Ich / komme / Deutschland <input type="text" class="sentence-input" id="ex2-3" placeholder="Напишите предложение"></p>
+                            <p>4. Sie / Woher / kommen ? <input type="text" class="sentence-input" id="ex2-4" placeholder="Напишите предложение"></p>
+                            <p>5. Name / Mein / ist / Peter <input type="text" class="sentence-input" id="ex2-5" placeholder="Напишите предложение"></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex2')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex2')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex2-result"></div>
+                    <div class="correct-answer" id="correct-answer-ex2">
+                        <strong>Правильные ответы:</strong><br>
+                        1. Ich heiße Maria.<br>
+                        2. Wie heißt du?<br>
+                        3. Ich komme aus Deutschland.<br>
+                        4. Woher kommen Sie?<br>
+                        5. Mein Name ist Peter.
+                    </div>
+                </div>
+
+                <!-- Упражнение 3 -->
+                <div class="exercise difficulty-easy">
+                    <h3>Упражнение 3: Выберите правильную форму обращения</h3>
+                    <div class="question">
+                        <p>Выберите правильный вариант для каждой ситуации:</p>
+                        
+                        <div class="options">
+                            <p><strong>1. Вы обращаетесь к незнакомому человеку:</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex3-1" id="ex3-1-1" value="correct">
+                                <label for="ex3-1-1">Wie heißen Sie?</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex3-1" id="ex3-1-2" value="incorrect">
+                                <label for="ex3-1-2">Wie heißt du?</label>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <p><strong>2. Вы обращаетесь к другу:</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex3-2" id="ex3-2-1" value="incorrect">
+                                <label for="ex3-2-1">Wie heißen Sie?</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex3-2" id="ex3-2-2" value="correct">
+                                <label for="ex3-2-2">Wie heißt du?</label>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <p><strong>3. Правильная форма представления:</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex3-3" id="ex3-3-1" value="correct">
+                                <label for="ex3-3-1">Ich heiße Anna.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex3-3" id="ex3-3-2" value="incorrect">
+                                <label for="ex3-3-2">Ich heiße anna.</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex3')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex3')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex3-result"></div>
+                </div>
+
+				<div class="exercise difficulty-medium">
+					<h3>Упражнение 4: Сопоставьте фразы с переводами</h3>
+					<div class="question">
+						<p>Нажмите на немецкую фразу слева, затем на русский перевод справа:</p>
+						<div style="display: flex; gap: 20px; margin: 1rem 0;">
+							<div style="flex: 1;">
+								<div class="match-item" data-match="1" onclick="selectMatch(this)">Wie heißen Sie?</div>
+								<div class="match-item" data-match="2" onclick="selectMatch(this)">Ich komme aus...</div>
+								<div class="match-item" data-match="3" onclick="selectMatch(this)">Freut mich!</div>
+								<div class="match-item" data-match="4" onclick="selectMatch(this)">Woher kommen Sie?</div>
+							</div>
+							<div style="flex: 1;">
+								<div class="match-item" data-match="3" onclick="selectMatch(this)">Рад познакомиться!</div>
+								<div class="match-item" data-match="1" onclick="selectMatch(this)">Как Вас зовут?</div>
+								<div class="match-item" data-match="4" onclick="selectMatch(this)">Откуда Вы?</div>
+								<div class="match-item" data-match="2" onclick="selectMatch(this)">Я из...</div>
+							</div>
+						</div>
+					</div>
+					<div class="exercise-controls">
+						<button class="check-btn" onclick="checkExercise('ex4')">Проверить</button>
+						<button class="reset-btn" onclick="resetExercise('ex4')">Сбросить</button>
+					</div>
+					<div class="result" id="ex4-result"></div>
+				</div>
+
+                <!-- Упражнение 5 -->
+                <div class="exercise difficulty-hard">
+                    <h3>Упражнение 5: Напишите текст о себе</h3>
+                    <div class="question">
+                        <p>Напишите 4-5 предложений на немецком языке, представив себя (имя, откуда вы, приветствие):</p>
+                        <textarea class="writing-exercise" id="ex5-text" placeholder="Начните писать здесь... Минимум 4 предложения." rows="6"></textarea>
+                        <p class="hint">💡 <strong>Подсказка:</strong> Используйте изученные фразы: Guten Tag, Ich heiße..., Ich komme aus..., Freut mich!</p>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex5')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex5')">Сбросить</button>
+                        <button class="keyboard-btn" onclick="toggleKeyboard()">⌨️ Немецкая клавиатура</button>
+                    </div>
+                    <div class="result" id="ex5-result"></div>
+                    <div id="error-analysis-ex5" class="error-analysis">
+                        <h4>🔍 Анализ ошибок:</h4>
+                        <div id="error-list-ex5"></div>
+                    </div>
+                    <div class="correct-answer" id="correct-answer-ex5">
+                        <strong>📝 Пример правильного ответа:</strong><br>
+                        Guten Tag! Ich heiße Maria. Ich komme aus Russland. Mein Name ist Maria Schmidt. Freut mich!
+                    </div>
+                </div>
+
+                <!-- Упражнение 6 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 6: Найдите и исправьте ошибки</h3>
+                    <div class="question">
+                        <p>В следующих предложениях есть ошибки. Напишите исправленные версии:</p>
+                        <div class="fill-blank">
+                            <p>1. wie heisst sie? <input type="text" class="sentence-input" id="ex6-1" placeholder="Исправленное предложение"></p>
+                            <p>2. ich heise peter <input type="text" class="sentence-input" id="ex6-2" placeholder="Исправленное предложение"></p>
+                            <p>3. woher kommst Sie <input type="text" class="sentence-input" id="ex6-3" placeholder="Исправленное предложение"></p>
+                            <p>4. ich komme aus deutschland <input type="text" class="sentence-input" id="ex6-4" placeholder="Исправленное предложение"></p>
+                            <p>5. freut mich <input type="text" class="sentence-input" id="ex6-5" placeholder="Исправленное предложение"></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex6')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex6')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex6-result"></div>
+                    <div class="correct-answer" id="correct-answer-ex6">
+                        <strong>Правильные ответы:</strong><br>
+                        1. Wie heißen Sie?<br>
+                        2. Ich heiße Peter.<br>
+                        3. Woher kommen Sie?<br>
+                        4. Ich komme aus Deutschland.<br>
+                        5. Freut mich!
+                    </div>
+                </div>
+
+                <!-- Упражнение 7 -->
+                <div class="exercise difficulty-easy">
+                    <h3>Упражнение 7: Выберите подходящее слово</h3>
+                    <div class="question">
+                        <p>Выберите правильное слово для завершения предложений:</p>
+                        
+                        <div class="options">
+                            <p><strong>1. ... heißen Sie?</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex7-1" id="ex7-1-1" value="correct">
+                                <label for="ex7-1-1">Wie</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-1" id="ex7-1-2" value="incorrect">
+                                <label for="ex7-1-2">Wo</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-1" id="ex7-1-3" value="incorrect">
+                                <label for="ex7-1-3">Was</label>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <p><strong>2. Ich ... aus Berlin.</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex7-2" id="ex7-2-1" value="incorrect">
+                                <label for="ex7-2-1">kommst</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-2" id="ex7-2-2" value="correct">
+                                <label for="ex7-2-2">komme</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-2" id="ex7-2-3" value="incorrect">
+                                <label for="ex7-2-3">kommen</label>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <p><strong>3. ... mich!</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex7-3" id="ex7-3-1" value="correct">
+                                <label for="ex7-3-1">Freut</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-3" id="ex7-3-2" value="incorrect">
+                                <label for="ex7-3-2">Freue</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-3" id="ex7-3-3" value="incorrect">
+                                <label for="ex7-3-3">Freut's</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex7')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex7')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex7-result"></div>
+                </div>
+
+                <!-- Упражнение 8 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 8: Введите правильные формы глаголов</h3>
+                    <div class="question">
+                        <p>Введите правильную форму глагола "heißen" для каждого местоимения:</p>
+                        <div class="fill-blank">
+                            <p>ich <input type="text" class="blank-input" id="ex8-1" placeholder="..."></p>
+                            <p>du <input type="text" class="blank-input" id="ex8-2" placeholder="..."></p>
+                            <p>er/sie/es <input type="text" class="blank-input" id="ex8-3" placeholder="..."></p>
+                            <p>wir <input type="text" class="blank-input" id="ex8-4" placeholder="..."></p>
+                            <p>ihr <input type="text" class="blank-input" id="ex8-5" placeholder="..."></p>
+                            <p>Sie/sie <input type="text" class="blank-input" id="ex8-6" placeholder="..."></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex8')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex8')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex8-result"></div>
+                    <div class="correct-answer" id="correct-answer-ex8">
+                        <strong>Правильные ответы:</strong><br>
+                        ich heiße<br>
+                        du heißt<br>
+                        er/sie/es heißt<br>
+                        wir heißen<br>
+                        ihr heißt<br>
+                        Sie/sie heißen
+                    </div>
+                </div>
+
+				<!-- Упражнение 9 -->
+				<div class="exercise difficulty-medium">
+					<h3>Упражнение 9: Аудирование - Выберите услышанное</h3>
+					<div class="question">
+						<p>Прослушайте фразу и выберите правильный вариант:</p>
+						<div class="audio-exercise">
+							<button class="audio-btn" onclick="playAudio('ex9')">🔊 Проиграть аудио</button>
+						</div>
+						<div class="options">
+							<div class="option">
+								<input type="radio" name="ex9" id="ex9-1" value="correct">
+								<label for="ex9-1">Guten Tag! Wie heißen Sie?</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="ex9" id="ex9-2" value="incorrect">
+								<label for="ex9-2">Guten Morgen! Wie geht's?</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="ex9" id="ex9-3" value="incorrect">
+								<label for="ex9-3">Auf Wiedersehen! Tschüss!</label>
+							</div>
+						</div>
+					</div>
+					<div class="exercise-controls">
+						<button class="check-btn" onclick="checkExercise('ex9')">Проверить</button>
+						<button class="reset-btn" onclick="resetExercise('ex9')">Сбросить</button>
+					</div>
+					<div class="result" id="ex9-result"></div>
+				</div>
+
+                <!-- Упражнение 10 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 10: Составьте диалог</h3>
+                    <div class="question">
+                        <p>Перетащите реплики в правильном порядке для составления диалога:</p>
+                        <div class="drag-container" id="ex10-target">
+                            <p>Перетащите реплики сюда в правильном порядке...</p>
+                        </div>
+                        <div class="drag-items">
+                            <div class="drag-item" draggable="true" data-correct="1">Guten Tag!</div>
+                            <div class="drag-item" draggable="true" data-correct="2">Guten Tag! Wie heißen Sie?</div>
+                            <div class="drag-item" draggable="true" data-correct="3">Ich heiße Maria. Und Sie?</div>
+                            <div class="drag-item" draggable="true" data-correct="4">Ich bin Thomas. Freut mich!</div>
+                            <div class="drag-item" draggable="true" data-correct="5">Freut mich auch!</div>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex10')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex10')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex10-result"></div>
+                </div>
+
+				<!-- Упражнение 11: Множественный выбор с картинками -->
+					<div class="exercise difficulty-easy">
+					<h3>Упражнение 11: Выберите правильный ответ для ситуации</h3>
+					<div class="question">
+						<p>Как вы представитесь в формальной ситуации?</p>
+						<div class="options">
+							<div class="option">
+								<input type="radio" name="ex11" id="ex11-1" value="correct">
+								<label for="ex11-1">Guten Tag! Ich heiße Schmidt.</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="ex11" id="ex11-2" value="incorrect">
+								<label for="ex11-2">Hallo! Ich bin der Schmidt.</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="ex11" id="ex11-3" value="incorrect">
+								<label for="ex11-3">Na du! Ich heiße Schmidt.</label>
+							</div>
+						</div>
+					</div>
+					<div class="exercise-controls">
+						<button class="check-btn" onclick="checkExercise('ex11')">Проверить</button>
+						<button class="reset-btn" onclick="resetExercise('ex11')">Сбросить</button>
+					</div>
+					<div class="result" id="ex11-result"></div>
+				</div>
+
+    <!-- Упражнение 12: Заполнение таблицы -->
+    <div class="exercise difficulty-medium">
+        <h3>Упражнение 12: Заполните таблицу спряжения</h3>
+        <div class="question">
+            <p>Заполните таблицу правильными формами глаголов:</p>
+            <table class="conjugation-table">
+                <tr>
+                    <th>Местоимение</th>
+                    <th>heißen</th>
+                    <th>kommen</th>
+                </tr>
+                <tr>
+                    <td>ich</td>
+                    <td><input type="text" class="blank-input" id="ex12-1-1" placeholder="..."></td>
+                    <td><input type="text" class="blank-input" id="ex12-1-2" placeholder="..."></td>
+                </tr>
+                <tr>
+                    <td>du</td>
+                    <td><input type="text" class="blank-input" id="ex12-2-1" placeholder="..."></td>
+                    <td><input type="text" class="blank-input" id="ex12-2-2" placeholder="..."></td>
+                </tr>
+                <tr>
+                    <td>er/sie/es</td>
+                    <td><input type="text" class="blank-input" id="ex12-3-1" placeholder="..."></td>
+                    <td><input type="text" class="blank-input" id="ex12-3-2" placeholder="..."></td>
+                </tr>
+            </table>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex12')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex12')">Сбросить</button>
+        </div>
+        <div class="result" id="ex12-result"></div>
+        <div class="correct-answer" id="correct-answer-ex12">
+            <strong>Правильные ответы:</strong><br>
+            ich heiße, komme<br>
+            du heißt, kommst<br>
+            er/sie/es heißt, kommt
+        </div>
+    </div>
+
+    <!-- Упражнение 13: Исправление ошибок в тексте -->
+    <div class="exercise difficulty-hard">
+        <h3>Упражнение 13: Найдите все ошибки в тексте</h3>
+        <div class="question">
+            <p>В этом тексте 5 ошибок. Найдите и исправьте их:</p>
+            <div class="text-with-errors">
+                <p>"hallo! ich heise anna. ich komme aus russland. woher kommst sie? freut mich"</p>
+            </div>
+            <div class="fill-blank">
+                <p>Исправленный текст: <input type="text" class="sentence-input" id="ex13-1" placeholder="Напишите исправленный текст" style="width: 100%"></p>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex13')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex13')">Сбросить</button>
+        </div>
+        <div class="result" id="ex13-result"></div>
+    </div>
+
+    <!-- Упражнение 14: Вопрос-ответ -->
+    <div class="exercise difficulty-medium">
+        <h3>Упражнение 14: Ответьте на вопросы</h3>
+        <div class="question">
+            <p>Ответьте на вопросы на немецком языке:</p>
+            <div class="fill-blank">
+                <p>Wie heißen Sie? <input type="text" class="sentence-input" id="ex14-1" placeholder="Ваш ответ"></p>
+                <p>Woher kommen Sie? <input type="text" class="sentence-input" id="ex14-2" placeholder="Ваш ответ"></p>
+                <p>Wie heißt du? (неформально) <input type="text" class="sentence-input" id="ex14-3" placeholder="Ваш ответ"></p>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex14')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex14')">Сбросить</button>
+        </div>
+        <div class="result" id="ex14-result"></div>
+    </div>
+
+    <!-- Упражнение 15: Тест на время -->
+    <div class="exercise difficulty-hard">
+        <h3>Упражнение 15: Быстрый тест</h3>
+        <div class="question">
+            <div class="timer" id="ex15-timer">Время: 60 секунд</div>
+            <p>Ответьте на вопросы как можно быстрее:</p>
+            <div class="fill-blank">
+                <p>Формальное "Как Вас зовут?" <input type="text" class="blank-input" id="ex15-1" placeholder="..."></p>
+                <p>Неформальное "Как тебя зовут?" <input type="text" class="blank-input" id="ex15-2" placeholder="..."></p>
+                <p>"Я из Германии" <input type="text" class="blank-input" id="ex15-3" placeholder="..."></p>
+                <p>"Рад познакомиться" <input type="text" class="blank-input" id="ex15-4" placeholder="..."></p>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex15')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex15')">Сбросить</button>
+            <button class="keyboard-btn" onclick="startTimer('ex15')">⏱️ Начать таймер</button>
+        </div>
+        <div class="result" id="ex15-result"></div>
+    </div>
+
+    <!-- Упражнение 16: Выбор из выпадающего списка -->
+    <div class="exercise difficulty-easy">
+        <h3>Упражнение 16: Выберите правильное слово</h3>
+        <div class="question">
+            <p>Выберите подходящие слова из выпадающих списков:</p>
+            <div class="fill-blank">
+                <p>
+                    <select class="dropdown-input" id="ex16-1">
+                        <option value="">Выберите...</option>
+                        <option value="Wie">Wie</option>
+                        <option value="Wo">Wo</option>
+                        <option value="Was">Was</option>
+                    </select>
+                    heißen Sie?
+                </p>
+                <p>
+                    Ich komme 
+                    <select class="dropdown-input" id="ex16-2">
+                        <option value="">Выберите...</option>
+                        <option value="aus">aus</option>
+                        <option value="von">von</option>
+                        <option value="in">in</option>
+                    </select>
+                    Deutschland.
+                </p>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex16')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex16')">Сбросить</button>
+        </div>
+        <div class="result" id="ex16-result"></div>
+    </div>
+
+    <!-- Упражнение 17: Сортировка слов -->
+    <div class="exercise difficulty-medium">
+        <h3>Упражнение 17: Расставьте слова по категориям</h3>
+        <div class="question">
+            <p>Перетащите слова в правильные категории:</p>
+            <div class="drag-containers">
+                <div class="drag-container">
+                    <strong>Формальное обращение</strong>
+                    <div id="ex17-formal"></div>
+                </div>
+                <div class="drag-container">
+                    <strong>Неформальное обращение</strong>
+                    <div id="ex17-informal"></div>
+                </div>
+            </div>
+            <div class="drag-items">
+                <div class="drag-item" draggable="true" data-category="formal">Sie</div>
+                <div class="drag-item" draggable="true" data-category="informal">du</div>
+                <div class="drag-item" draggable="true" data-category="formal">heißen</div>
+                <div class="drag-item" draggable="true" data-category="informal">heißt</div>
+                <div class="drag-item" draggable="true" data-category="formal">kommen</div>
+                <div class="drag-item" draggable="true" data-category="informal">kommst</div>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex17')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex17')">Сбросить</button>
+        </div>
+        <div class="result" id="ex17-result"></div>
+    </div>
+
+    <!-- Упражнение 18: Правда/Ложь -->
+    <div class="exercise difficulty-easy">
+        <h3>Упражнение 18: Правда или Ложь</h3>
+        <div class="question">
+            <p>Отметьте, являются ли утверждения верными:</p>
+            <div class="options">
+                <div class="option">
+                    <input type="checkbox" id="ex18-1" value="true">
+                    <label for="ex18-1">"Sie" используется для формального обращения</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="ex18-2" value="false">
+                    <label for="ex18-2">"du" используется при обращении к незнакомому человеку</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="ex18-3" value="true">
+                    <label for="ex18-3">Все существительные в немецком пишутся с заглавной буквы</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="ex18-4" value="false">
+                    <label for="ex18-4">"Ich heiße" означает "Как тебя зовут?"</label>
+                </div>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex18')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex18')">Сбросить</button>
+        </div>
+        <div class="result" id="ex18-result"></div>
+    </div>
+
+    <!-- Упражнение 19: Заполнение пропусков в тексте -->
+    <div class="exercise difficulty-hard">
+        <h3>Упражнение 19: Заполните пропуски в диалоге</h3>
+        <div class="question">
+            <p>Заполните все пропуски в диалоге:</p>
+            <div class="text-with-gaps">
+                <p><strong>Person A:</strong> Guten Tag! <input type="text" class="blank-input" id="ex19-1" placeholder="..."> heißen Sie?</p>
+                <p><strong>Person B:</strong> Guten Tag! <input type="text" class="blank-input" id="ex19-2" placeholder="..."> heiße Klaus. Und <input type="text" class="blank-input" id="ex19-3" placeholder="...">?</p>
+                <p><strong>Person A:</strong> Ich <input type="text" class="blank-input" id="ex19-4" placeholder="..."> Sabine. <input type="text" class="blank-input" id="ex19-5" placeholder="..."> mich!</p>
+                <p><strong>Person B:</strong> Freut mich <input type="text" class="blank-input" id="ex19-6" placeholder="...">! <input type="text" class="blank-input" id="ex19-7" placeholder="..."> kommen Sie?</p>
+                <p><strong>Person A:</strong> Ich komme <input type="text" class="blank-input" id="ex19-8" placeholder="..."> Österreich.</p>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex19')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex19')">Сбросить</button>
+        </div>
+        <div class="result" id="ex19-result"></div>
+    </div>
+
+    <!-- Упражнение 20: Перевод с русского на немецкий -->
+    <div class="exercise difficulty-medium">
+        <h3>Упражнение 20: Переведите на немецкий</h3>
+        <div class="question">
+            <p>Переведите следующие предложения на немецкий язык:</p>
+            <div class="fill-blank">
+                <p>Добрый день! Как Вас зовут? <input type="text" class="sentence-input" id="ex20-1" placeholder="Немецкий перевод"></p>
+                <p>Меня зовут Анна. <input type="text" class="sentence-input" id="ex20-2" placeholder="Немецкий перевод"></p>
+                <p>Я из России. <input type="text" class="sentence-input" id="ex20-3" placeholder="Немецкий перевод"></p>
+                <p>Рад познакомиться! <input type="text" class="sentence-input" id="ex20-4" placeholder="Немецкий перевод"></p>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex20')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex20')">Сбросить</button>
+        </div>
+        <div class="result" id="ex20-result"></div>
+    </div>
+
+    <!-- Упражнение 21: Поиск слов -->
+    <div class="exercise difficulty-easy">
+        <h3>Упражнение 21: Найдите слова в сетке</h3>
+        <div class="question">
+            <p>Найдите 6 слов по теме в словесной сетке:</p>
+            <div class="word-search">
+                <div class="word-grid" id="ex21-grid">
+                    H E I S S E N F<br>
+                    R E U T M I C H<br>
+                    K O M M E N A U<br>
+                    S I E D U S T<br>
+                    D E U T S C H E<br>
+                    N A M E I S T R<br>
+                </div>
+               </div>
+            <div class="fill-blank">
+                <p>Найденные слова: <input type="text" class="sentence-input" id="ex21-1" placeholder="Перечислите найденные слова через запятую"></p>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex21')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex21')">Сбросить</button>
+        </div>
+        <div class="result" id="ex21-result"></div>
+    </div>
+
+    <!-- Упражнение 22: Соответствие картинкам -->
+    <div class="exercise difficulty-medium">
+        <h3>Упражнение 22: Выберите фразу для ситуации</h3>
+        <div class="question">
+            <p>Какую фразу вы скажете в каждой ситуации?</p>
+            <div class="scenario-options">
+                <div class="scenario">
+                    <p><strong>Ситуация 1:</strong> Вы встречаете коллегу по работе</p>
+                    <select class="dropdown-input" id="ex22-1">
+                        <option value="">Выберите фразу...</option>
+                        <option value="formal">Guten Tag! Wie heißen Sie?</option>
+                        <option value="informal">Hallo! Wie heißt du?</option>
+                    </select>
+                </div>
+                <div class="scenario">
+                    <p><strong>Ситуация 2:</strong> Вы знакомитесь с другом друга</p>
+                    <select class="dropdown-input" id="ex22-2">
+                        <option value="">Выберите фразу...</option>
+                        <option value="informal">Hallo! Ich heiße...</option>
+                        <option value="formal">Guten Tag! Mein Name ist...</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex22')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex22')">Сбросить</button>
+        </div>
+        <div class="result" id="ex22-result"></div>
+    </div>
+
+    <!-- Упражнение 23: Заполнение пропусков с подсказками -->
+    <div class="exercise difficulty-medium">
+        <h3>Упражнение 23: Завершите диалог</h3>
+        <div class="question">
+            <p>Завершите диалог, используя слова из списка:</p>
+            <p class="translation-hint">Слова: heiße, Woher, Sie, aus, Freut</p>
+            <div class="fill-blank">
+                <p>A: Guten Tag! Wie heißen <input type="text" class="blank-input" id="ex23-1" placeholder="...">?</p>
+                <p>B: Ich <input type="text" class="blank-input" id="ex23-2" placeholder="..."> Maria.</p>
+                <p>A: <input type="text" class="blank-input" id="ex23-3" placeholder="..."> mich!</p>
+                <p>B: <input type="text" class="blank-input" id="ex23-4" placeholder="..."> kommen Sie?</p>
+                <p>A: Ich komme <input type="text" class="blank-input" id="ex23-5" placeholder="..."> Berlin.</p>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex23')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex23')">Сбросить</button>
+        </div>
+        <div class="result" id="ex23-result"></div>
+    </div>
+
+    <!-- Упражнение 24: Множественный выбор с объяснениями -->
+    <div class="exercise difficulty-hard">
+        <h3>Упражнение 24: Выберите правильный вариант с объяснением</h3>
+        <div class="question">
+            <p>Выберите грамматически правильный вариант и объясните свой выбор:</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="ex24" id="ex24-1" value="correct">
+                    <label for="ex24-1">"Wie heißen Sie?" - Формальное обращение к незнакомому человеку</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="ex24" id="ex24-2" value="incorrect">
+                    <label for="ex24-2">"Wie heißt Sie?" - Неправильное спряжение глагола</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="ex24" id="ex24-3" value="incorrect">
+                    <label for="ex24-3">"Wie heißen du?" - Смешение формального и неформального обращения</label>
+                </div>
+            </div>
+            <div class="fill-blank">
+                <p>Объяснение вашего выбора: <input type="text" class="sentence-input" id="ex24-explanation" placeholder="Напишите краткое объяснение"></p>
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex24')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex24')">Сбросить</button>
+        </div>
+        <div class="result" id="ex24-result"></div>
+    </div>
+
+    <!-- Упражнение 25: Финальный тест -->
+    <div class="exercise difficulty-hard">
+        <h3>Упражнение 25: Финальный тест по теме</h3>
+        <div class="question">
+            <p>Пройдите финальный тест, чтобы проверить свои знания:</p>
+            <div class="final-test">
+                <p><strong>1. Выберите формальное приветствие:</strong></p>
+                <select class="dropdown-input" id="ex25-1">
+                    <option value="">Выберите...</option>
+                    <option value="correct">Guten Tag!</option>
+                    <option value="incorrect">Hallo!</option>
+                    <option value="incorrect">Na!</option>
+                </select>
+
+                <p><strong>2. Как спросить "Как Вас зовут?" формально:</strong></p>
+                <input type="text" class="sentence-input" id="ex25-2" placeholder="Напишите фразу">
+
+                <p><strong>3. Выберите правильное представление:</strong></p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="ex25-3" id="ex25-3-1" value="correct">
+                        <label for="ex25-3-1">Ich heiße Anna Müller.</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="ex25-3" id="ex25-3-2" value="incorrect">
+                        <label for="ex25-3-2">ich heise anna müller</label>
+                    </div>
+                </div>
+
+                <p><strong>4. Переведите: "Я из Германии"</strong></p>
+                <input type="text" class="sentence-input" id="ex25-4" placeholder="Немецкий перевод">
+
+                <p><strong>5. Какая фраза означает "Рад познакомиться!"?</strong></p>
+                <input type="text" class="blank-input" id="ex25-5" placeholder="Напишите фразу">
+            </div>
+        </div>
+        <div class="exercise-controls">
+            <button class="check-btn" onclick="checkExercise('ex25')">Проверить</button>
+            <button class="reset-btn" onclick="resetExercise('ex25')">Сбросить</button>
+        </div>
+        <div class="result" id="ex25-result"></div>
+    </div>
+
+            <div class="page-navigation">
+                <a href="../level-a1.html" class="nav-btn">← Назад к уровню A1</a>
+                <button class="nav-btn complete-topic-btn" onclick="markTopicComplete('a1-t1')">
+                    Завершить тему
+                </button>
+                <a href="topic2.html" class="nav-btn">Следующая тема →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Немецкая клавиатура -->
+    <button class="keyboard-toggle" onclick="toggleKeyboard()">⌨️</button>
+    <div class="keyboard" id="keyboard">
+        <button class="keyboard-close" onclick="toggleKeyboard()">×</button>
+        
+        <!-- Первый ряд -->
+        <div class="keyboard-row">
+            <div class="keyboard-key" data-key="^">^</div>
+            <div class="keyboard-key" data-key="1">1</div>
+            <div class="keyboard-key" data-key="2">2</div>
+            <div class="keyboard-key" data-key="3">3</div>
+            <div class="keyboard-key" data-key="4">4</div>
+            <div class="keyboard-key" data-key="5">5</div>
+            <div class="keyboard-key" data-key="6">6</div>
+            <div class="keyboard-key" data-key="7">7</div>
+            <div class="keyboard-key" data-key="8">8</div>
+            <div class="keyboard-key" data-key="9">9</div>
+            <div class="keyboard-key" data-key="0">0</div>
+            <div class="keyboard-key" data-key="ß">ß</div>
+            <div class="keyboard-key" data-key="´">´</div>
+            <div class="keyboard-key special wide" data-key="backspace">Backspace</div>
+        </div>
+        
+        <!-- Второй ряд -->
+        <div class="keyboard-row">
+            <div class="keyboard-key special wide" data-key="tab">Tab</div>
+            <div class="keyboard-key" data-key="q">q</div>
+            <div class="keyboard-key" data-key="w">w</div>
+            <div class="keyboard-key" data-key="e">e</div>
+            <div class="keyboard-key" data-key="r">r</div>
+            <div class="keyboard-key" data-key="t">t</div>
+            <div class="keyboard-key" data-key="z">z</div>
+            <div class="keyboard-key" data-key="u">u</div>
+            <div class="keyboard-key" data-key="i">i</div>
+            <div class="keyboard-key" data-key="o">o</div>
+            <div class="keyboard-key" data-key="p">p</div>
+            <div class="keyboard-key" data-key="ü">ü</div>
+            <div class="keyboard-key" data-key="+">+</div>
+            <div class="keyboard-key special" data-key="enter">Enter</div>
+        </div>
+        
+        <!-- Третий ряд -->
+        <div class="keyboard-row">
+            <div class="keyboard-key special wide" data-key="caps">Caps</div>
+            <div class="keyboard-key" data-key="a">a</div>
+            <div class="keyboard-key" data-key="s">s</div>
+            <div class="keyboard-key" data-key="d">d</div>
+            <div class="keyboard-key" data-key="f">f</div>
+            <div class="keyboard-key" data-key="g">g</div>
+            <div class="keyboard-key" data-key="h">h</div>
+            <div class="keyboard-key" data-key="j">j</div>
+            <div class="keyboard-key" data-key="k">k</div>
+            <div class="keyboard-key" data-key="l">l</div>
+            <div class="keyboard-key" data-key="ö">ö</div>
+            <div class="keyboard-key" data-key="ä">ä</div>
+            <div class="keyboard-key" data-key="#">#</div>
+        </div>
+        
+        <!-- Четвертый ряд -->
+        <div class="keyboard-row">
+            <div class="keyboard-key special wide" data-key="shift">Shift</div>
+            <div class="keyboard-key" data-key="<"><</div>
+            <div class="keyboard-key" data-key="y">y</div>
+            <div class="keyboard-key" data-key="x">x</div>
+            <div class="keyboard-key" data-key="c">c</div>
+            <div class="keyboard-key" data-key="v">v</div>
+            <div class="keyboard-key" data-key="b">b</div>
+            <div class="keyboard-key" data-key="n">n</div>
+            <div class="keyboard-key" data-key="m">m</div>
+            <div class="keyboard-key" data-key=",">,</div>
+            <div class="keyboard-key" data-key=".">.</div>
+            <div class="keyboard-key" data-key="-">-</div>
+            <div class="keyboard-key special wide" data-key="shift">Shift</div>
+        </div>
+        
+        <!-- Пятый ряд -->
+        <div class="keyboard-row">
+            <div class="keyboard-key special" data-key="ctrl">Ctrl</div>
+            <div class="keyboard-key special" data-key="win">Win</div>
+            <div class="keyboard-key special" data-key="alt">Alt</div>
+            <div class="keyboard-key special extra-wide" data-key="space">Space</div>
+            <div class="keyboard-key special" data-key="altgr">AltGr</div>
+            <div class="keyboard-key special" data-key="fn">Fn</div>
+            <div class="keyboard-key special" data-key="clear">Clear</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">DeutscheSprache</div>
+                <div class="footer-links">
+                    <a href="../../index.html">Главная</a>
+                    <a href="../../about.html">О сайте</a>
+                </div>
+                <p>&copy; 2025 DeutscheSprache. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Основные функции для работы упражнений
+        let activeInput = null;
+        let isCapsLock = false;
+        let isShiftPressed = false;
+
+        // Функция для нормализации текста
+        function normalizeText(text) {
+            return text
+                .trim()
+                .replace(/\s+/g, ' ')
+                .replace(/\s+$/, '')
+                .replace(/^\s+/, '');
+        }
+
+        // Функция для проверки немецкого правописания
+        function checkGermanSpelling(text, correctAnswer) {
+            const normalizedText = normalizeText(text);
+            const normalizedCorrect = normalizeText(correctAnswer);
+            
+            if (normalizedText === normalizedCorrect) {
+                return { isCorrect: true, errors: [] };
+            }
+            
+            const errors = [];
+            
+            // Проверка заглавных букв в начале предложения
+            if (text.length > 0 && text[0] !== text[0].toUpperCase()) {
+                errors.push({
+                    type: 'capitalization',
+                    message: 'Предложение должно начинаться с заглавной буквы.',
+                    example: `Вместо: "${text}" -> "${text.charAt(0).toUpperCase() + text.slice(1)}"`
+                });
+            }
+            
+            // Проверка заглавных букв у существительных и имен
+            const mustBeCapitalized = [
+                'Ich', 'Sie', 'Du', 'Maria', 'Thomas', 'Anna', 'Peter', 'Julia', 'Max', 'Lisa',
+                'Deutschland', 'Russland', 'Berlin', 'Moskau', 'Frankreich', 'Paris', 'London',
+                'Name', 'Tag', 'Freut'
+            ];
+            
+            mustBeCapitalized.forEach(word => {
+                if (text.toLowerCase().includes(word.toLowerCase()) && 
+                    !text.includes(word)) {
+                    errors.push({
+                        type: 'capitalization',
+                        message: `"${word}" должно писаться с заглавной буквы.`,
+                        example: `Вместо: "${word.toLowerCase()}" -> "${word}"`
+                    });
+                }
+            });
+            
+            // Проверка пунктуации
+            if (!text.includes('?') && correctAnswer.includes('?')) {
+                errors.push({
+                    type: 'punctuation',
+                    message: 'Вопросительное предложение должно заканчиваться знаком вопроса.',
+                    example: `Добавьте "?" в конце предложения`
+                });
+            }
+            
+            if (!text.includes('.') && correctAnswer.includes('.') && !correctAnswer.includes('?')) {
+                errors.push({
+                    type: 'punctuation',
+                    message: 'Повествовательное предложение должно заканчиваться точкой.',
+                    example: `Добавьте "." в конце предложения`
+                });
+            }
+            
+            // Проверка орфографии
+            const spellingMistakes = {
+                'heise': 'heiße',
+                'heisst': 'heißt',
+                'komest': 'kommst',
+                'komst': 'kommst',
+                'deutchland': 'Deutschland',
+                'russsland': 'Russland'
+            };
+            
+            for (const [mistake, correction] of Object.entries(spellingMistakes)) {
+                if (text.toLowerCase().includes(mistake)) {
+                    errors.push({
+                        type: 'spelling',
+                        message: `Орфографическая ошибка: "${mistake}"`,
+                        example: `Правильно: "${correction}"`
+                    });
+                }
+            }
+            
+            return { isCorrect: false, errors };
+        }
+		
+		// Функция для выбора сопоставления
+		function selectMatch(element) {
+			if (!element.classList.contains('selected')) {
+				element.classList.add('selected');
+			} else {
+				element.classList.remove('selected');
+			}
+		}
+
+        // Функция для анализа текста
+        function analyzeText(text) {
+            const errors = [];
+            
+            // Проверка заглавных букв после точки
+            const sentences = text.split('.');
+            for (let i = 0; i < sentences.length - 1; i++) {
+                const nextSentence = sentences[i+1].trim();
+                if (nextSentence && nextSentence[0] === nextSentence[0].toLowerCase()) {
+                    errors.push({
+                        type: 'capitalization',
+                        message: 'После точки предложение должно начинаться с заглавной буквы.',
+                        example: `Вместо: "${nextSentence}" -> "${nextSentence.charAt(0).toUpperCase() + nextSentence.slice(1)}"`
+                    });
+                }
+            }
+            
+            // Проверка грамматических ошибок
+            if (text.includes('ich bist') || text.includes('Ich bist')) {
+                errors.push({
+                    type: 'grammar',
+                    message: 'Грамматическая ошибка: несоответствие местоимения и глагола.',
+                    example: 'С местоимением "ich" используется форма "bin". Правильно: "ich bin"'
+                });
+            }
+            
+            if (text.includes('du bin') || text.includes('Du bin')) {
+                errors.push({
+                    type: 'grammar',
+                    message: 'Грамматическая ошибка: несоответствие местоимения и глагола.',
+                    example: 'С местоимением "du" используется форма "bist". Правильно: "du bist"'
+                });
+            }
+            
+            if (text.includes('kommst Sie') || text.includes('Kommst Sie')) {
+                errors.push({
+                    type: 'grammar',
+                    message: 'Грамматическая ошибка: несоответствие местоимения и глагола.',
+                    example: 'С местоимением "Sie" используется форма "kommen". Правильно: "kommen Sie"'
+                });
+            }
+            
+            return errors;
+        }
+
+        // Основная функция проверки упражнений
+        function checkExercise(exerciseId) {
+            let resultDiv, correctAnswerDiv, errorAnalysisDiv, errorListDiv, message, isCorrect;
+            
+            switch(exerciseId) {
+                case 'ex1':
+                    resultDiv = document.getElementById('ex1-result');
+                    correctAnswerDiv = document.getElementById('correct-answer-ex1');
+                    const answers1 = {
+                        'ex1-1': 'heißen',
+                        'ex1-2': 'heiße',
+                        'ex1-3': 'Freut',
+                        'ex1-4': 'Woher',
+                        'ex1-5': 'aus'
+                    };
+                    
+                    let correctCount1 = 0;
+                    let totalQuestions1 = Object.keys(answers1).length;
+                    
+                    for (let id in answers1) {
+                        const userAnswer = normalizeText(document.getElementById(id).value);
+                        if (userAnswer === answers1[id]) {
+                            correctCount1++;
+                            document.getElementById(id).classList.add('input-correct');
+                            document.getElementById(id).classList.remove('input-incorrect');
+                        } else {
+                            document.getElementById(id).classList.add('input-incorrect');
+                            document.getElementById(id).classList.remove('input-correct');
+                        }
+                    }
+                    
+                    if (correctCount1 === totalQuestions1) {
+                        message = "✅ Отлично! Все ответы правильные.";
+                        isCorrect = true;
+                        correctAnswerDiv.style.display = 'none';
+                    } else {
+                        message = `❌ Вы правильно ответили на ${correctCount1} из ${totalQuestions1} вопросов. Попробуйте еще раз!`;
+                        isCorrect = false;
+                        correctAnswerDiv.style.display = 'block';
+                    }
+                    break;
+                    
+                case 'ex2':
+                    resultDiv = document.getElementById('ex2-result');
+                    correctAnswerDiv = document.getElementById('correct-answer-ex2');
+                    const answers2 = {
+                        'ex2-1': 'Ich heiße Maria.',
+                        'ex2-2': 'Wie heißt du?',
+                        'ex2-3': 'Ich komme aus Deutschland.',
+                        'ex2-4': 'Woher kommen Sie?',
+                        'ex2-5': 'Mein Name ist Peter.'
+                    };
+                    
+                    let correctCount2 = 0;
+                    let totalQuestions2 = Object.keys(answers2).length;
+                    
+                    for (let id in answers2) {
+                        const userAnswer = document.getElementById(id).value;
+                        const spellingCheck = checkGermanSpelling(userAnswer, answers2[id]);
+                        
+                        if (spellingCheck.isCorrect) {
+                            correctCount2++;
+                            document.getElementById(id).classList.add('input-correct');
+                            document.getElementById(id).classList.remove('input-incorrect');
+                        } else {
+                            document.getElementById(id).classList.add('input-incorrect');
+                            document.getElementById(id).classList.remove('input-correct');
+                        }
+                    }
+                    
+                    if (correctCount2 === totalQuestions2) {
+                        message = "✅ Превосходно! Все предложения составлены правильно.";
+                        isCorrect = true;
+                        correctAnswerDiv.style.display = 'none';
+                    } else {
+                        message = `❌ Вы правильно составили ${correctCount2} из ${totalQuestions2} предложений. Обратите внимание на правильное написание.`;
+                        isCorrect = false;
+                        correctAnswerDiv.style.display = 'block';
+                    }
+                    break;
+                    
+                case 'ex3':
+                    resultDiv = document.getElementById('ex3-result');
+                    const selected1 = document.querySelector('input[name="ex3-1"]:checked');
+                    const selected2 = document.querySelector('input[name="ex3-2"]:checked');
+                    const selected3 = document.querySelector('input[name="ex3-3"]:checked');
+                    
+                    let correctCount3 = 0;
+                    if (selected1 && selected1.value === 'correct') correctCount3++;
+                    if (selected2 && selected2.value === 'correct') correctCount3++;
+                    if (selected3 && selected3.value === 'correct') correctCount3++;
+                    
+                    // Подсветка правильных/неправильных ответов
+                    document.querySelectorAll('input[name="ex3-1"], input[name="ex3-2"], input[name="ex3-3"]').forEach(input => {
+                        const option = input.closest('.option');
+                        if (input.checked) {
+                            if (input.value === 'correct') {
+                                option.classList.add('option-correct');
+                                option.classList.remove('option-incorrect');
+                            } else {
+                                option.classList.add('option-incorrect');
+                                option.classList.remove('option-correct');
+                            }
+                        }
+                    });
+                    
+                    if (correctCount3 === 3) {
+                        message = "✅ Отлично! Все ответы правильные!";
+                        isCorrect = true;
+                    } else {
+                        message = `❌ Правильно ${correctCount3} из 3. Обратите внимание на формальное и неформальное обращение.`;
+                        isCorrect = false;
+                    }
+                    break;
+                    
+                case 'ex4':
+					resultDiv = document.getElementById('ex4-result');
+					const selectedItems = document.querySelectorAll('.match-item.selected');
+					
+					// Проверяем, что выбрано 4 элемента (2 пары)
+					if (selectedItems.length !== 4) {
+						message = "❌ Пожалуйста, выберите 2 пары (по одному элементу из каждой колонки для каждой пары).";
+						isCorrect = false;
+						break;
+					}
+					
+					// Группируем выбранные элементы по колонкам
+					const leftColumn = document.querySelectorAll('.match-exercise > div:first-child .match-item.selected');
+					const rightColumn = document.querySelectorAll('.match-exercise > div:last-child .match-item.selected');
+					
+					if (leftColumn.length !== 2 || rightColumn.length !== 2) {
+						message = "❌ Выберите по одному элементу из левой и правой колонки для создания пар.";
+						isCorrect = false;
+						break;
+					}
+					
+					// Проверяем правильность сопоставления
+					let correctPairs = 0;
+					const correctPairsMap = {
+						'Wie heißen Sie?': 'Как Вас зовут?',
+						'Ich komme aus...': 'Я из...',
+						'Freut mich!': 'Рад познакомиться!',
+						'Woher kommen Sie?': 'Откуда Вы?'
+					};
+					
+					// Проверяем каждую выбранную пару
+					leftColumn.forEach(leftItem => {
+						const germanText = leftItem.textContent.trim();
+						const correspondingRight = Array.from(rightColumn).find(rightItem => {
+							const russianText = rightItem.textContent.trim();
+							return correctPairsMap[germanText] === russianText;
+						});
+						
+						if (correspondingRight) {
+							correctPairs++;
+							leftItem.classList.add('match-correct');
+							correspondingRight.classList.add('match-correct');
+						} else {
+							leftItem.classList.add('match-incorrect');
+						}
+					});
+					
+					if (correctPairs === 2) {
+						message = "✅ Превосходно! Все сопоставления правильные!";
+						isCorrect = true;
+					} else {
+						message = `❌ Правильно ${correctPairs} из 2 пар. Попробуйте еще раз!`;
+						isCorrect = false;
+					}
+					// Добавьте в функцию resetExercise case для ex4
+					function resetExercise(exerciseId) {
+						const exerciseElement = document.querySelector(`#${exerciseId}-result`).closest('.exercise');
+    
+						// Сброс полей ввода
+						const inputs = exerciseElement.querySelectorAll('input, textarea');
+						inputs.forEach(input => {
+							input.value = '';
+							input.classList.remove('input-correct', 'input-incorrect');
+							if (input.type === 'radio' || input.type === 'checkbox') {
+								input.checked = false;
+							}
+						});
+    
+						// Сброс классов стилей
+						const options = exerciseElement.querySelectorAll('.option');
+						options.forEach(option => {
+							option.classList.remove('option-correct', 'option-incorrect');
+						});
+    
+						// ОСОБЫЙ СБРОС ДЛЯ УПРАЖНЕНИЯ 4 (СОПОСТАВЛЕНИЕ)
+						if (exerciseId === 'ex4') {
+							const matchItems = exerciseElement.querySelectorAll('.match-item');
+							matchItems.forEach(item => {
+							item.classList.remove('selected', 'match-correct', 'match-incorrect');
+							item.style.backgroundColor = '';
+							item.style.borderColor = '';
+							});
+						}
+						
+						const matches = exerciseElement.querySelectorAll('.match-left, .match-right');
+						matches.forEach(match => {
+							match.classList.remove('match-correct', 'match-incorrect');
+						});
+						
+						// Скрытие результатов
+						const resultDiv = document.getElementById(`${exerciseId}-result`);
+						if (resultDiv) {
+							resultDiv.style.display = 'none';
+						}
+						
+						const correctAnswerDiv = document.getElementById(`correct-answer-${exerciseId}`);
+						if (correctAnswerDiv) {
+							correctAnswerDiv.style.display = 'none';
+						}
+						
+						const errorAnalysisDiv = document.getElementById(`error-analysis-${exerciseId}`);
+						if (errorAnalysisDiv) {
+							errorAnalysisDiv.style.display = 'none';
+						}
+					}
+					break;
+                    
+                case 'ex5':
+                    resultDiv = document.getElementById('ex5-result');
+                    correctAnswerDiv = document.getElementById('correct-answer-ex5');
+                    errorAnalysisDiv = document.getElementById('error-analysis-ex5');
+                    errorListDiv = document.getElementById('error-list-ex5');
+                    const userText = document.getElementById('ex5-text').value.trim();
+                    
+                    if (userText.length > 0) {
+                        const errors = analyzeText(userText);
+                        
+                        if (errors.length > 0) {
+                            errorListDiv.innerHTML = '';
+                            errors.forEach(error => {
+                                const errorItem = document.createElement('div');
+                                errorItem.className = 'error-item';
+                                errorItem.innerHTML = `
+                                    <strong>${error.type === 'capitalization' ? 'Заглавные буквы' : 
+                                              error.type === 'spelling' ? 'Орфография' : 
+                                              error.type === 'grammar' ? 'Грамматика' : 
+                                              'Пунктуация'}:</strong> ${error.message}<br>
+                                    <em>${error.example}</em>
+                                `;
+                                errorListDiv.appendChild(errorItem);
+                            });
+                            
+                            message = "В вашем тексте есть ошибки. Ознакомьтесь с анализом ниже.";
+                            isCorrect = false;
+                            correctAnswerDiv.style.display = 'block';
+                            errorAnalysisDiv.style.display = 'block';
+                        } else {
+                            const keywords = ['heiße', 'komme', 'aus', 'freut', 'name'];
+                            let foundKeywords = keywords.filter(word => userText.toLowerCase().includes(word.toLowerCase()));
+                            
+                            if (foundKeywords.length >= 2) {
+                                message = "✅ Отлично! Ваш текст грамматически правильный и содержит необходимые элементы.";
+                                isCorrect = true;
+                                correctAnswerDiv.style.display = 'none';
+                                errorAnalysisDiv.style.display = 'none';
+                            } else {
+                                message = "Текст грамматически правильный, но попробуйте использовать больше ключевых слов из урока (например, heiße, komme, aus, freut).";
+                                isCorrect = false;
+                                correctAnswerDiv.style.display = 'block';
+                                errorAnalysisDiv.style.display = 'none';
+                            }
+                        }
+                    } else {
+                        message = "Пожалуйста, напишите текст перед проверкой.";
+                        isCorrect = false;
+                        correctAnswerDiv.style.display = 'none';
+                        errorAnalysisDiv.style.display = 'none';
+                    }
+                    break;
+                    
+                case 'ex6':
+                    resultDiv = document.getElementById('ex6-result');
+                    correctAnswerDiv = document.getElementById('correct-answer-ex6');
+                    const answers6 = {
+                        'ex6-1': 'Wie heißen Sie?',
+                        'ex6-2': 'Ich heiße Peter.',
+                        'ex6-3': 'Woher kommen Sie?',
+                        'ex6-4': 'Ich komme aus Deutschland.',
+                        'ex6-5': 'Freut mich!'
+                    };
+                    
+                    let correctCount6 = 0;
+                    let totalQuestions6 = Object.keys(answers6).length;
+                    
+                    for (let id in answers6) {
+                        const userAnswer = document.getElementById(id).value;
+                        const spellingCheck = checkGermanSpelling(userAnswer, answers6[id]);
+                        
+                        if (spellingCheck.isCorrect) {
+                            correctCount6++;
+                            document.getElementById(id).classList.add('input-correct');
+                            document.getElementById(id).classList.remove('input-incorrect');
+                        } else {
+                            document.getElementById(id).classList.add('input-incorrect');
+                            document.getElementById(id).classList.remove('input-correct');
+                        }
+                    }
+                    
+                    if (correctCount6 === totalQuestions6) {
+                        message = "✅ Отлично! Все ошибки исправлены правильно!";
+                        isCorrect = true;
+                        correctAnswerDiv.style.display = 'none';
+                    } else {
+                        message = `❌ Вы правильно исправили ${correctCount6} из ${totalQuestions6} предложений. Обратите внимание на правильное написание.`;
+                        isCorrect = false;
+                        correctAnswerDiv.style.display = 'block';
+                    }
+                    break;
+                    
+                case 'ex7':
+                    resultDiv = document.getElementById('ex7-result');
+                    const selected7_1 = document.querySelector('input[name="ex7-1"]:checked');
+                    const selected7_2 = document.querySelector('input[name="ex7-2"]:checked');
+                    const selected7_3 = document.querySelector('input[name="ex7-3"]:checked');
+                    
+                    let correctCount7 = 0;
+                    if (selected7_1 && selected7_1.value === 'correct') correctCount7++;
+                    if (selected7_2 && selected7_2.value === 'correct') correctCount7++;
+                    if (selected7_3 && selected7_3.value === 'correct') correctCount7++;
+                    
+                    // Подсветка правильных/неправильных ответов
+                    document.querySelectorAll('input[name="ex7-1"], input[name="ex7-2"], input[name="ex7-3"]').forEach(input => {
+                        const option = input.closest('.option');
+                        if (input.checked) {
+                            if (input.value === 'correct') {
+                                option.classList.add('option-correct');
+                                option.classList.remove('option-incorrect');
+                            } else {
+                                option.classList.add('option-incorrect');
+                                option.classList.remove('option-correct');
+                            }
+                        }
+                    });
+                    
+                    if (correctCount7 === 3) {
+                        message = "✅ Превосходно! Все ответы правильные!";
+                        isCorrect = true;
+                    } else {
+                        message = `❌ Правильно ${correctCount7} из 3. Обратите внимание на спряжение глаголов.`;
+                        isCorrect = false;
+                    }
+                    break;
+                    
+                case 'ex8':
+                    resultDiv = document.getElementById('ex8-result');
+                    correctAnswerDiv = document.getElementById('correct-answer-ex8');
+                    const answers8 = {
+                        'ex8-1': 'heiße',
+                        'ex8-2': 'heißt',
+                        'ex8-3': 'heißt',
+                        'ex8-4': 'heißen',
+                        'ex8-5': 'heißt',
+                        'ex8-6': 'heißen'
+                    };
+                    
+                    let correctCount8 = 0;
+                    let totalQuestions8 = Object.keys(answers8).length;
+                    
+                    for (let id in answers8) {
+                        const userAnswer = normalizeText(document.getElementById(id).value);
+                        if (userAnswer === answers8[id]) {
+                            correctCount8++;
+                            document.getElementById(id).classList.add('input-correct');
+                            document.getElementById(id).classList.remove('input-incorrect');
+                        } else {
+                            document.getElementById(id).classList.add('input-incorrect');
+                            document.getElementById(id).classList.remove('input-correct');
+                        }
+                    }
+                    
+                    if (correctCount8 === totalQuestions8) {
+                        message = "✅ Отлично! Все формы глаголов правильные!";
+                        isCorrect = true;
+                        correctAnswerDiv.style.display = 'none';
+                    } else {
+                        message = `❌ Правильно ${correctCount8} из ${totalQuestions8}. Повторите спряжение глаголов.`;
+                        isCorrect = false;
+                        correctAnswerDiv.style.display = 'block';
+                    }
+                    break;
+                    
+                case 'ex9':
+                    resultDiv = document.getElementById('ex9-result');
+                    const selected9 = document.querySelector('input[name="ex9"]:checked');
+                    
+                    if (selected9) {
+                        if (selected9.value === 'correct') {
+                            message = "✅ Правильно! Вы верно распознали фразу 'Guten Tag! Wie heißen Sie?'";
+                            isCorrect = true;
+                        } else {
+                            message = "❌ Неправильно. Попробуйте еще раз!";
+                            isCorrect = false;
+                        }
+                        
+                        // Подсветка ответов
+                        document.querySelectorAll('input[name="ex9"]').forEach(input => {
+                            const option = input.closest('.option');
+                            if (input.checked) {
+                                if (input.value === 'correct') {
+                                    option.classList.add('option-correct');
+                                    option.classList.remove('option-incorrect');
+                                } else {
+                                    option.classList.add('option-incorrect');
+                                    option.classList.remove('option-correct');
+                                }
+                            }
+                        });
+                    } else {
+                        message = "Пожалуйста, выберите вариант ответа.";
+                        isCorrect = false;
+                    }
+                    break;
+                    
+                case 'ex10':
+                    resultDiv = document.getElementById('ex10-result');
+                    const target = document.getElementById('ex10-target');
+                    const items = target.querySelectorAll('.drag-item');
+                    let correctCount10 = 0;
+                    let total10 = items.length;
+                    
+                    items.forEach((item, index) => {
+                        const correctOrder = parseInt(item.getAttribute('data-correct'));
+                        if (correctOrder === index + 1) {
+                            correctCount10++;
+                            item.classList.add('match-correct');
+                            item.classList.remove('match-incorrect');
+                        } else {
+                            item.classList.add('match-incorrect');
+                            item.classList.remove('match-correct');
+                        }
+                    });
+                    
+                    if (correctCount10 === total10) {
+                        message = "✅ Превосходно! Диалог составлен правильно!";
+                        isCorrect = true;
+                    } else {
+                        message = `❌ Правильно расставлено ${correctCount10} из ${total10} реплик. Попробуйте еще раз!`;
+                        isCorrect = false;
+                    }
+                    break;
+					
+					case 'ex11':
+    resultDiv = document.getElementById('ex11-result');
+    const selected11 = document.querySelector('input[name="ex11"]:checked');
+    
+    if (selected11) {
+        if (selected11.value === 'correct') {
+            message = "✅ Правильно! В формальной ситуации используется 'Guten Tag! Ich heiße Schmidt.'";
+            isCorrect = true;
+        } else {
+            message = "❌ Неправильно. В формальной ситуации используется вежливое обращение.";
+            isCorrect = false;
+        }
+        
+        document.querySelectorAll('input[name="ex11"]').forEach(input => {
+            const option = input.closest('.option');
+            if (input.checked) {
+                if (input.value === 'correct') {
+                    option.classList.add('option-correct');
+                    option.classList.remove('option-incorrect');
+                } else {
+                    option.classList.add('option-incorrect');
+                    option.classList.remove('option-correct');
+                }
+            }
+        });
+    } else {
+        message = "Пожалуйста, выберите вариант ответа.";
+        isCorrect = false;
+    }
+    break;
+
+case 'ex12':
+    resultDiv = document.getElementById('ex12-result');
+    correctAnswerDiv = document.getElementById('correct-answer-ex12');
+    const answers12 = {
+        'ex12-1-1': 'heiße',
+        'ex12-1-2': 'komme',
+        'ex12-2-1': 'heißt',
+        'ex12-2-2': 'kommst',
+        'ex12-3-1': 'heißt',
+        'ex12-3-2': 'kommt'
+    };
+    
+    let correctCount12 = 0;
+    let totalQuestions12 = Object.keys(answers12).length;
+    
+    for (let id in answers12) {
+        const userAnswer = normalizeText(document.getElementById(id).value);
+        if (userAnswer === answers12[id]) {
+            correctCount12++;
+            document.getElementById(id).classList.add('input-correct');
+            document.getElementById(id).classList.remove('input-incorrect');
+        } else {
+            document.getElementById(id).classList.add('input-incorrect');
+            document.getElementById(id).classList.remove('input-correct');
+        }
+    }
+    
+    if (correctCount12 === totalQuestions12) {
+        message = "✅ Отлично! Все формы глаголов правильные!";
+        isCorrect = true;
+        if (correctAnswerDiv) correctAnswerDiv.style.display = 'none';
+    } else {
+        message = `❌ Правильно ${correctCount12} из ${totalQuestions12}. Повторите спряжение глаголов.`;
+        isCorrect = false;
+        if (correctAnswerDiv) correctAnswerDiv.style.display = 'block';
+    }
+    break;
+
+case 'ex13':
+    resultDiv = document.getElementById('ex13-result');
+    const userAnswer13 = normalizeText(document.getElementById('ex13-1').value);
+    const correctAnswer13 = "Hallo! Ich heiße Anna. Ich komme aus Russland. Woher kommen Sie? Freut mich!";
+    
+    const spellingCheck13 = checkGermanSpelling(userAnswer13, correctAnswer13);
+    
+    if (spellingCheck13.isCorrect) {
+        message = "✅ Отлично! Все ошибки исправлены правильно!";
+        isCorrect = true;
+        document.getElementById('ex13-1').classList.add('input-correct');
+        document.getElementById('ex13-1').classList.remove('input-incorrect');
+    } else {
+        message = "❌ Не все ошибки исправлены. Проверьте заглавные буквы и пунктуацию.";
+        isCorrect = false;
+        document.getElementById('ex13-1').classList.add('input-incorrect');
+        document.getElementById('ex13-1').classList.remove('input-correct');
+    }
+    break;
+
+case 'ex14':
+    resultDiv = document.getElementById('ex14-result');
+    const answers14 = {
+        'ex14-1': 'Ich heiße [ваше имя].',
+        'ex14-2': 'Ich komme aus [ваша страна/город].',
+        'ex14-3': 'Ich heiße [ваше имя].'
+    };
+    
+    let correctCount14 = 0;
+    let totalQuestions14 = Object.keys(answers14).length;
+    
+    for (let id in answers14) {
+        const userAnswer = document.getElementById(id).value.trim();
+        if (userAnswer.length > 5 && userAnswer.includes('heiße') || userAnswer.includes('komme')) {
+            correctCount14++;
+            document.getElementById(id).classList.add('input-correct');
+            document.getElementById(id).classList.remove('input-incorrect');
+        } else {
+            document.getElementById(id).classList.add('input-incorrect');
+            document.getElementById(id).classList.remove('input-correct');
+        }
+    }
+    
+    if (correctCount14 === totalQuestions14) {
+        message = "✅ Отлично! Все ответы правильные!";
+        isCorrect = true;
+    } else {
+        message = `❌ Правильно ${correctCount14} из ${totalQuestions14}. Используйте изученные фразы.`;
+        isCorrect = false;
+    }
+    break;
+
+case 'ex15':
+    resultDiv = document.getElementById('ex15-result');
+    const answers15 = {
+        'ex15-1': 'Wie heißen Sie?',
+        'ex15-2': 'Wie heißt du?',
+        'ex15-3': 'Ich komme aus Deutschland.',
+        'ex15-4': 'Freut mich!'
+    };
+    
+    let correctCount15 = 0;
+    let totalQuestions15 = Object.keys(answers15).length;
+    
+    for (let id in answers15) {
+        const userAnswer = normalizeText(document.getElementById(id).value);
+        if (userAnswer === answers15[id]) {
+            correctCount15++;
+            document.getElementById(id).classList.add('input-correct');
+            document.getElementById(id).classList.remove('input-incorrect');
+        } else {
+            document.getElementById(id).classList.add('input-incorrect');
+            document.getElementById(id).classList.remove('input-correct');
+        }
+    }
+    
+    if (correctCount15 === totalQuestions15) {
+        message = "✅ Превосходно! Все ответы правильные и быстрые!";
+        isCorrect = true;
+    } else {
+        message = `❌ Правильно ${correctCount15} из ${totalQuestions15}. Попрактикуйтесь еще!`;
+        isCorrect = false;
+    }
+    break;
+
+case 'ex16':
+    resultDiv = document.getElementById('ex16-result');
+    const select16_1 = document.getElementById('ex16-1');
+    const select16_2 = document.getElementById('ex16-2');
+    
+    if (select16_1.value === 'Wie' && select16_2.value === 'aus') {
+        message = "✅ Правильно! Отличный выбор слов.";
+        isCorrect = true;
+        select16_1.classList.add('input-correct');
+        select16_2.classList.add('input-correct');
+        select16_1.classList.remove('input-incorrect');
+        select16_2.classList.remove('input-incorrect');
+    } else {
+        message = "❌ Неправильно. Проверьте выбор слов.";
+        isCorrect = false;
+        select16_1.classList.add('input-incorrect');
+        select16_2.classList.add('input-incorrect');
+        select16_1.classList.remove('input-correct');
+        select16_2.classList.remove('input-correct');
+    }
+    break;
+
+case 'ex17':
+    resultDiv = document.getElementById('ex17-result');
+    const formalContainer = document.getElementById('ex17-formal');
+    const informalContainer = document.getElementById('ex17-informal');
+    
+    let correctCount17 = 0;
+    const formalItems = formalContainer.querySelectorAll('.drag-item');
+    const informalItems = informalContainer.querySelectorAll('.drag-item');
+    
+    // Проверяем формальные элементы
+    formalItems.forEach(item => {
+        if (item.getAttribute('data-category') === 'formal') correctCount17++;
+    });
+    
+    // Проверяем неформальные элементы
+    informalItems.forEach(item => {
+        if (item.getAttribute('data-category') === 'informal') correctCount17++;
+    });
+    
+    if (correctCount17 === 6) {
+        message = "✅ Превосходно! Все слова правильно распределены!";
+        isCorrect = true;
+    } else {
+        message = `❌ Правильно распределено ${correctCount17} из 6 слов. Попробуйте еще раз!`;
+        isCorrect = false;
+    }
+    break;
+
+case 'ex18':
+    resultDiv = document.getElementById('ex18-result');
+    const check18_1 = document.getElementById('ex18-1');
+    const check18_2 = document.getElementById('ex18-2');
+    const check18_3 = document.getElementById('ex18-3');
+    const check18_4 = document.getElementById('ex18-4');
+    
+    let correctCount18 = 0;
+    if (check18_1.checked && check18_1.value === 'true') correctCount18++;
+    if (!check18_2.checked && check18_2.value === 'false') correctCount18++;
+    if (check18_3.checked && check18_3.value === 'true') correctCount18++;
+    if (!check18_4.checked && check18_4.value === 'false') correctCount18++;
+    
+    if (correctCount18 === 4) {
+        message = "✅ Отлично! Все утверждения правильно оценены!";
+        isCorrect = true;
+    } else {
+        message = `❌ Правильно ${correctCount18} из 4. Обратите внимание на формальное и неформальное обращение.`;
+        isCorrect = false;
+    }
+    break;
+
+case 'ex19':
+    resultDiv = document.getElementById('ex19-result');
+    correctAnswerDiv = document.getElementById('correct-answer-ex19');
+    const answers19 = {
+        'ex19-1': 'Wie',
+        'ex19-2': 'Ich',
+        'ex19-3': 'Sie',
+        'ex19-4': 'heiße',
+        'ex19-5': 'Freut',
+        'ex19-6': 'auch',
+        'ex19-7': 'Woher',
+        'ex19-8': 'aus'
+    };
+    
+    let correctCount19 = 0;
+    let totalQuestions19 = Object.keys(answers19).length;
+    
+    for (let id in answers19) {
+        const userAnswer = normalizeText(document.getElementById(id).value);
+        if (userAnswer === answers19[id]) {
+            correctCount19++;
+            document.getElementById(id).classList.add('input-correct');
+            document.getElementById(id).classList.remove('input-incorrect');
+        } else {
+            document.getElementById(id).classList.add('input-incorrect');
+            document.getElementById(id).classList.remove('input-correct');
+        }
+    }
+    
+    if (correctCount19 === totalQuestions19) {
+        message = "✅ Превосходно! Весь диалог заполнен правильно!";
+        isCorrect = true;
+        if (correctAnswerDiv) correctAnswerDiv.style.display = 'none';
+    } else {
+        message = `❌ Правильно ${correctCount19} из ${totalQuestions19}. Заполните все пропуски.`;
+        isCorrect = false;
+        if (correctAnswerDiv) correctAnswerDiv.style.display = 'block';
+    }
+    break;
+
+case 'ex20':
+    resultDiv = document.getElementById('ex20-result');
+    const answers20 = {
+        'ex20-1': 'Guten Tag! Wie heißen Sie?',
+        'ex20-2': 'Ich heiße Anna.',
+        'ex20-3': 'Ich komme aus Russland.',
+        'ex20-4': 'Freut mich!'
+    };
+    
+    let correctCount20 = 0;
+    let totalQuestions20 = Object.keys(answers20).length;
+    
+    for (let id in answers20) {
+        const userAnswer = document.getElementById(id).value;
+        const spellingCheck = checkGermanSpelling(userAnswer, answers20[id]);
+        
+        if (spellingCheck.isCorrect) {
+            correctCount20++;
+            document.getElementById(id).classList.add('input-correct');
+            document.getElementById(id).classList.remove('input-incorrect');
+        } else {
+            document.getElementById(id).classList.add('input-incorrect');
+            document.getElementById(id).classList.remove('input-correct');
+        }
+    }
+    
+    if (correctCount20 === totalQuestions20) {
+        message = "✅ Отлично! Все переводы правильные!";
+        isCorrect = true;
+    } else {
+        message = `❌ Правильно ${correctCount20} из ${totalQuestions20}. Проверьте правописание.`;
+        isCorrect = false;
+    }
+    break;
+
+case 'ex21':
+    resultDiv = document.getElementById('ex21-result');
+    const userAnswer21 = normalizeText(document.getElementById('ex21-1').value.toLowerCase());
+    const requiredWords = ['heißen', 'freut', 'mich', 'kommen', 'sie', 'du', 'name'];
+    let foundWords = 0;
+    
+    requiredWords.forEach(word => {
+        if (userAnswer21.includes(word.toLowerCase())) {
+            foundWords++;
+        }
+    });
+    
+    if (foundWords >= 5) {
+        message = `✅ Отлично! Найдено ${foundWords} из 7 слов!`;
+        isCorrect = true;
+        document.getElementById('ex21-1').classList.add('input-correct');
+        document.getElementById('ex21-1').classList.remove('input-incorrect');
+    } else {
+        message = `❌ Найдено ${foundWords} из 7 слов. Попробуйте найти больше!`;
+        isCorrect = false;
+        document.getElementById('ex21-1').classList.add('input-incorrect');
+        document.getElementById('ex21-1').classList.remove('input-correct');
+    }
+    break;
+
+case 'ex22':
+    resultDiv = document.getElementById('ex22-result');
+    const select22_1 = document.getElementById('ex22-1');
+    const select22_2 = document.getElementById('ex22-2');
+    
+    if (select22_1.value === 'formal' && select22_2.value === 'informal') {
+        message = "✅ Правильно! Отличное понимание ситуаций общения!";
+        isCorrect = true;
+        select22_1.classList.add('input-correct');
+        select22_2.classList.add('input-correct');
+        select22_1.classList.remove('input-incorrect');
+        select22_2.classList.remove('input-incorrect');
+    } else {
+        message = "❌ Неправильно. Вспомните разницу между формальным и неформальным общением.";
+        isCorrect = false;
+        select22_1.classList.add('input-incorrect');
+        select22_2.classList.add('input-incorrect');
+        select22_1.classList.remove('input-correct');
+        select22_2.classList.remove('input-correct');
+    }
+    break;
+
+case 'ex23':
+    resultDiv = document.getElementById('ex23-result');
+    const answers23 = {
+        'ex23-1': 'Sie',
+        'ex23-2': 'heiße',
+        'ex23-3': 'Freut',
+        'ex23-4': 'Woher',
+        'ex23-5': 'aus'
+    };
+    
+    let correctCount23 = 0;
+    let totalQuestions23 = Object.keys(answers23).length;
+    
+    for (let id in answers23) {
+        const userAnswer = normalizeText(document.getElementById(id).value);
+        if (userAnswer === answers23[id]) {
+            correctCount23++;
+            document.getElementById(id).classList.add('input-correct');
+            document.getElementById(id).classList.remove('input-incorrect');
+        } else {
+            document.getElementById(id).classList.add('input-incorrect');
+            document.getElementById(id).classList.remove('input-correct');
+        }
+    }
+    
+    if (correctCount23 === totalQuestions23) {
+        message = "✅ Превосходно! Все пропуски заполнены правильно!";
+        isCorrect = true;
+    } else {
+        message = `❌ Правильно ${correctCount23} из ${totalQuestions23}. Используйте слова из списка.`;
+        isCorrect = false;
+    }
+    break;
+
+case 'ex24':
+    resultDiv = document.getElementById('ex24-result');
+    const selected24 = document.querySelector('input[name="ex24"]:checked');
+    const explanation = document.getElementById('ex24-explanation').value;
+    
+    if (selected24 && selected24.value === 'correct' && explanation.length > 10) {
+        message = "✅ Отлично! Правильный выбор с хорошим объяснением!";
+        isCorrect = true;
+        
+        document.querySelectorAll('input[name="ex24"]').forEach(input => {
+            const option = input.closest('.option');
+            if (input.checked) {
+                option.classList.add('option-correct');
+                option.classList.remove('option-incorrect');
+            }
+        });
+    } else if (selected24 && selected24.value === 'correct') {
+        message = "✅ Правильный выбор, но объяснение слишком короткое.";
+        isCorrect = true;
+    } else {
+        message = "❌ Неправильно. Вспомните правила формального обращения.";
+        isCorrect = false;
+    }
+    break;
+
+case 'ex25':
+    resultDiv = document.getElementById('ex25-result');
+    let correctCount25 = 0;
+    
+    // Вопрос 1
+    const select25_1 = document.getElementById('ex25-1');
+    if (select25_1.value === 'correct') correctCount25++;
+    
+    // Вопрос 2
+    const answer25_2 = normalizeText(document.getElementById('ex25-2').value);
+    if (answer25_2 === 'Wie heißen Sie?') correctCount25++;
+    
+    // Вопрос 3
+    const selected25_3 = document.querySelector('input[name="ex25-3"]:checked');
+    if (selected25_3 && selected25_3.value === 'correct') correctCount25++;
+    
+    // Вопрос 4
+    const answer25_4 = normalizeText(document.getElementById('ex25-4').value);
+    if (answer25_4 === 'Ich komme aus Deutschland.') correctCount25++;
+    
+    // Вопрос 5
+    const answer25_5 = normalizeText(document.getElementById('ex25-5').value);
+    if (answer25_5 === 'Freut mich!') correctCount25++;
+    
+    if (correctCount25 === 5) {
+        message = "🎉 Браво! Вы отлично справились с финальным тестом! Тема освоена!";
+        isCorrect = true;
+    } else {
+        message = `✅ Вы правильно ответили на ${correctCount25} из 5 вопросов. Рекомендуется повторить тему.`;
+        isCorrect = correctCount25 >= 3;
+    }
+    break;
+            }
+            
+            if (resultDiv) {
+                resultDiv.textContent = message;
+                resultDiv.className = 'result ' + (isCorrect ? 'correct' : 'incorrect');
+                resultDiv.style.display = 'block';
+            }
+        }
+
+        // Функция сброса упражнения
+        function resetExercise(exerciseId) {
+            const exerciseElement = document.querySelector(`#${exerciseId}-result`).closest('.exercise');
+            
+            // Сброс полей ввода
+            const inputs = exerciseElement.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.value = '';
+                input.classList.remove('input-correct', 'input-incorrect');
+                if (input.type === 'radio' || input.type === 'checkbox') {
+                    input.checked = false;
+                }
+            });
+            
+            // Сброс классов стилей
+            const options = exerciseElement.querySelectorAll('.option');
+            options.forEach(option => {
+                option.classList.remove('option-correct', 'option-incorrect');
+            });
+            
+            const matches = exerciseElement.querySelectorAll('.match-left, .match-right');
+            matches.forEach(match => {
+                match.classList.remove('match-correct', 'match-incorrect');
+            });
+            
+            // Скрытие результатов
+            const resultDiv = document.getElementById(`${exerciseId}-result`);
+            if (resultDiv) {
+                resultDiv.style.display = 'none';
+            }
+            
+            const correctAnswerDiv = document.getElementById(`correct-answer-${exerciseId}`);
+            if (correctAnswerDiv) {
+                correctAnswerDiv.style.display = 'none';
+            }
+            
+            const errorAnalysisDiv = document.getElementById(`error-analysis-${exerciseId}`);
+            if (errorAnalysisDiv) {
+                errorAnalysisDiv.style.display = 'none';
+            }
+            
+            // Сброс Drag & Drop
+            if (exerciseId === 'ex10') {
+                const dragContainer = document.getElementById('ex10-target');
+                const dragItems = document.querySelectorAll('.drag-items .drag-item');
+                dragContainer.innerHTML = '<p>Перетащите реплики сюда в правильном порядке...</p>';
+                document.querySelector('.drag-items').append(...dragItems);
+            }
+        }
+
+        // Функции для немецкой клавиатуры
+        function toggleKeyboard() {
+            const keyboard = document.getElementById('keyboard');
+            if (keyboard.style.display === 'block') {
+                keyboard.style.display = 'none';
+            } else {
+                keyboard.style.display = 'block';
+                // Установка фокуса на последнее активное поле
+                if (activeInput) {
+                    activeInput.focus();
+                }
+            }
+        }
+
+// Замените функцию setupKeyboard на эту:
+function setupKeyboard() {
+    const keyboardKeys = document.querySelectorAll('.keyboard-key');
+    const inputs = document.querySelectorAll('input, textarea');
+    
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            activeInput = this;
+        });
+        
+        input.addEventListener('blur', function() {
+            activeInput = null;
+        });
+        
+        if (input.classList.contains('sentence-input')) {
+            input.addEventListener('input', function() {
+                resizeInput(this);
+            });
+        }
+    });
+    
+    keyboardKeys.forEach(key => {
+        key.addEventListener('mousedown', function(e) {
+            e.preventDefault(); // Важно: предотвращаем потерю фокуса
+            if (!activeInput) return;
+            
+            const keyValue = this.getAttribute('data-key');
+            handleKeyPress(keyValue);
+        });
+    });
+}
+
+// Добавьте эту функцию:
+function handleKeyPress(keyValue) {
+    if (!activeInput) return;
+    
+    const startPos = activeInput.selectionStart;
+    const endPos = activeInput.selectionEnd;
+    const currentValue = activeInput.value;
+    
+    if (keyValue === 'backspace') {
+        if (startPos === endPos) {
+            // Удаляем один символ перед курсором
+            activeInput.value = currentValue.substring(0, startPos - 1) + currentValue.substring(endPos);
+            activeInput.selectionStart = activeInput.selectionEnd = startPos - 1;
+        } else {
+            // Удаляем выделенный текст
+            activeInput.value = currentValue.substring(0, startPos) + currentValue.substring(endPos);
+            activeInput.selectionStart = activeInput.selectionEnd = startPos;
+        }
+    } else if (keyValue === 'space') {
+        activeInput.value = currentValue.substring(0, startPos) + ' ' + currentValue.substring(endPos);
+        activeInput.selectionStart = activeInput.selectionEnd = startPos + 1;
+    } else if (keyValue === 'enter') {
+        activeInput.value = currentValue.substring(0, startPos) + '\n' + currentValue.substring(endPos);
+        activeInput.selectionStart = activeInput.selectionEnd = startPos + 1;
+    } else if (keyValue === 'clear') {
+        activeInput.value = '';
+        activeInput.selectionStart = activeInput.selectionEnd = 0;
+    } else if (keyValue === 'caps') {
+        isCapsLock = !isCapsLock;
+        document.querySelectorAll('.keyboard-key[data-key="caps"]').forEach(key => {
+            key.classList.toggle('active', isCapsLock);
+        });
+    } else if (keyValue === 'shift') {
+        isShiftPressed = !isShiftPressed;
+        document.querySelectorAll('.keyboard-key[data-key="shift"]').forEach(key => {
+            key.classList.toggle('active', isShiftPressed);
+        });
+    } else {
+        let charToAdd = keyValue;
+        
+        if (isCapsLock || isShiftPressed) {
+            charToAdd = charToAdd.toUpperCase();
+        }
+        
+        activeInput.value = currentValue.substring(0, startPos) + charToAdd + currentValue.substring(endPos);
+        activeInput.selectionStart = activeInput.selectionEnd = startPos + charToAdd.length;
+        
+        if (isShiftPressed && keyValue !== 'shift') {
+            isShiftPressed = false;
+            document.querySelectorAll('.keyboard-key[data-key="shift"]').forEach(key => {
+                key.classList.remove('active');
+            });
+        }
+    }
+    
+    // Триггерим событие input
+    activeInput.dispatchEvent(new Event('input', { bubbles: true }));
+    activeInput.focus();
+    
+    if (activeInput.classList.contains('sentence-input')) {
+        resizeInput(activeInput);
+    }
+}
+
+// Добавьте эту функцию для изменения размера input:
+function resizeInput(input) {
+    input.style.width = 'auto';
+    input.style.width = (input.scrollWidth + 10) + 'px';
+}
+
+        // Функция для Drag & Drop
+        function initializeDragDrop() {
+            const dragItems = document.querySelectorAll('.drag-item');
+            const dropZones = document.querySelectorAll('.drag-container');
+            
+            dragItems.forEach(item => {
+                item.addEventListener('dragstart', handleDragStart);
+                item.addEventListener('dragend', handleDragEnd);
+            });
+            
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', handleDragOver);
+                zone.addEventListener('drop', handleDrop);
+                zone.addEventListener('dragenter', handleDragEnter);
+                zone.addEventListener('dragleave', handleDragLeave);
+            });
+        }
+
+        function handleDragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.id);
+            e.target.classList.add('dragging');
+            setTimeout(() => e.target.style.display = 'none', 0);
+        }
+
+        function handleDragEnd(e) {
+            e.target.classList.remove('dragging');
+            e.target.style.display = 'block';
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const id = e.dataTransfer.getData('text/plain');
+            const draggable = document.getElementById(id);
+            const dropzone = e.target.closest('.drag-container');
+            
+            if (dropzone && draggable) {
+                dropzone.appendChild(draggable);
+                draggable.style.display = 'block';
+                dropzone.classList.remove('drag-over');
+            }
+        }
+
+        function handleDragEnter(e) {
+            e.preventDefault();
+            e.target.closest('.drag-container')?.classList.add('drag-over');
+        }
+
+        function handleDragLeave(e) {
+            e.target.closest('.drag-container')?.classList.remove('drag-over');
+        }
+
+        // Функция для воспроизведения аудио
+function playAudio(exerciseId) {
+    // Создаем текст для озвучки
+    const text = "Guten Tag! Wie heißen Sie?";
+    
+    // Пытаемся использовать Web Speech API
+    if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'de-DE';
+        utterance.rate = 0.8;
+        utterance.pitch = 1;
+        
+        // Находим голос для немецкого
+        const voices = speechSynthesis.getVoices();
+        const germanVoice = voices.find(voice => voice.lang.includes('de'));
+        if (germanVoice) {
+            utterance.voice = germanVoice;
+        }
+        
+        speechSynthesis.speak(utterance);
+    } else {
+        // Fallback - показываем текст
+        alert("Аудио: " + text + "\n\n(Ваш браузер не поддерживает озвучку текста)");
+    }
+}
+
+        // Функция для кнопки "Наверх"
+        function setupScrollToTop() {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+ // Функция для отметки темы как пройденной
+function markTopicComplete(topicId) {
+    const currentUser = localStorage.getItem('currentUser');
+    const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+    
+    if (!currentUser || !users[currentUser]) {
+        showNotification('Пожалуйста, войдите в систему, чтобы сохранять прогресс!', 'error');
+        return;
+    }
+    
+    const level = topicId.split('-')[0]; // 'a1'
+    const topic = topicId; // 'a1-t1'
+    
+    if (!users[currentUser].progress[level].topics[topic]) {
+        users[currentUser].progress[level].topics[topic] = true;
+        users[currentUser].progress[level].completed++;
+        users[currentUser].lastActivity = new Date().toISOString();
+        
+        localStorage.setItem('deutschUsers', JSON.stringify(users));
+        
+        // Обновляем отображение прогресса
+        updateProgressDisplay();
+        
+        // Показываем красивое уведомление
+        showNotification('Тема отмечена как пройденная! Ваш прогресс обновлен.', 'success');
+        
+        // Обновляем индикатор прогресса темы
+        const topicProgressElement = document.getElementById(`progress-${topicId}`);
+        if (topicProgressElement) {
+            topicProgressElement.style.width = '100%';
+        }
+        
+        // Обновляем кнопку завершения темы
+        updateCompleteButton();
+        
+    } else {
+        showNotification('Эта тема уже отмечена как пройденная.', 'info');
+    }
+}
+
+// Функция для обновления кнопки завершения темы
+function updateCompleteButton() {
+    const currentUser = localStorage.getItem('currentUser');
+    const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+    const currentPath = window.location.pathname;
+    
+    // Определяем topicId из текущего URL
+    let topicId = '';
+    if (currentPath.includes('topic1.html')) topicId = 'a1-t1';
+    if (currentPath.includes('topic2.html')) topicId = 'a1-t2';
+    // Добавьте остальные темы по аналогии
+    
+    if (topicId && currentUser && users[currentUser] && 
+        users[currentUser].progress.a1.topics[topicId]) {
+        
+        const completeButton = document.querySelector('.complete-topic-btn');
+        if (completeButton) {
+            completeButton.textContent = 'Тема уже завершена';
+            completeButton.disabled = true;
+            completeButton.classList.add('completed');
+            completeButton.classList.remove('btn-red');
+        }
+    }
+}
+
+// Функция для показа красивых уведомлений
+function showNotification(message, type = 'success') {
+    // Определяем иконку в зависимости от типа
+    let icon = '✓';
+    let title = 'Успех!';
+    
+    switch(type) {
+        case 'error':
+            icon = '✕';
+            title = 'Ошибка!';
+            break;
+        case 'info':
+            icon = 'ℹ';
+            title = 'Информация';
+            break;
+        case 'warning':
+            icon = '⚠';
+            title = 'Внимание!';
+            break;
+    }
+    
+    // Создаем элемент уведомления
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <span class="notification-icon">${icon}</span>
+            <div class="notification-body">
+                <div class="notification-title">${title}</div>
+                <div class="notification-text">${message}</div>
+            </div>
+        </div>
+    `;
+    
+    // Добавляем уведомление на страницу
+    document.body.appendChild(notification);
+    
+    // Показываем уведомление с анимацией
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+    
+    // Автоматически скрываем через 4 секунды
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 4000);
+    
+    // Добавляем возможность закрытия по клику
+    notification.addEventListener('click', function() {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    });
+}
+// Инициализация при загрузке страницы темы
+document.addEventListener('DOMContentLoaded', function() {
+    // Проверяем, завершена ли тема и обновляем кнопку
+    updateCompleteButton();
+    
+    // Проверяем авторизацию
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+        // Если не авторизован, скрываем кнопку завершения темы
+        const completeButton = document.querySelector('.complete-topic-btn');
+        if (completeButton) {
+            completeButton.style.display = 'none';
+        }
+        
+        // Показываем сообщение о необходимости авторизации
+        const authAlert = document.createElement('div');
+        authAlert.className = 'auth-alert';
+        authAlert.innerHTML = `
+            <h3>🔒 Для завершения темы необходима авторизация</h3>
+            <p>Пожалуйста, <span class="auth-link" onclick="openAuthModal()">войдите в систему</span>, чтобы сохранять свой прогресс.</p>
+        `;
+        
+        const pageNavigation = document.querySelector('.page-navigation');
+        if (pageNavigation) {
+            pageNavigation.parentNode.insertBefore(authAlert, pageNavigation);
+        }
+    }
+});
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            setupKeyboard();
+            setupScrollToTop();
+            initializeDragDrop();
+            
+            // Инициализация размеров полей ввода
+            document.querySelectorAll('.sentence-input').forEach(input => {
+                input.style.width = 'auto';
+                input.style.width = (input.scrollWidth + 10) + 'px';
+            });
+            
+            // Обработка изменения размеров окна
+            window.addEventListener('resize', function() {
+                document.querySelectorAll('.sentence-input').forEach(input => {
+                    input.style.width = 'auto';
+                    input.style.width = (input.scrollWidth + 10) + 'px';
+                });
+            });
+        });
+		
+		// ========== DRAG & DROP ФУНКЦИИ ==========
+
+// Функция для инициализации Drag & Drop
+function initializeDragDrop() {
+    const dragItems = document.querySelectorAll('.drag-item');
+    const dropZones = document.querySelectorAll('.drag-container');
+    
+    dragItems.forEach(item => {
+        item.setAttribute('draggable', 'true');
+        item.addEventListener('dragstart', handleDragStart);
+        item.addEventListener('dragend', handleDragEnd);
+    });
+    
+    dropZones.forEach(zone => {
+        zone.addEventListener('dragover', handleDragOver);
+        zone.addEventListener('drop', handleDrop);
+        zone.addEventListener('dragenter', handleDragEnter);
+        zone.addEventListener('dragleave', handleDragLeave);
+    });
+}
+
+function handleDragStart(e) {
+    e.dataTransfer.setData('text/plain', e.target.id);
+    e.target.classList.add('dragging');
+}
+
+function handleDragEnd(e) {
+    e.target.classList.remove('dragging');
+}
+
+function handleDragOver(e) {
+    e.preventDefault();
+}
+
+function handleDrop(e) {
+    e.preventDefault();
+    const id = e.dataTransfer.getData('text/plain');
+    const draggable = document.getElementById(id);
+    const dropzone = e.target.closest('.drag-container');
+    
+    if (dropzone && draggable) {
+        dropzone.appendChild(draggable);
+        dropzone.classList.remove('drag-over');
+    }
+}
+
+function handleDragEnter(e) {
+    e.preventDefault();
+    const dropzone = e.target.closest('.drag-container');
+    if (dropzone) {
+        dropzone.classList.add('drag-over');
+    }
+}
+
+function handleDragLeave(e) {
+    const dropzone = e.target.closest('.drag-container');
+    if (dropzone && !dropzone.contains(e.relatedTarget)) {
+        dropzone.classList.remove('drag-over');
+    }
+}
+
+// ========== ТАЙМЕР ДЛЯ УПРАЖНЕНИЯ 15 ==========
+
+let exerciseTimer;
+let timeLeft = 60;
+
+function startTimer(exerciseId) {
+    const timerElement = document.getElementById(`${exerciseId}-timer`);
+    const exerciseElement = document.querySelector(`#${exerciseId}-result`).closest('.exercise');
+    const inputs = exerciseElement.querySelectorAll('input');
+    
+    // Сброс предыдущего таймера
+    if (exerciseTimer) {
+        clearInterval(exerciseTimer);
+    }
+    
+    timeLeft = 60;
+    exerciseTimer = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = `Время: ${timeLeft} секунд`;
+        
+        if (timeLeft <= 0) {
+            clearInterval(exerciseTimer);
+            timerElement.textContent = "⏰ Время вышло!";
+            timerElement.style.color = "var(--red)";
+            
+            // Автоматически проверяем упражнение
+            checkExercise(exerciseId);
+        } else if (timeLeft <= 10) {
+            timerElement.style.color = "var(--red)";
+        } else if (timeLeft <= 30) {
+            timerElement.style.color = "#FF9800";
+        }
+    }, 1000);
+    
+    // Даем фокус первому полю ввода
+    if (inputs.length > 0) {
+        inputs[0].focus();
+    }
+}
+
+// ========== ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ ==========
+
+document.addEventListener('DOMContentLoaded', function() {
+    initializeDragDrop();
+    
+    // Остальной ваш код инициализации...
+    setupKeyboard();
+    setupScrollToTop();
+    
+    // Инициализация размеров полей ввода
+    document.querySelectorAll('.sentence-input').forEach(input => {
+        input.style.width = 'auto';
+        input.style.width = (input.scrollWidth + 10) + 'px';
+    });
+});
+    </script>
+</body>
+</html>

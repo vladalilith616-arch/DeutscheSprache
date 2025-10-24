@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уровень C1 - DeutscheSprache</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<script>
+    // Проверяем авторизацию и меняем интерфейс
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentUser = localStorage.getItem('currentUser');
+        const topicButtons = document.querySelectorAll('.topic-btn');
+        
+        if (!currentUser) {
+            // Для неавторизованных пользователей
+            topicButtons.forEach(button => {
+                button.classList.add('inactive');
+                button.removeAttribute('onclick');
+                button.style.pointerEvents = 'none';
+            });
+
+            // Скрываем блок с упражнениями
+            const topicContent = document.getElementById('topic-content');
+            if (topicContent) {
+                topicContent.style.display = 'none';
+            }
+
+            // Скрываем кнопки навигации для авторизованных
+            const authNavButtons = document.querySelectorAll('.auth-only');
+            authNavButtons.forEach(button => {
+                button.style.display = 'none';
+            });
+
+            // Создаем красивое сообщение
+            const authAlert = document.createElement('div');
+            authAlert.className = 'auth-alert';
+            authAlert.innerHTML = `
+                <h3>🔒 Для доступа к заданиям необходима авторизация</h3>
+                <p>Пожалуйста, <span class="auth-link" onclick="openAuthModal()">войдите в систему</span>, чтобы начать обучение и отслеживать свой прогресс.</p>
+            `;
+            
+            // Вставляем сообщение после заголовка уровня
+            const levelSelector = document.querySelector('.level-selector');
+            if (levelSelector) {
+                levelSelector.parentNode.insertBefore(authAlert, levelSelector.nextSibling);
+            }
+        } else {
+            // Для авторизованных пользователей
+            const topicContent = document.getElementById('topic-content');
+            if (topicContent) {
+                topicContent.style.display = 'block';
+            }
+            
+            // Показываем кнопки для авторизованных
+            const authNavButtons = document.querySelectorAll('.auth-only');
+            authNavButtons.forEach(button => {
+                button.style.display = 'inline-block';
+            });
+        }
+    });
+
+    // Глобальная функция для открытия модального окна
+    function openAuthModal() {
+        if (typeof window.openAuthModal === 'function') {
+            window.openAuthModal();
+        } else {
+            // Fallback: открываем модальное окно напрямую
+            const modal = document.getElementById('authModal');
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        }
+    }
+</script>
+    <div class="scroll-to-top" id="scrollToTop">
+        <svg viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+        </svg>
+    </div>
+
+    <header>
+        <div class="container">
+             <div class="header-content">
+			<a href="../index.html" class="logo-link">
+				<div class="logo">DeutscheSprache</div>
+			</a>
+			<nav>
+				<ul>
+					<li><a href="../index.html">Главная</a></li>
+					<li><a href="../about.html">О сайте</a></li>
+					<li class="auth-only" style="display: none;">
+						<a href="../profile.html">Личный кабинет</a>
+					</li>
+					<li class="auth-section">
+						<div id="userInfo" class="user-info" style="display: none;">
+							<div class="user-avatar" id="userAvatar">U</div>
+							<span id="userName">Пользователь</span>
+						</div>
+						<button id="authButton" class="auth-btn">Войти</button>
+					</li>
+				</ul>
+			</nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="topics">
+        <div class="container">
+            <h2 class="section-title">Уровень C1 - Продвинутый</h2>
+            
+            <div class="level-selector">
+                <a href="level-a1.html" class="level-btn">A1</a>
+                <a href="level-a2.html" class="level-btn">A2</a>
+                <a href="level-b1.html" class="level-btn">B1</a>
+                <a href="level-b2.html" class="level-btn">B2</a>
+                <button class="level-btn active">C1</button>
+				<a href="level-c2.html" class="level-btn">C2</a>
+            </div>
+            
+			 <div class="progress-container">
+                <h3>Ключевые навыки на уровне C1</h3>
+                <div class="rules">
+                    <p><strong>Владение языком: </strong> Вы можете гибко и эффективно использовать язык в социальной, профессиональной и академической сферах. Это включает способность понимать сложные тексты со скрытыми смыслами и бегло выражать свои мысли на сложные темы.</p>
+                    
+                    <p><strong>Речь и аудирование:</strong> Вы говорите спонтанно и бегло, без затруднений подбирая слова. Вы умеете вести дискуссии, отстаивать свою позицию и понимать сложный контент, такой как лекции, интервью и фильмы.</p>
+                    
+                    <p><strong>Письмо:</strong> Вы способны писать структурированные тексты, включая деловые письма, рецензии и эссе, логично и подробно излагая мысли по сложным вопросам.</p>
+                    
+                    <p><strong>Лексика и грамматика:</strong> Ваш активный словарный запас составляет около 6500 слов, и вы уверенно используете сложные конструкции, идиомы и фразеологизмы.</p>
+                    
+                    <p><strong>Темы:</strong> Вы можете обсуждать широкий спектр тем — от повседневных и социальных до профессиональных (бизнес, право, медицина) и абстрактных (мечты, цели).</p>
+                    
+                </div>
+            </div>
+			
+            <div id="topics-c1" class="topics-list active">
+                <a href="c1/topic1.html" class="topic-btn active">
+					<div class="topic-progress" id="progress-c1-t1"></div>
+                    1. Wissenschaftssprache
+               </a>
+				<a href="c1/topic2.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t2"></div>
+                    2. Komplexe Syntax
+                </a>
+				<a href="c1/topic3.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t3"></div>
+                    3. Idiomatische Ausdrücke
+                </a>
+				<a href="c1/topic4.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t4"></div>
+                    4. Stilistische Varianten
+                </a>
+				<a href="c1/topic5.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t5"></div>
+                    5. Fachtexte verfassen
+                </a>
+				<a href="c1/topic6.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t6"></div>
+                    6. Literarische Texte
+                </a>
+				<a href="c1/topic7.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t7"></div>
+                    7. Wissenschaftliches Schreiben
+                </a>
+				<a href="c1/topic8.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t8"></div>
+                    8. Rhetorische Mittel
+                </a>
+				<a href="c1/topic9.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t9"></div>
+                    9. Dialekte und Varietäten
+                </a>
+				<a href="c1/topic10.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t10"></div>
+                    10. Fachvokabular
+                </a>
+				<a href="c1/topic11.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t11"></div>
+                    11. Komplexe Diskussionen
+                </a>
+				<a href="c1/topic12.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t12"></div>
+                    12. Abstracts und Zusammenfassungen
+                </a>
+				<a href="c1/topic13.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t13"></div>
+                    13. Kritische Auseinandersetzung
+                </a>
+				<a href="c1/topic14.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t14"></div>
+                    14. Interkulturelle Kommunikation
+                </a>
+				<a href="c1/topic15.html" class="topic-btn">
+                    <div class="topic-progress" id="progress-c1-t15"></div>
+                    15. Fachpräsentationen
+                </a>
+            </div>
+            
+            <div class="page-navigation">
+                <a href="../index.html" class="nav-btn">На главную</a>
+                <a href="../about.html" class="nav-btn">О сайте</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Немецкая клавиатура и модальное окно как в предыдущих уровнях -->
+    
+	    <footer>
+		<div class="container">
+			<div class="footer-content">
+				<div class="logo">DeutscheSprache</div>
+				<div class="footer-links">
+					<a href="../index.html">Главная</a>
+					<a href="../about.html">О сайте</a>
+				</div>
+				<p>&copy; 2025 DeutscheSprache. Все права защищены.</p>
+			</div>
+		</div>
+	</footer>
+	
+
+	  <!-- Модальное окно авторизации -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeAuthModal">&times;</span>
+            <div class="modal-tabs">
+                <div class="modal-tab active" data-tab="login">Вход</div>
+                <div class="modal-tab" data-tab="register">Регистрация</div>
+            </div>
+            
+            <!-- ОБНОВЛЕННАЯ форма входа -->
+		<div id="loginTab" class="tab-content active">
+			<h2>Вход в аккаунт</h2>
+			<form id="loginForm">
+				<div class="form-group">
+					<label for="loginUsername">Имя пользователя</label>
+					<input type="text" id="loginUsername" required>
+					<div class="error-message" id="loginUsernameError"></div>
+				</div>
+				<div class="form-group">
+					<label for="loginPassword">Пароль</label>
+					<input type="password" id="loginPassword" required>
+					<div class="error-message" id="loginPasswordError"></div>
+				</div>
+				<div class="form-actions">
+					<button type="submit" class="btn">Войти</button>
+				</div>
+			</form>
+		</div>
+
+		<!-- ОБНОВЛЕННАЯ форма регистрации -->
+		<div id="registerTab" class="tab-content">
+			<h2>Регистрация</h2>
+			<form id="registerForm">
+				<div class="form-group">
+					<label for="registerUsername">Имя пользователя</label>
+					<input type="text" id="registerUsername" required>
+					<div class="error-message" id="registerUsernameError"></div>
+				</div>
+				<div class="form-group">
+					<label for="registerPassword">Пароль</label>
+					<input type="password" id="registerPassword" required>
+					<div class="error-message" id="registerPasswordError"></div>
+				</div>
+				<div class="form-group">
+					<label for="confirmPassword">Подтвердите пароль</label>
+					<input type="password" id="confirmPassword" required>
+					<div class="error-message" id="confirmPasswordError"></div>
+				</div>
+				<div class="form-actions">
+					<button type="submit" class="btn">Зарегистрироваться</button>
+				</div>
+			</form>
+        </div>
+    </div>
+	<!-- Модальное окно подтверждения выхода -->
+	<div id="logoutModal" class="modal">
+		<div class="modal-content">
+			<h2>Подтверждение выхода</h2>
+			<p>Вы уверены, что хотите выйти из аккаунта?</p>
+			<div class="form-actions">
+				<button id="confirmLogout" class="btn btn-red">Да, выйти</button>
+				<button id="cancelLogout" class="btn">Отмена</button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+    // Функция для отметки темы как пройденной
+    function markTopicComplete(topicId) {
+        const currentUser = localStorage.getItem('currentUser');
+        const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+        
+        if (!currentUser || !users[currentUser]) {
+            alert('Пожалуйста, войдите в систему, чтобы сохранять прогресс!');
+            return;
+        }
+        
+        const level = topicId.split('-')[0];
+        const topic = topicId;
+        
+        if (!users[currentUser].progress[level].topics[topic]) {
+            users[currentUser].progress[level].topics[topic] = true;
+            users[currentUser].progress[level].completed++;
+            users[currentUser].lastActivity = new Date().toISOString();
+            
+            localStorage.setItem('deutschUsers', JSON.stringify(users));
+            
+            // Обновляем отображение прогресса
+            updateProgressDisplay();
+            
+            alert('Тема отмечена как пройденная! Ваш прогресс обновлен.');
+            
+            // Обновляем индикатор прогресса темы
+            const topicProgressElement = document.getElementById(`progress-${topicId}`);
+            if (topicProgressElement) {
+                topicProgressElement.style.width = '100%';
+            }
+        } else {
+            alert('Эта тема уже отмечена как пройденная.');
+        }
+    }
+    
+    // Функция для обновления отображения прогресса
+    function updateProgressDisplay() {
+        const currentUser = localStorage.getItem('currentUser');
+        const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+        
+        if (currentUser && users[currentUser]) {
+            const progress = users[currentUser].progress;
+            
+            // Обновляем прогресс каждой темы
+            for (let level in progress) {
+                for (let topic in progress[level].topics) {
+                    const topicProgressElement = document.getElementById(`progress-${topic}`);
+                    if (topicProgressElement && progress[level].topics[topic]) {
+                        topicProgressElement.style.width = '100%';
+                    }
+                }
+            }
+        }
+    }
+    
+    // Инициализация прогресса при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        updateProgressDisplay();
+    });
+</script>
+
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/progress.js"></script>
+	<script src="../js/password.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/levels.js"></script>
+	<script src="../js/exercises.js"></script>
+    <script src="../js/keyboard.js"></script>
+</body>
+</html>

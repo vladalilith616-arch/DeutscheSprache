@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тема 1: Wie heißen Sie? - Уровень A1 - DeutscheSprache</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <!-- Такой же header как в level-a1.html -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../../index.html" class="logo-link">
+                    <div class="logo">DeutscheSprache</div>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="../../index.html">Главная</a></li>
+                        <li><a href="../../about.html">О сайте</a></li>
+                        <li class="auth-only" style="display: none;">
+                            <a href="../../profile.html">Личный кабинет</a>
+                        </li>
+                        <li class="auth-section">
+                            <div id="userInfo" class="user-info" style="display: none;">
+                                <div class="user-avatar" id="userAvatar">U</div>
+                                <span id="userName">Пользователь</span>
+                            </div>
+                            <button id="authButton" class="auth-btn">Войти</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div id="topic-content">
+                               <!-- Тема 2 A1-->
+                <div id="a1-t2" class="topic-container active-topic">
+                    <h2 class="topic-title">Тема 2: Zahlen von 0 bis 100 (Числа от 0 до 100)</h2>
+                    
+                    <div class="rules">
+                        <h3>Правила и объяснения</h3>
+                        <p>Изучаем немецкие числительные от 0 до 100.</p>
+                        <p><strong>Основные числа:</strong></p>
+                        <ul>
+                            <li>0 - null, 1 - eins, 2 - zwei, 3 - drei, 4 - vier, 5 - fünf</li>
+                            <li>6 - sechs, 7 - sieben, 8 - acht, 9 - neun, 10 - zehn</li>
+                            <li>11 - elf, 12 - zwölf, 13 - dreizehn, 14 - vierzehn</li>
+                            <li>20 - zwanzig, 21 - einundzwanzig, 30 - dreißig</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+    <h3>Упражнение 1: Напишите числа словами</h3>
+    <div class="question">
+        <p>Напишите следующие числа немецкими словами:</p>
+        <div class="fill-blank">
+            <p>7: <input type="text" class="blank-input" id="a1t2-ex1-1" placeholder="..."></p>
+            <p>15: <input type="text" class="blank-input" id="a1t2-ex1-2" placeholder="..."></p>
+            <p>23: <input type="text" class="blank-input" id="a1t2-ex1-3" placeholder="..."></p>
+            <p>48: <input type="text" class="blank-input" id="a1t2-ex1-4" placeholder="..."></p>
+            <p>100: <input type="text" class="blank-input" id="a1t2-ex1-5" placeholder="..."></p>
+        </div>
+    </div>
+    <div class="correct-answer" id="correct-answer-a1t2-ex1">
+        <strong>Правильные ответы:</strong><br>
+        7: sieben<br>
+        15: fünfzehn<br>
+        23: dreiundzwanzig<br>
+        48: achtundvierzig<br>
+        100: (ein)hundert
+    </div>
+    <div class="exercise-controls">
+        <button class="check-btn" onclick="checkExercise('a1t2-ex1')">Проверить</button>
+        <button class="reset-btn" onclick="resetExercise('a1t2-ex1')">Сбросить</button>
+    </div>
+    <div class="result" id="a1t2-ex1-result"></div>
+</div>
+                    
+             <div class="page-navigation">
+                <a href="../level-a1.html" class="nav-btn">← Назад к уровню A1</a>
+                <button class="nav-btn complete-topic-btn">
+					Завершить тему
+				</button>
+                <a href="topic3.html" class="nav-btn">Следующая тема →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+		<div class="container">
+			<div class="footer-content">
+				<div class="logo">DeutscheSprache</div>
+				<div class="footer-links">
+					<a href="../index.html">Главная</a>
+					<a href="../about.html">О сайте</a>
+				</div>
+				<p>&copy; 2025 DeutscheSprache. Все права защищены.</p>
+			</div>
+		</div>
+	</footer>
+
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/progress.js"></script>
+    <script src="../../js/app.js"></script>
+    <script>
+        // Защита от неавторизованного доступа
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (!currentUser) {
+                alert('Для доступа к заданиям необходимо авторизоваться!');
+                window.location.href = '../../index.html';
+                return;
+            }
+        });
+
+// Функция для отметки темы как пройденной
+function markTopicComplete(topicId) {
+    const currentUser = localStorage.getItem('currentUser');
+    const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+    
+    if (!currentUser || !users[currentUser]) {
+        showNotification('Пожалуйста, войдите в систему, чтобы сохранять прогресс!', 'error');
+        return;
+    }
+    
+    const level = topicId.split('-')[0]; // 'a1'
+    const topic = topicId; // 'a1-t1'
+    
+    if (!users[currentUser].progress[level].topics[topic]) {
+        users[currentUser].progress[level].topics[topic] = true;
+        users[currentUser].progress[level].completed++;
+        users[currentUser].lastActivity = new Date().toISOString();
+        
+        localStorage.setItem('deutschUsers', JSON.stringify(users));
+        
+        // Обновляем отображение прогресса
+        updateProgressDisplay();
+        
+        // Показываем красивое уведомление
+        showNotification('Тема отмечена как пройденная! Ваш прогресс обновлен.', 'success');
+        
+        // Обновляем индикатор прогресса темы
+        const topicProgressElement = document.getElementById(`progress-${topicId}`);
+        if (topicProgressElement) {
+            topicProgressElement.style.width = '100%';
+        }
+        
+        // Обновляем кнопку завершения темы
+        updateCompleteButton();
+        
+    } else {
+        showNotification('Эта тема уже отмечена как пройденная.', 'info');
+    }
+}
+
+// Функция для обновления кнопки завершения темы
+function updateCompleteButton() {
+    const currentUser = localStorage.getItem('currentUser');
+    const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+    const currentPath = window.location.pathname;
+    
+    // Определяем topicId из текущего URL
+    let topicId = '';
+    if (currentPath.includes('topic1.html')) topicId = 'a1-t1';
+    if (currentPath.includes('topic2.html')) topicId = 'a1-t2';
+    // Добавьте остальные темы по аналогии
+    
+    if (topicId && currentUser && users[currentUser] && 
+        users[currentUser].progress.a1.topics[topicId]) {
+        
+        const completeButton = document.querySelector('.complete-topic-btn');
+        if (completeButton) {
+            completeButton.textContent = 'Тема уже завершена';
+            completeButton.disabled = true;
+            completeButton.classList.add('completed');
+            completeButton.classList.remove('btn-red');
+        }
+    }
+}
+
+// Функция для показа красивых уведомлений
+function showNotification(message, type = 'success') {
+    // Определяем иконку в зависимости от типа
+    let icon = '✓';
+    let title = 'Успех!';
+    
+    switch(type) {
+        case 'error':
+            icon = '✕';
+            title = 'Ошибка!';
+            break;
+        case 'info':
+            icon = 'ℹ';
+            title = 'Информация';
+            break;
+        case 'warning':
+            icon = '⚠';
+            title = 'Внимание!';
+            break;
+    }
+    
+    // Создаем элемент уведомления
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <span class="notification-icon">${icon}</span>
+            <div class="notification-body">
+                <div class="notification-title">${title}</div>
+                <div class="notification-text">${message}</div>
+            </div>
+        </div>
+    `;
+    
+    // Добавляем уведомление на страницу
+    document.body.appendChild(notification);
+    
+    // Показываем уведомление с анимацией
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+    
+    // Автоматически скрываем через 4 секунды
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 4000);
+    
+    // Добавляем возможность закрытия по клику
+    notification.addEventListener('click', function() {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    });
+}
+// Инициализация при загрузке страницы темы
+document.addEventListener('DOMContentLoaded', function() {
+    // Проверяем, завершена ли тема и обновляем кнопку
+    updateCompleteButton();
+    
+    // Проверяем авторизацию
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+        // Если не авторизован, скрываем кнопку завершения темы
+        const completeButton = document.querySelector('.complete-topic-btn');
+        if (completeButton) {
+            completeButton.style.display = 'none';
+        }
+        
+        // Показываем сообщение о необходимости авторизации
+        const authAlert = document.createElement('div');
+        authAlert.className = 'auth-alert';
+        authAlert.innerHTML = `
+            <h3>🔒 Для завершения темы необходима авторизация</h3>
+            <p>Пожалуйста, <span class="auth-link" onclick="openAuthModal()">войдите в систему</span>, чтобы сохранять свой прогресс.</p>
+        `;
+        
+        const pageNavigation = document.querySelector('.page-navigation');
+        if (pageNavigation) {
+            pageNavigation.parentNode.insertBefore(authAlert, pageNavigation);
+        }
+    }
+});
+    </script>
+</body>
+</html>
