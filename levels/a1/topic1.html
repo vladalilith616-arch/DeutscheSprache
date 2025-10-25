@@ -6,6 +6,82 @@
     <title>Тема 1: Wie heißen Sie? - Уровень A1 - DeutscheSprache</title>
     <link rel="stylesheet" href="../../css/style.css">
     <style>
+		/* Компактный вариант сообщения об авторизации */
+		.auth-alert {
+			background-color: var(--white);
+			border-radius: 8px;
+			padding: 1.5rem;
+			margin: 1rem auto;
+			max-width: 450px;
+			text-align: center;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+			border: 1px solid #e9ecef;
+		}
+
+		.auth-alert-content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0.8rem;
+		}
+
+		.auth-alert-icon {
+			font-size: 2.5rem;
+			margin-bottom: 0.3rem;
+		}
+
+		.auth-alert h3 {
+			color: var(--black);
+			margin-bottom: 0.3rem;
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
+
+		.auth-alert p {
+			color: var(--dark-gray);
+			margin-bottom: 0.3rem;
+			font-size: 0.9rem;
+			line-height: 1.3;
+			max-width: 350px;
+		}
+
+		.auth-alert-buttons {
+			margin: 0.8rem 0;
+		}
+
+		.auth-alert-btn {
+			background-color: var(--yellow);
+			color: var(--black);
+			border: none;
+			padding: 0.6rem 1.2rem;
+			border-radius: 4px;
+			font-weight: bold;
+			font-size: 0.9rem;
+			transition: all 0.3s ease;
+		}
+
+		.auth-alert-btn:hover {
+			background-color: #e6b800;
+			transform: translateY(-1px);
+			box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+		}
+
+		.auth-alert-footer {
+			font-size: 0.8rem;
+			color: var(--dark-gray);
+			margin-top: 0.3rem;
+		}
+
+		.auth-alert-footer a {
+			color: var(--red);
+			text-decoration: none;
+			font-weight: 500;
+		}
+
+		.auth-alert-footer a:hover {
+			color: #cc0000;
+			text-decoration: underline;
+		}
         /* Дополнительные стили для упражнений */
         .input-correct {
             border: 2px solid var(--green) !important;
@@ -82,9 +158,8 @@
             margin: 5px 0;
         }
         
-        .difficulty-easy { border-left: 4px solid var(--green); }
-        .difficulty-medium { border-left: 4px solid #FF9800; }
-        .difficulty-hard { border-left: 4px solid var(--red); }
+        .exercise {
+			border-left: 4px solid var(--yellow) !important;
         
         .timer {
             font-size: 1.2em;
@@ -178,18 +253,18 @@
                     <div class="logo">DeutscheSprache</div>
                 </a>
                 <nav>
-                    <ul>
-                        <li><a href="../../index.html">Главная</a></li>
-                        <li><a href="../../about.html">О сайте</a></li>
-                        <li class="auth-section">
-                            <div id="userInfo" class="user-info" style="display: none;">
-                                <div class="user-avatar" id="userAvatar">U</div>
-                                <span id="userName">Пользователь</span>
-                            </div>
-                            <button id="authButton" class="auth-btn">Войти</button>
-                        </li>
-                    </ul>
-                </nav>
+					<ul>
+						<li><a href="../../index.html">Главная</a></li>
+						<li><a href="../../about.html">О сайте</a></li>
+						<li class="auth-section">
+							<a href="../../profile.html" id="userInfo" class="user-info" style="display: none;">
+								<div class="user-avatar" id="userAvatar">U</div>
+								<span id="userName">Пользователь</span>
+							</a>
+							<button id="authButton" class="auth-btn">Войти</button>
+						</li>
+					</ul>
+				</nav>
             </div>
         </div>
     </header>
@@ -1088,6 +1163,74 @@
             </div>
         </div>
     </footer>
+
+	<!-- Модальное окно авторизации -->
+	<div id="authModal" class="modal">
+		<div class="modal-content">
+			<span class="close-modal" id="closeAuthModal">&times;</span>
+			<div class="modal-tabs">
+				<div class="modal-tab active" data-tab="login">Вход</div>
+				<div class="modal-tab" data-tab="register">Регистрация</div>
+			</div>
+			
+			<!-- Форма входа -->
+			<div id="loginTab" class="tab-content active">
+				<h2>Вход в аккаунт</h2>
+				<form id="loginForm">
+					<div class="form-group">
+						<label for="loginUsername">Имя пользователя</label>
+						<input type="text" id="loginUsername" required>
+						<div class="error-message" id="loginUsernameError"></div>
+					</div>
+					<div class="form-group">
+						<label for="loginPassword">Пароль</label>
+						<input type="password" id="loginPassword" required>
+						<div class="error-message" id="loginPasswordError"></div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn">Войти</button>
+					</div>
+				</form>
+			</div>
+
+			<!-- Форма регистрации -->
+			<div id="registerTab" class="tab-content">
+				<h2>Регистрация</h2>
+				<form id="registerForm">
+					<div class="form-group">
+						<label for="registerUsername">Имя пользователя</label>
+						<input type="text" id="registerUsername" required>
+						<div class="error-message" id="registerUsernameError"></div>
+					</div>
+					<div class="form-group">
+						<label for="registerPassword">Пароль</label>
+						<input type="password" id="registerPassword" required>
+						<div class="error-message" id="registerPasswordError"></div>
+					</div>
+					<div class="form-group">
+						<label for="confirmPassword">Подтвердите пароль</label>
+						<input type="password" id="confirmPassword" required>
+						<div class="error-message" id="confirmPasswordError"></div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn">Зарегистрироваться</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Модальное окно подтверждения выхода -->
+	<div id="logoutModal" class="modal">
+		<div class="modal-content">
+			<h2>Подтверждение выхода</h2>
+			<p>Вы уверены, что хотите выйти из аккаунта?</p>
+			<div class="form-actions">
+				<button id="confirmLogout" class="btn btn-red">Да, выйти</button>
+				<button id="cancelLogout" class="btn">Отмена</button>
+			</div>
+		</div>
+	</div>
 
     <script>
         // Основные функции для работы упражнений
@@ -2397,13 +2540,14 @@ function playAudio(exerciseId) {
             });
         }
 
- // Функция для отметки темы как пройденной
+// Функция для отметки темы как пройденной
 function markTopicComplete(topicId) {
     const currentUser = localStorage.getItem('currentUser');
     const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
     
     if (!currentUser || !users[currentUser]) {
         showNotification('Пожалуйста, войдите в систему, чтобы сохранять прогресс!', 'error');
+        openAuthModal(); // Открываем окно авторизации
         return;
     }
     
@@ -2416,9 +2560,6 @@ function markTopicComplete(topicId) {
         users[currentUser].lastActivity = new Date().toISOString();
         
         localStorage.setItem('deutschUsers', JSON.stringify(users));
-        
-        // Обновляем отображение прогресса
-        updateProgressDisplay();
         
         // Показываем красивое уведомление
         showNotification('Тема отмечена как пройденная! Ваш прогресс обновлен.', 'success');
@@ -2524,33 +2665,239 @@ function showNotification(message, type = 'success') {
         }, 300);
     });
 }
-// Инициализация при загрузке страницы темы
-document.addEventListener('DOMContentLoaded', function() {
-    // Проверяем, завершена ли тема и обновляем кнопку
-    updateCompleteButton();
-    
-    // Проверяем авторизацию
+
+// ========== ФУНКЦИИ АВТОРИЗАЦИИ ==========
+
+// Функция для открытия модального окна авторизации
+function openAuthModal() {
+    const modal = document.getElementById('authModal');
+    if (modal) {
+        modal.style.display = 'block';
+        
+        // Если подключен auth.js, используем его функцию
+        if (typeof window.setupAuthModal === 'function') {
+            window.setupAuthModal();
+        }
+    }
+}
+
+// Функция для отметки темы как пройденной
+function markTopicComplete(topicId) {
     const currentUser = localStorage.getItem('currentUser');
+    const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+    
+    if (!currentUser || !users[currentUser]) {
+        showNotification('Пожалуйста, войдите в систему, чтобы сохранять прогресс!', 'error');
+        openAuthModal(); // Открываем окно авторизации
+        return;
+    }
+    
+    const level = topicId.split('-')[0]; // 'a1'
+    const topic = topicId; // 'a1-t1'
+    
+    if (!users[currentUser].progress[level].topics[topic]) {
+        users[currentUser].progress[level].topics[topic] = true;
+        users[currentUser].progress[level].completed++;
+        users[currentUser].lastActivity = new Date().toISOString();
+        
+        localStorage.setItem('deutschUsers', JSON.stringify(users));
+        
+        // Показываем красивое уведомление
+        showNotification('Тема отмечена как пройденная! Ваш прогресс обновлен.', 'success');
+        
+        // Обновляем индикатор прогресса темы
+        const topicProgressElement = document.getElementById(`progress-${topicId}`);
+        if (topicProgressElement) {
+            topicProgressElement.style.width = '100%';
+        }
+        
+        // Обновляем кнопку завершения темы
+        updateCompleteButton();
+        
+    } else {
+        showNotification('Эта тема уже отмечена как пройденная.', 'info');
+    }
+}
+
+// Функция для обновления кнопки завершения темы
+function updateCompleteButton() {
+    const currentUser = localStorage.getItem('currentUser');
+    const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+    const topicId = 'a1-t1'; // Для topic1.html
+    
+    if (currentUser && users[currentUser] && users[currentUser].progress.a1.topics[topicId]) {
+        const completeButton = document.querySelector('.complete-topic-btn');
+        if (completeButton) {
+            completeButton.textContent = 'Тема уже завершена';
+            completeButton.disabled = true;
+            completeButton.classList.add('completed');
+        }
+    }
+}
+
+// Функция для показа красивых уведомлений
+function showNotification(message, type = 'success') {
+    // Создаем элемент уведомления
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <span class="notification-icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ'}</span>
+            <div class="notification-body">
+                <div class="notification-text">${message}</div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => notification.classList.add('show'), 100);
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 4000);
+    
+    notification.addEventListener('click', function() {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    });
+}
+// ========== ПРОВЕРКА АВТОРИЗАЦИИ И ОТОБРАЖЕНИЯ КОНТЕНТА ==========
+
+// Функция для проверки авторизации и показа/скрытия контента
+function checkAuthAndDisplayContent() {
+    const currentUser = localStorage.getItem('currentUser');
+    const topicContent = document.querySelector('.topic-content');
+    const authAlert = document.querySelector('.auth-alert');
+    
     if (!currentUser) {
-        // Если не авторизован, скрываем кнопку завершения темы
+        // Если не авторизован - скрываем задания и показываем сообщение
+        if (topicContent) {
+            topicContent.style.display = 'none';
+        }
+        
+        // Создаем или показываем сообщение об авторизации
+        if (!authAlert) {
+            createAuthAlert();
+        } else {
+            authAlert.style.display = 'block';
+        }
+        
+        // Скрываем кнопку завершения темы
         const completeButton = document.querySelector('.complete-topic-btn');
         if (completeButton) {
             completeButton.style.display = 'none';
         }
         
-        // Показываем сообщение о необходимости авторизации
-        const authAlert = document.createElement('div');
-        authAlert.className = 'auth-alert';
-        authAlert.innerHTML = `
-            <h3>🔒 Для завершения темы необходима авторизация</h3>
-            <p>Пожалуйста, <span class="auth-link" onclick="openAuthModal()">войдите в систему</span>, чтобы сохранять свой прогресс.</p>
-        `;
+    } else {
+        // Если авторизован - показываем задания и скрываем сообщение
+        if (topicContent) {
+            topicContent.style.display = 'block';
+        }
         
-        const pageNavigation = document.querySelector('.page-navigation');
-        if (pageNavigation) {
-            pageNavigation.parentNode.insertBefore(authAlert, pageNavigation);
+        if (authAlert) {
+            authAlert.style.display = 'none';
+        }
+        
+        // Показываем кнопку завершения темы
+        const completeButton = document.querySelector('.complete-topic-btn');
+        if (completeButton) {
+            completeButton.style.display = 'inline-block';
         }
     }
+}
+
+// Функция для создания сообщения об авторизации
+function createAuthAlert() {
+    const authAlert = document.createElement('div');
+    authAlert.className = 'auth-alert';
+    authAlert.innerHTML = `
+        <div class="auth-alert-content">
+            <div class="auth-alert-icon">🔒</div>
+            <h3>Требуется авторизация</h3>
+            <p>Для доступа к заданиям и отслеживания прогресса необходимо войти в систему.</p>
+            <div class="auth-alert-buttons">
+                <button onclick="openAuthModal()" class="btn auth-alert-btn">
+                    Войти в систему
+                </button>
+            </div>
+            <p class="auth-alert-footer">
+                Нет аккаунта? <a href="javascript:void(0)" onclick="openAuthModal(); switchToRegisterTab()">Зарегистрируйтесь</a>
+            </p>
+        </div>
+    `;
+    
+    const topicContent = document.querySelector('.topic-content');
+    if (topicContent) {
+        topicContent.parentNode.insertBefore(authAlert, topicContent);
+    }
+}
+
+// Функция для переключения на вкладку регистрации
+function switchToRegisterTab() {
+    const modal = document.getElementById('authModal');
+    if (modal) {
+        modal.style.display = 'block';
+        
+        // Переключаем на вкладку регистрации
+        const registerTab = document.querySelector('.modal-tab[data-tab="register"]');
+        const loginTab = document.querySelector('.modal-tab[data-tab="login"]');
+        const registerContent = document.getElementById('registerTab');
+        const loginContent = document.getElementById('loginTab');
+        
+        if (registerTab && loginTab && registerContent && loginContent) {
+            loginTab.classList.remove('active');
+            registerTab.classList.add('active');
+            loginContent.classList.remove('active');
+            registerContent.classList.add('active');
+        }
+    }
+}
+// ========== ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ ==========
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Инициализация Drag & Drop
+    initializeDragDrop();
+    
+    // Инициализация клавиатуры
+    setupKeyboard();
+    
+    // Инициализация кнопки "Наверх"
+    setupScrollToTop();
+    
+    // ПРОВЕРЯЕМ АВТОРИЗАЦИЮ И ОТОБРАЖАЕМ КОНТЕНТ
+    checkAuthAndDisplayContent();
+    
+    // Проверяем авторизацию и обновляем интерфейс
+    if (typeof updateAuthInterface === 'function') {
+        updateAuthInterface();
+    }
+    
+    // Проверяем, завершена ли тема и обновляем кнопку
+    updateCompleteButton();
+    
+    // Инициализация размеров полей ввода
+    document.querySelectorAll('.sentence-input').forEach(input => {
+        input.style.width = 'auto';
+        input.style.width = (input.scrollWidth + 10) + 'px';
+    });
+    
+    // Обработка изменения размеров окна
+    window.addEventListener('resize', function() {
+        document.querySelectorAll('.sentence-input').forEach(input => {
+            input.style.width = 'auto';
+            input.style.width = (input.scrollWidth + 10) + 'px';
+        });
+    });
 });
         // Инициализация при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
@@ -2689,6 +3036,42 @@ document.addEventListener('DOMContentLoaded', function() {
         input.style.width = (input.scrollWidth + 10) + 'px';
     });
 });
+// ========== ОБРАБОТЧИКИ ДЛЯ ОБНОВЛЕНИЯ ПРИ ВХОДЕ/ВЫХОДЕ ==========
+
+// Функция для обновления страницы при выходе
+function handleLogoutOnTopicPage() {
+    // Скрываем задания и показываем сообщение об авторизации
+    checkAuthAndDisplayContent();
+    
+    // Показываем уведомление о выходе
+    showNotification('Вы вышли из системы. Для продолжения обучения войдите снова.', 'info');
+}
+
+// Слушаем изменения в localStorage (для отслеживания выхода)
+window.addEventListener('storage', function(e) {
+    if (e.key === 'currentUser' && e.newValue === null) {
+        // Пользователь вышел в другой вкладке
+        handleLogoutOnTopicPage();
+    }
+});
+
+// Также обновляем при прямом вызове выхода
+if (typeof performLogout === 'function') {
+    // Сохраняем оригинальную функцию
+    const originalPerformLogout = performLogout;
+    
+    // Переопределяем функцию выхода
+    window.performLogout = function() {
+        originalPerformLogout();
+        handleLogoutOnTopicPage();
+    };
+}
     </script>
+	
+	<!-- Подключение основных скриптов -->
+	<script src="../../js/auth.js"></script>
+	<script src="../../js/progress.js"></script>
+	<script src="../../js/password.js"></script>
+	<script src="../../js/app.js"></script>
 </body>
 </html>
