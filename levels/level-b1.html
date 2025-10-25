@@ -34,12 +34,23 @@
             });
 
             // Создаем красивое сообщение
-            const authAlert = document.createElement('div');
-            authAlert.className = 'auth-alert';
-            authAlert.innerHTML = `
-                <h3>🔒 Для доступа к заданиям необходима авторизация</h3>
-                <p>Пожалуйста, <span class="auth-link" onclick="openAuthModal()">войдите в систему</span>, чтобы начать обучение и отслеживать свой прогресс.</p>
-            `;
+            			const authAlert = document.createElement('div');
+			authAlert.className = 'auth-alert';
+			authAlert.innerHTML = `
+				<div class="auth-alert-content">
+					<div class="auth-alert-header">
+						<span class="auth-alert-icon">🔒</span>
+						<h3>Для доступа к заданиям необходима авторизация</h3>
+					</div>
+					<p>Пожалуйста, войдите в систему, чтобы начать обучение и отслеживать свой прогресс.</p>
+					<div class="auth-alert-buttons">
+						<button onclick="openAuthModal()" class="btn auth-alert-btn">
+							Войти в систему
+						</button>
+					</div>
+				</div>
+			`;
+
             
             // Вставляем сообщение после заголовка уровня
             const levelSelector = document.querySelector('.level-selector');
