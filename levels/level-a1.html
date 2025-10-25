@@ -34,12 +34,22 @@
             });
 
             // Создаем красивое сообщение
-            const authAlert = document.createElement('div');
-            authAlert.className = 'auth-alert';
-            authAlert.innerHTML = `
-                <h3>🔒 Для доступа к заданиям необходима авторизация</h3>
-                <p>Пожалуйста, <span class="auth-link" onclick="openAuthModal()">войдите в систему</span>, чтобы начать обучение и отслеживать свой прогресс.</p>
-            `;
+			const authAlert = document.createElement('div');
+			authAlert.className = 'auth-alert';
+			authAlert.innerHTML = `
+				<div class="auth-alert-content">
+					<div class="auth-alert-header">
+						<span class="auth-alert-icon">🔒</span>
+						<h3>Для доступа к заданиям необходима авторизация</h3>
+					</div>
+					<p>Пожалуйста, войдите в систему, чтобы начать обучение и отслеживать свой прогресс.</p>
+					<div class="auth-alert-buttons">
+						<button onclick="openAuthModal()" class="btn auth-alert-btn">
+							Войти в систему
+						</button>
+					</div>
+				</div>
+			`;
             
             // Вставляем сообщение после заголовка уровня
             const levelSelector = document.querySelector('.level-selector');
@@ -73,6 +83,26 @@
             }
         }
     }
+	// Функция для переключения на вкладку регистрации
+	function switchToRegisterTab() {
+		const modal = document.getElementById('authModal');
+		if (modal) {
+			modal.style.display = 'block';
+			
+			// Переключаем на вкладку регистрации
+			const registerTab = document.querySelector('.modal-tab[data-tab="register"]');
+			const loginTab = document.querySelector('.modal-tab[data-tab="login"]');
+			const registerContent = document.getElementById('registerTab');
+			const loginContent = document.getElementById('loginTab');
+			
+			if (registerTab && loginTab && registerContent && loginContent) {
+				loginTab.classList.remove('active');
+				registerTab.classList.add('active');
+				loginContent.classList.remove('active');
+				registerContent.classList.add('active');
+			}
+		}
+	}
 </script>
     <div class="scroll-to-top" id="scrollToTop">
         <svg viewBox="0 0 24 24">
