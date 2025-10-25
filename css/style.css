@@ -1824,3 +1824,69 @@ footer {
         font-size: 2.5rem;
     }
 }
+/* Стили для сообщения об авторизации - идентично странице упражнений */
+.auth-alert {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.auth-alert-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.auth-alert-icon {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.auth-alert h3 {
+    color: var(--black);
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.auth-alert p {
+    color: var(--dark-gray);
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    max-width: 400px;
+}
+
+.auth-alert-buttons {
+    margin-top: 0.5rem;
+}
+
+.auth-alert-btn {
+    background-color: var(--yellow);
+    color: var(--black);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.auth-alert-btn:hover {
+    background-color: #e6b800;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .auth-alert {
+        padding: 1.2rem;
+        margin: 0.8rem auto;
+    }
+}
