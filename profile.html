@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - DeutscheSprache</title>
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+</head>
+<body>
+	<script>
+		// Защита от неавторизованного доступа
+		document.addEventListener('DOMContentLoaded', function() {
+			const currentUser = localStorage.getItem('currentUser');
+			if (!currentUser) {
+				showNotification('Для доступа к личному кабинете необходимо авторизоваться!', 'warning');
+				setTimeout(() => {
+					window.location.href = 'index.html';
+				}, 2000);
+				return;
+			}
+		});
+	</script>
+    <div class="scroll-to-top" id="scrollToTop">
+        <svg viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+        </svg>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+					<a href="index.html" class="logo-link">
+						<div class="logo">DeutscheSprache</div>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="index.html">Главная</a></li>
+							<li><a href="about.html">О сайте</a></li>
+							<li class="auth-only" style="display: none;">
+								<a href="profile.html">Личный кабинет</a>
+							</li>
+							<li class="auth-section">
+								<a href="profile.html" id="userInfo" class="user-info" style="display: none;">
+									<div class="user-avatar" id="userAvatar">U</div>
+									<span id="userName">Пользователь</span>
+								</a>
+								<button id="authButton" class="auth-btn">Войти</button>
+							</li>
+						</ul>
+					</nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="topics">
+        <div class="container">
+            <h2 class="section-title">Личный кабинет</h2>
+            
+            <!-- Информация о пользователе -->
+            <div id="userDashboard" class="user-dashboard">
+                <div class="dashboard-header">
+                    <div class="dashboard-avatar" id="dashboardAvatar">U</div>
+                    <div>
+                        <h2 id="dashboardUsername">Пользователь</h2>
+                        <p id="userJoinDate">Дата регистрации: </p>
+                        <p id="userLevel">Текущий уровень: A1</p>
+                    </div>
+                </div>
+                
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalTopicsCompleted">0</div>
+                        <div class="stat-label">Тем завершено</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalExercisesCompleted">0</div>
+                        <div class="stat-label">Упражнений выполнено</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="currentStreak">0</div>
+                        <div class="stat-label">Дней подряд</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="studyDays">0</div>
+                        <div class="stat-label">Всего дней обучения</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Общий прогресс -->
+            <div class="progress-container">
+                <h3 class="progress-title">Общий прогресс</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="overall-progress"></div>
+                </div>
+                <div class="progress-text" id="overall-progress-text">0% завершено</div>
+            </div>
+
+            <!-- Детальный прогресс по уровням -->
+            <div class="progress-container">
+                <h3 class="progress-title">Прогресс по уровням</h3>
+                <div class="progress-details">
+                    <div class="progress-level">
+                        <h3>Уровень A1</h3>
+                        <div class="progress-percent" id="detail-a1">0%</div>
+                        <div class="progress-text" id="detail-a1-text">0/15 тем</div>
+                        <div class="progress-mini-bar">
+                            <div class="progress-mini-fill" id="mini-a1"></div>
+                        </div>
+                    </div>
+                    <div class="progress-level">
+                        <h3>Уровень A2</h3>
+                        <div class="progress-percent" id="detail-a2">0%</div>
+                        <div class="progress-text" id="detail-a2-text">0/15 тем</div>
+                        <div class="progress-mini-bar">
+                            <div class="progress-mini-fill" id="mini-a2"></div>
+                        </div>
+                    </div>
+                    <div class="progress-level">
+                        <h3>Уровень B1</h3>
+                        <div class="progress-percent" id="detail-b1">0%</div>
+                        <div class="progress-text" id="detail-b1-text">0/15 тем</div>
+                        <div class="progress-mini-bar">
+                            <div class="progress-mini-fill" id="mini-b1"></div>
+                        </div>
+                    </div>
+                    <div class="progress-level">
+                        <h3>Уровень B2</h3>
+                        <div class="progress-percent" id="detail-b2">0%</div>
+                        <div class="progress-text" id="detail-b2-text">0/15 тем</div>
+                        <div class="progress-mini-bar">
+                            <div class="progress-mini-fill" id="mini-b2"></div>
+                        </div>
+                    </div>
+                    <div class="progress-level">
+                        <h3>Уровень C1</h3>
+                        <div class="progress-percent" id="detail-c1">0%</div>
+                        <div class="progress-text" id="detail-c1-text">0/15 тем</div>
+                        <div class="progress-mini-bar">
+                            <div class="progress-mini-fill" id="mini-c1"></div>
+                        </div>
+                    </div>
+                    <div class="progress-level">
+                        <h3>Уровень C2</h3>
+                        <div class="progress-percent" id="detail-c2">0%</div>
+                        <div class="progress-text" id="detail-c2-text">0/15 тем</div>
+                        <div class="progress-mini-bar">
+                            <div class="progress-mini-fill" id="mini-c2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- Статистика обучения -->
+<div class="progress-container">
+    <h3 class="progress-title">Статистика обучения</h3>
+    <div class="stats-grid">
+        <div class="stat-item">
+            <span class="stat-label">Последняя активность:</span>
+            <span class="stat-value small-text" id="lastActivity">-</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Среднее в день:</span>
+            <span class="stat-value small-text" id="averagePerDay">0 тем</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Правильных ответов:</span>
+            <span class="stat-value small-text" id="correctAnswers">0</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Неправильных ответов:</span>
+            <span class="stat-value small-text" id="incorrectAnswers">0</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Процент правильных:</span>
+            <span class="stat-value small-text" id="accuracyRate">0%</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Следующая цель:</span>
+            <span class="stat-value small-text" id="nextGoal">-</span>
+        </div>
+    </div>
+</div>
+		<div class="progress-container">
+			<h3 class="progress-title">Смена пароля</h3>
+			<form id="changePasswordForm">
+				<div class="form-group">
+					<label for="currentPassword">Текущий пароль</label>
+					<input type="password" id="currentPassword" required>
+					<div class="error-message" id="currentPasswordError"></div>
+				</div>
+				<div class="form-group">
+					<label for="newPassword">Новый пароль</label>
+					<input type="password" id="newPassword" required>
+					<div class="error-message" id="newPasswordError"></div>
+				</div>
+				<div class="form-group">
+					<label for="confirmNewPassword">Подтвердите пароль</label>
+					<input type="password" id="confirmNewPassword" required>
+					<div class="error-message" id="confirmNewPasswordError"></div>
+				</div>
+				<div class="form-actions">
+					<button type="submit" class="btn">Сменить пароль</button>
+				</div>
+			</form>
+		</div>
+            <div class="page-navigation">
+                <a href="index.html" class="nav-btn">На главную</a>
+                <a href="levels/level-a1.html" class="nav-btn nav-btn-red">Продолжить обучение</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+		<div class="container">
+			<div class="footer-content">
+				<div class="logo">DeutscheSprache</div>
+				<div class="footer-links">
+					<a href="../index.html">Главная</a>
+					<a href="../about.html">О сайте</a>
+				</div>
+				<p>&copy; 2025 DeutscheSprache. Все права защищены.</p>
+			</div>
+		</div>
+	</footer>
+	
+	    <!-- Модальное окно авторизации ДОЛЖНО БЫТЬ ЗДЕСЬ -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeAuthModal">&times;</span>
+            <div class="modal-tabs">
+                <div class="modal-tab active" data-tab="login">Вход</div>
+                <div class="modal-tab" data-tab="register">Регистрация</div>
+            </div>
+    
+            <!-- Форма входа -->
+            <div id="loginTab" class="tab-content active">
+                <h2>Вход в аккаунт</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">Имя пользователя</label>
+                        <input type="text" id="loginUsername" required>
+                        <div class="error-message" id="loginUsernameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <input type="password" id="loginPassword" required>
+                        <div class="error-message" id="loginPasswordError"></div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Войти</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Форма регистрации -->
+            <div id="registerTab" class="tab-content">
+                <h2>Регистрация</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerUsername">Имя пользователя</label>
+                        <input type="text" id="registerUsername" required>
+                        <div class="error-message" id="registerUsernameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Пароль</label>
+                        <input type="password" id="registerPassword" required>
+                        <div class="error-message" id="registerPasswordError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Подтвердите пароль</label>
+                        <input type="password" id="confirmPassword" required>
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Зарегистрироваться</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+			<!-- Модальное окно подтверждения выхода -->
+			<div id="logoutModal" class="modal">
+				<div class="modal-content">
+					<h2>Подтверждение выхода</h2>
+					<p>Вы уверены, что хотите выйти из аккаунта?</p>
+					<div class="form-actions">
+						<button id="confirmLogout" class="btn btn-red">Да, выйти</button>
+						<button id="cancelLogout" class="btn">Отмена</button>
+					</div>
+				</div>
+			</div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/progress.js"></script>
+	<script src="js/password.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Функция для загрузки данных профиля
+        function loadProfileData() {
+            const currentUser = localStorage.getItem('currentUser');
+            const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+            
+            if (currentUser && users[currentUser]) {
+                const userData = users[currentUser];
+                
+                // Обновляем информацию о пользователе
+                document.getElementById('dashboardUsername').textContent = currentUser;
+                document.getElementById('dashboardAvatar').textContent = currentUser.charAt(0).toUpperCase();
+                
+                // Дата регистрации
+                const joinDate = new Date(userData.joinDate);
+                document.getElementById('userJoinDate').textContent = 'Дата регистрации: ' + joinDate.toLocaleDateString('ru-RU');
+                
+                // Обновляем прогресс
+                updateProfileProgress();
+                
+                // Обновляем статистику
+                updateProfileStats();
+            }
+        }
+
+       // Функция для обновления прогресса в профиле
+function updateProfileProgress() {
+    const currentUser = localStorage.getItem('currentUser');
+    const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+    
+    if (currentUser && users[currentUser] && users[currentUser].progress) {
+        const progress = users[currentUser].progress;
+        let totalCompleted = 0;
+        let totalTopics = 0;
+        
+        // Обновляем прогресс по каждому уровню
+        for (let level in progress) {
+            const levelProgress = progress[level];
+            const percent = Math.round((levelProgress.completed / levelProgress.total) * 100);
+            
+            // Обновляем процент
+            const percentElement = document.getElementById(`detail-${level}`);
+            if (percentElement) {
+                percentElement.textContent = `${percent}%`;
+            }
+            
+            // Обновляем текст
+            const textElement = document.getElementById(`detail-${level}-text`);
+            if (textElement) {
+                textElement.textContent = `${levelProgress.completed}/${levelProgress.total} тем`;
+            }
+            
+            // Обновляем мини-прогресс бар
+            const miniBarElement = document.getElementById(`mini-${level}`);
+            if (miniBarElement) {
+                miniBarElement.style.width = `${percent}%`;
+            }
+            
+            totalCompleted += levelProgress.completed;
+            totalTopics += levelProgress.total;
+        }
+        
+        // Общий прогресс
+        const overallPercent = Math.round((totalCompleted / totalTopics) * 100);
+        const overallProgressElement = document.getElementById('overall-progress');
+        if (overallProgressElement) {
+            overallProgressElement.style.width = `${overallPercent}%`;
+        }
+        
+        const overallProgressTextElement = document.getElementById('overall-progress-text');
+        if (overallProgressTextElement) {
+            overallProgressTextElement.textContent = `${overallPercent}% завершено`;
+        }
+        
+        // Обновляем статистику
+        document.getElementById('totalTopicsCompleted').textContent = totalCompleted;
+        document.getElementById('totalExercisesCompleted').textContent = totalCompleted * 4; // Предполагаем 4 упражнения на тему
+        
+        // Определяем текущий уровень
+        let currentLevel = 'A1';
+        if (progress.a1 && progress.a1.completed >= 10) currentLevel = 'A2';
+        if (progress.a2 && progress.a2.completed >= 10) currentLevel = 'B1';
+        if (progress.b1 && progress.b1.completed >= 10) currentLevel = 'B2';
+        if (progress.b2 && progress.b2.completed >= 10) currentLevel = 'C1';
+        if (progress.c1 && progress.c1.completed >= 10) currentLevel = 'C2';
+        
+        document.getElementById('userLevel').textContent = `Текущий уровень: ${currentLevel}`;
+    } else {
+        // Если данных нет, показываем 0%
+        document.getElementById('overall-progress').style.width = '0%';
+        document.getElementById('overall-progress-text').textContent = '0% завершено';
+        document.getElementById('totalTopicsCompleted').textContent = '0';
+        document.getElementById('totalExercisesCompleted').textContent = '0';
+        document.getElementById('userLevel').textContent = 'Текущий уровень: A1';
+    }
+}
+
+// Функция для обновления статистики профиля
+function updateProfileStats() {
+    const currentUser = localStorage.getItem('currentUser');
+    const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+    
+    if (currentUser && users[currentUser]) {
+        const userData = users[currentUser];
+        const progress = userData.progress;
+        const stats = userData.stats || { correctAnswers: 0, incorrectAnswers: 0, totalExercises: 0 };
+        
+        // Последняя активность
+        const lastActivity = userData.lastActivity || userData.joinDate;
+        document.getElementById('lastActivity').textContent = new Date(lastActivity).toLocaleDateString('ru-RU');
+        
+        // Дни обучения
+        const joinDate = new Date(userData.joinDate);
+        const today = new Date();
+        const diffTime = Math.abs(today - joinDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        document.getElementById('studyDays').textContent = diffDays;
+        
+        // Среднее в день
+        let totalCompleted = 0;
+        for (let level in progress) {
+            totalCompleted += progress[level].completed;
+        }
+        const averagePerDay = (totalCompleted / Math.max(diffDays, 1)).toFixed(1);
+        document.getElementById('averagePerDay').textContent = `${averagePerDay} тем`;
+        
+        // Статистика ответов
+        document.getElementById('correctAnswers').textContent = stats.correctAnswers || 0;
+        document.getElementById('incorrectAnswers').textContent = stats.incorrectAnswers || 0;
+        
+        // Процент правильных ответов
+        const totalAnswers = (stats.correctAnswers || 0) + (stats.incorrectAnswers || 0);
+        const accuracyRate = totalAnswers > 0 ? Math.round((stats.correctAnswers / totalAnswers) * 100) : 0;
+        document.getElementById('accuracyRate').textContent = `${accuracyRate}%`;
+        
+        // Следующая цель
+        let nextGoal = 'Завершить уровень A1';
+        for (let level in progress) {
+            if (progress[level].completed < progress[level].total) {
+                const levelName = level.toUpperCase();
+                const remaining = progress[level].total - progress[level].completed;
+                nextGoal = `Завершить ${remaining} тем в уровне ${levelName}`;
+                break;
+            }
+        }
+        document.getElementById('nextGoal').textContent = nextGoal;
+        
+        // Текущая серия (дней подряд)
+        const currentStreak = userData.currentStreak || 0;
+        document.getElementById('currentStreak').textContent = currentStreak;
+    }
+}
+
+        // Обработчик смены пароля
+        document.getElementById('changePasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmNewPassword = document.getElementById('confirmNewPassword').value;
+            
+            const currentUser = localStorage.getItem('currentUser');
+            const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+            
+            if (!currentUser || !users[currentUser]) {
+                alert('Ошибка: пользователь не найден!');
+                return;
+            }
+            
+            // Проверка текущего пароля
+            if (users[currentUser].password !== currentPassword) {
+                alert('Текущий пароль неверен!');
+                return;
+            }
+            
+            // Проверка совпадения новых паролей
+            if (newPassword !== confirmNewPassword) {
+                alert('Новые пароли не совпадают!');
+                return;
+            }
+            
+            // Проверка длины нового пароля
+            if (newPassword.length < 4) {
+                alert('Новый пароль должен содержать минимум 4 символа!');
+                return;
+            }
+            
+            // Сохранение нового пароля
+            users[currentUser].password = newPassword;
+            localStorage.setItem('deutschUsers', JSON.stringify(users));
+            
+            alert('Пароль успешно изменен!');
+            document.getElementById('changePasswordForm').reset();
+        });
+
+        // Инициализация профиля при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProfileData();
+        });
+    </script>
+</body>
+</html>

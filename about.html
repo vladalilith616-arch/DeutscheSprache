@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О сайте - DeutscheSprache</title>
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+</head>
+<body>
+    <div class="scroll-to-top" id="scrollToTop">
+        <svg viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+        </svg>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+				<a href="index.html" class="logo-link">
+				<div class="logo">DeutscheSprache</div>
+			</a>
+			<nav>
+				<ul>
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="about.html">О сайте</a></li>
+					<li class="auth-only">
+						<a href="profile.html">Личный кабинет</a>
+					</li>
+					<li class="auth-section">
+						<a href="profile.html" id="userInfo" class="user-info" style="display: none;">
+							<div class="user-avatar" id="userAvatar">U</div>
+							<span id="userName">Пользователь</span>
+						</a>
+						<button id="authButton" class="auth-btn">Войти</button>
+					</li>
+				</ul>
+			</nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="levels">
+        <div class="container">
+            <h2 class="section-title">О нашем сайте</h2>
+            
+            <div class="progress-container">
+                <h3>Что можно делать на сайте?</h3>
+                <p>Наш сайт предлагает комплексное изучение немецкого языка через:</p>
+                <ul>
+                    <li>Поэтапное прохождение уровней от A1 до C1</li>
+                    <li>Интерактивные упражнения для каждой темы</li>
+                    <li>Отслеживание прогресса обучения</li>
+                    <li>Систему достижений и мотивации</li>
+                </ul>
+
+                <h3>Описание каждого уровня</h3>
+                <div class="level-description">
+                    <h4>Уровень A1 (Начальный)</h4>
+                    <p>Изучение базовой лексики и простых грамматических конструкций для повседневного общения.</p>
+
+                    <h4>Уровень A2 (Элементарный)</h4>
+                    <p>Расширение словарного запаса и изучение более сложных грамматических структур.</p>
+
+                    <h4>Уровень B1 (Средний)</h4>
+                    <p>Развитие навыков для свободного общения на различные темы и понимания сложных текстов.</p>
+
+                    <h4>Уровень B2 (Выше среднего)</h4>
+                    <p>Углубленное изучение грамматики и лексики для свободного общения на сложные темы.</p>
+
+                    <h4>Уровень C1 (Продвинутый)</h4>
+                    <p>Свободное владение языком, понимание сложных текстов и выражение мыслей без подготовки.</p>
+  
+                    <h4>Уровень C2 (В совершенстве)</h4>
+                    <p>Свободное владение языком на уровне образованного носителя, понимание любых текстов и устной речи.</p>
+
+			   </div>
+
+                <h3>Задания на каждом уровне</h3>
+                <p>Каждый уровень содержит 16 тем, в каждой теме вас ждут:</p>
+                <ul>
+                    <li>Теоретический материал с объяснениями</li>
+                    <li>Упражнения на заполнение пропусков</li>
+                    <li>Упражнения на составление предложений</li>
+                    <li>Письменные задания</li>
+                    <li>Тесты с выбором правильного ответа</li>
+                </ul>
+            </div>
+
+            <div class="page-navigation">
+                <a href="index.html" class="nav-btn">На главную</a>
+            </div>
+        </div>
+    </section>
+
+     <footer>
+		<div class="container">
+			<div class="footer-content">
+				<div class="logo">DeutscheSprache</div>
+				<div class="footer-links">
+					<a href="index.html">Главная</a>
+					<a href="about.html">О сайте</a>
+				</div>
+				<p>&copy; 2025 DeutscheSprache. Все права защищены.</p>
+			</div>
+		</div>
+	</footer>
+	
+		<!-- Модальное окно авторизации -->
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeAuthModal">&times;</span>
+        <div class="modal-tabs">
+            <div class="modal-tab active" data-tab="login">Вход</div>
+            <div class="modal-tab" data-tab="register">Регистрация</div>
+        </div>
+        
+        <!-- ОБНОВЛЕННАЯ форма входа -->
+		<div id="loginTab" class="tab-content active">
+			<h2>Вход в аккаунт</h2>
+			<form id="loginForm">
+				<div class="form-group">
+					<label for="loginUsername">Имя пользователя</label>
+					<input type="text" id="loginUsername" required>
+					<div class="error-message" id="loginUsernameError"></div>
+				</div>
+				<div class="form-group">
+					<label for="loginPassword">Пароль</label>
+					<input type="password" id="loginPassword" required>
+					<div class="error-message" id="loginPasswordError"></div>
+				</div>
+				<div class="form-actions">
+					<button type="submit" class="btn">Войти</button>
+				</div>
+			</form>
+		</div>
+
+		<!-- ОБНОВЛЕННАЯ форма регистрации -->
+		<div id="registerTab" class="tab-content">
+			<h2>Регистрация</h2>
+			<form id="registerForm">
+				<div class="form-group">
+					<label for="registerUsername">Имя пользователя</label>
+					<input type="text" id="registerUsername" required>
+					<div class="error-message" id="registerUsernameError"></div>
+				</div>
+				<div class="form-group">
+					<label for="registerPassword">Пароль</label>
+					<input type="password" id="registerPassword" required>
+					<div class="error-message" id="registerPasswordError"></div>
+				</div>
+				<div class="form-group">
+					<label for="confirmPassword">Подтвердите пароль</label>
+					<input type="password" id="confirmPassword" required>
+					<div class="error-message" id="confirmPasswordError"></div>
+				</div>
+				<div class="form-actions">
+					<button type="submit" class="btn">Зарегистрироваться</button>
+				</div>
+			</form>
+		</div>
+		<!-- Модальное окно подтверждения выхода -->
+		<div id="logoutModal" class="modal">
+			<div class="modal-content">
+				<h2>Подтверждение выхода</h2>
+				<p>Вы уверены, что хотите выйти из аккаунта?</p>
+				<div class="form-actions">
+					<button id="confirmLogout" class="btn btn-red">Да, выйти</button>
+					<button id="cancelLogout" class="btn">Отмена</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Скрипты -->
+		<script src="js/auth.js"></script>
+		<script src="js/progress.js"></script>
+		<script src="js/password.js"></script>
+		<script src="js/app.js"></script>
+
+	</body> <!-- Закрывающий тег body -->
+	</html> <!-- Закрывающий тег html -->

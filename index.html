@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeutscheSprache - Изучение немецкого языка</title>
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+</head>
+<body>
+    <div class="scroll-to-top" id="scrollToTop">
+        <svg viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+        </svg>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+			<a href="index.html" class="logo-link">
+				<div class="logo">DeutscheSprache</div>
+			</a>
+			<nav>
+				<ul>
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="about.html">О сайте</a></li>
+					<li class="auth-section">
+						<a href="profile.html" id="userInfo" class="user-info" style="display: none;">
+							<div class="user-avatar" id="userAvatar">U</div>
+							<span id="userName">Пользователь</span>
+						</a>
+						<button id="authButton" class="auth-btn">Войти</button>
+					</li>
+				</ul>
+			</nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Изучайте немецкий язык эффективно</h1>
+            <p>Система обучения с упражнениями для всех уровней: от начинающего A1 до продвинутого C1. Изучайте грамматику, лексику и развивайте языковые навыки.</p>
+            <a href="#levels" class="btn">Начать обучение</a>
+        </div>
+    </section>
+
+    <section class="levels" id="levels">
+        <div class="container">
+            <h2 class="section-title">Уровни немецкого языка</h2>
+            <div class="levels-grid">
+                <div class="level-card level-a1">
+                    <div class="level-progress" id="a1-progress" style="display: none;">0%</div>
+                    <div class="level-header">
+                        <h2>Уровень A1</h2>
+                        <p>Начальный</p>
+                    </div>
+                    <div class="level-content">
+                        <h3>Основы немецкого языка</h3>
+                        <p>Изучение базовой лексики и простых грамматических конструкций.</p>
+                        <ul>
+                            <li>Знакомство и представление</li>
+                            <li>Числа, даты, время</li>
+                            <li>Базовые фразы для общения</li>
+                            <li>15 тем для изучения</li>
+                        </ul>
+                        <a href="levels/level-a1.html" class="btn" style="margin-top: 1rem; display: inline-block;">Выбрать уровень</a>
+                    </div>
+                </div>
+                
+                <div class="level-card level-a2">
+                   	<div class="level-progress" id="a2-progress" style="display: none;">0%</div>
+                    <div class="level-header">
+                        <h2>Уровень A2</h2>
+                        <p>Элементарный</p>
+                    </div>
+                    <div class="level-content">
+                        <h3>Разговорный немецкий</h3>
+                        <p>Расширение словарного запаса и изучение грамматических структур.</p>
+                        <ul>
+                            <li>Описание людей и предметов</li>
+                            <li>Повседневные ситуации</li>
+                            <li>Прошедшее время</li>
+                            <li>15 тем для изучения</li>
+                        </ul>
+                        <a href="levels/level-a2.html" class="btn" style="margin-top: 1rem; display: inline-block;">Выбрать уровень</a>
+                    </div>
+                </div>
+                
+				<!-- Уровень B1 -->
+				<div class="level-card level-b1">
+					<div class="level-progress" id="b1-progress" style="display: none;">0%</div>
+					<div class="level-header">
+						<h2>Уровень B1</h2>
+						<p>Средний</p>
+					</div>
+					<div class="level-content">
+						<h3>Свободное общение</h3>
+						<p>Развитие навыков для свободного общения на различные темы и понимания сложных текстов.</p>
+						<ul>
+							<li>Обсуждение планов и мечтаний</li>
+							<li>Сложные грамматические конструкции</li>
+							<li>Деловая переписка</li>
+							<li>Культура и традиции</li>
+							<li>15 тем для изучения</li>
+						</ul>
+						<a href="levels/level-b1.html" class="btn" style="margin-top: 1rem; display: inline-block;">Выбрать уровень</a>
+					</div>
+				</div>
+
+				<!-- Уровень B2 -->
+				<div class="level-card level-b2">
+					<div class="level-progress" id="b2-progress" style="display: none;">0%</div>
+					<div class="level-header">
+						<h2>Уровень B2</h2>
+						<p>Выше среднего</p>
+					</div>
+					<div class="level-content">
+						<h3>Продвинутый немецкий</h3>
+						<p>Углубленное изучение грамматики и лексики для свободного общения на сложные темы.</p>
+						<ul>
+							<li>Сложные грамматические конструкции</li>
+							<li>Абстрактные темы</li>
+							<li>Профессиональная лексика</li>
+							<li>Специализированные тексты</li>
+							<li>15 тем для изучения</li>
+						</ul>
+						<a href="levels/level-b2.html" class="btn" style="margin-top: 1rem; display: inline-block;">Выбрать уровень</a>
+					</div>
+				</div>
+
+				<!-- Уровень C1 -->
+				<div class="level-card level-c1">
+					<div class="level-progress" id="c1-progress" style="display: none;">0%</div>
+					<div class="level-header">
+						<h2>Уровень C1</h2>
+						<p>Продвинутый</p>
+					</div>
+					<div class="level-content">
+						<h3>Профессиональный немецкий</h3>
+						<p>Свободное владение языком, понимание сложных текстов и выражение мыслей без подготовки.</p>
+						<ul>
+							<li>Сложные тексты и их скрытые значения</li>
+							<li>Идиомы и фразеологизмы</li>
+							<li>Специализированные темы</li>
+							<li>Академическое письмо</li>
+							<li>15 тем для изучения</li>
+						</ul>
+						<a href="levels/level-c1.html" class="btn" style="margin-top: 1rem; display: inline-block;">Выбрать уровень</a>
+					</div>
+				</div>
+
+				<!-- Уровень C2 -->
+				<div class="level-card level-c2">
+					<div class="level-progress" id="c2-progress" style="display: none;">0%</div>
+					<div class="level-header">
+						<h2>Уровень C2</h2>
+						<p>В совершенстве</p>
+					</div>
+					<div class="level-content">
+						<h3>Уровень носителя</h3>
+						<p>Свободное владение языком на уровне образованного носителя, понимание любых текстов и устной речи.</p>
+						<ul>
+							<li>Понимание любых текстов и устной речи</li>
+							<li>Свободное выражение сложных мыслей</li>
+							<li>Работа с научными и литературными текстами</li>
+							<li>Владение идиомами и стилистическими нюансами</li>
+							<li>15 тем для изучения</li>
+						</ul>
+						<a href="levels/level-c2.html" class="btn" style="margin-top: 1rem; display: inline-block;">Выбрать уровень</a>
+					</div>
+				</div>
+				
+				
+    </section>
+
+    <section class="topics auth-only" id="progress" style="display: none;">
+		<div class="container">
+			<h2 class="section-title">Ваш прогресс обучения</h2>
+        
+			<div id="userDashboard" class="user-dashboard">
+				<div class="dashboard-header">
+					<div class="dashboard-avatar" id="dashboardAvatar">U</div>
+					<div>
+						<h2 id="dashboardUsername">Пользователь</h2>
+						<p>Ваш прогресс в изучении немецкого языка</p>
+					</div>
+				</div>
+            
+				<div class="dashboard-stats">
+					<div class="stat-card">
+						<div class="stat-value" id="totalTopicsCompleted">0</div>
+						<div class="stat-label">Тем завершено</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-value" id="totalExercisesCompleted">0</div>
+						<div class="stat-label">Упражнений выполнено</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-value" id="currentLevel">A1</div>
+						<div class="stat-label">Текущий уровень</div>
+					</div>
+				</div>
+			</div>
+        
+			<div class="progress-container">
+				<h3 class="progress-title">Общий прогресс</h3>
+				<div class="progress-bar">
+					<div class="progress-fill" id="overall-progress"></div>
+				</div>
+				<div class="progress-text" id="overall-progress-text">0% завершено</div>
+			</div>
+		</div>
+	</section>
+
+    <footer>
+		<div class="container">
+			<div class="footer-content">
+				<div class="logo">DeutscheSprache</div>
+				<div class="footer-links">
+					<a href="index.html">Главная</a>
+					<a href="about.html">О сайте</a>
+				</div>
+				<p>&copy; 2025 DeutscheSprache. Все права защищены.</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Модальное окно авторизации ДОЛЖНО БЫТЬ ЗДЕСЬ -->
+	<div id="authModal"  class="modal" style="display: none;">
+		<div class="modal-content">
+			<span class="close-modal" id="closeAuthModal">&times;</span>
+			<div class="modal-tabs">
+				<div class="modal-tab active" data-tab="login">Вход</div>
+				<div class="modal-tab" data-tab="register">Регистрация</div>
+			</div>
+		
+			<!-- Форма входа -->
+			<div id="loginTab" class="tab-content active">
+				<h2>Вход в аккаунт</h2>
+				<form id="loginForm">
+					<div class="form-group">
+						<label for="loginUsername">Имя пользователя</label>
+						<input type="text" id="loginUsername" required>
+						<div class="error-message" id="loginUsernameError"></div>
+					</div>
+					<div class="form-group">
+						<label for="loginPassword">Пароль</label>
+						<input type="password" id="loginPassword" required>
+						<div class="error-message" id="loginPasswordError"></div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn">Войти</button>
+					</div>
+				</form>
+			</div>
+
+			<!-- Форма регистрации -->
+			<div id="registerTab" class="tab-content">
+				<h2>Регистрация</h2>
+				<form id="registerForm">
+					<div class="form-group">
+						<label for="registerUsername">Имя пользователя</label>
+						<input type="text" id="registerUsername" required>
+						<div class="error-message" id="registerUsernameError"></div>
+					</div>
+					<div class="form-group">
+						<label for="registerPassword">Пароль</label>
+						<input type="password" id="registerPassword" required>
+						<div class="error-message" id="registerPasswordError"></div>
+					</div>
+					<div class="form-group">
+						<label for="confirmPassword">Подтвердите пароль</label>
+						<input type="password" id="confirmPassword" required>
+						<div class="error-message" id="confirmPasswordError"></div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn">Зарегистрироваться</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+			<!-- Модальное окно подтверждения выхода -->
+			<div id="logoutConfirmModal" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="notification-icon">🚪</span>
+						<h2>Подтверждение выхода</h2>
+					</div>
+					<p>Вы уверены, что хотите выйти из аккаунта?</p>
+					<div class="form-actions">
+						<button id="confirmLogout" class="btn btn-red">Да, выйти</button>
+						<button id="cancelLogout" class="btn">Отмена</button>
+					</div>
+				</div>
+			</div>
+
+    <!-- Скрипты ДОЛЖНЫ БЫТЬ ПОСЛЕ модального окна -->
+    <script src="js/debug.js"></script>
+	<script src="js/auth.js"></script>
+	<script src="js/progress.js"></script> <!-- ← РАСКОММЕНТИРУЙТЕ -->
+	<script src="js/password.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+</html>

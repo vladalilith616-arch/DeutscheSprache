@@ -1,0 +1,2855 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тема 3: Zahlen von 0 bis 100 - Уровень A1 - DeutscheSprache</title>
+    <link rel="stylesheet" href="../../css/style.css">
+	<link rel="icon" href="../favicon.png">
+    <style>
+		/* Компактный вариант сообщения об авторизации */
+		.auth-alert {
+			background-color: var(--white);
+			border-radius: 8px;
+			padding: 1.5rem;
+			margin: 1rem auto;
+			max-width: 450px;
+			text-align: center;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+			border: 1px solid #e9ecef;
+		}
+
+		.auth-alert-content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0.8rem;
+		}
+
+		.auth-alert-icon {
+			font-size: 2.5rem;
+			margin-bottom: 0.3rem;
+		}
+
+		.auth-alert h3 {
+			color: var(--black);
+			margin-bottom: 0.3rem;
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
+
+		.auth-alert p {
+			color: var(--dark-gray);
+			margin-bottom: 0.3rem;
+			font-size: 0.9rem;
+			line-height: 1.3;
+			max-width: 350px;
+		}
+
+		.auth-alert-buttons {
+			margin: 0.8rem 0;
+		}
+
+		.auth-alert-btn {
+			background-color: var(--yellow);
+			color: var(--black);
+			border: none;
+			padding: 0.6rem 1.2rem;
+			border-radius: 4px;
+			font-weight: bold;
+			font-size: 0.9rem;
+			transition: all 0.3s ease;
+		}
+
+		.auth-alert-btn:hover {
+			background-color: #e6b800;
+			transform: translateY(-1px);
+			box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+		}
+
+		.auth-alert-footer {
+			font-size: 0.8rem;
+			color: var(--dark-gray);
+			margin-top: 0.3rem;
+		}
+
+		.auth-alert-footer a {
+			color: var(--red);
+			text-decoration: none;
+			font-weight: 500;
+		}
+
+		.auth-alert-footer a:hover {
+			color: #cc0000;
+			text-decoration: underline;
+		}
+        /* Дополнительные стили для упражнений */
+        .input-correct {
+            border: 2px solid var(--green) !important;
+            background-color: #f8fff8;
+        }
+        
+        .input-incorrect {
+            border: 2px solid var(--red) !important;
+            background-color: #fff8f8;
+        }
+        
+        .option-correct {
+            background-color: #e8f5e9;
+            border-left: 4px solid var(--green);
+        }
+        
+        .option-incorrect {
+            background-color: #ffebee;
+            border-left: 4px solid var(--red);
+        }
+        
+        .match-correct {
+            background-color: #e8f5e9 !important;
+            border: 2px solid var(--green) !important;
+        }
+        
+        .match-incorrect {
+            background-color: #ffebee !important;
+            border: 2px solid var(--red) !important;
+        }
+        
+        .drag-item {
+            padding: 10px;
+            margin: 5px;
+            background-color: var(--light-gray);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: move;
+        }
+        
+        .drag-container {
+            min-height: 100px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .drag-over {
+            background-color: #f0f8ff;
+            border-color: #2196F3;
+        }
+        
+        .audio-exercise {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .audio-btn {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        .translation-hint {
+            font-style: italic;
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .exercise {
+			border-left: 4px solid var(--yellow) !important;
+        }
+        
+        .timer {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2196F3;
+            margin: 10px 0;
+        }
+        
+        .conjugation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .conjugation-table th,
+        .conjugation-table td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: left;
+        }
+        
+        .conjugation-table th {
+            background-color: var(--light-gray);
+            font-weight: bold;
+        }
+        
+        .dropdown-input {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin: 0 5px;
+        }
+        
+        .word-grid {
+            font-family: monospace;
+            white-space: pre;
+            background-color: var(--light-gray);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            line-height: 1.5;
+        }
+        
+        .scenario-options {
+            margin: 1rem 0;
+        }
+        
+        .scenario {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        
+        .text-with-errors {
+            background-color: #fff0f0;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--red);
+        }
+        
+        .text-with-gaps {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        
+        .final-test {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 1rem 0;
+        }
+        
+        .number-item {
+            padding: 10px;
+            text-align: center;
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .number-item.selected {
+            background-color: var(--yellow);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <svg viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+        </svg>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../../index.html" class="logo-link">
+                    <div class="logo">DeutscheSprache</div>
+                </a>
+                <nav>
+					<ul>
+						<li><a href="../../index.html">Главная</a></li>
+						<li><a href="../../about.html">О сайте</a></li>
+						<li class="auth-section">
+							<a href="../../profile.html" id="userInfo" class="user-info" style="display: none;">
+								<div class="user-avatar" id="userAvatar">U</div>
+								<span id="userName">Пользователь</span>
+							</a>
+							<button id="authButton" class="auth-btn">Войти</button>
+						</li>
+					</ul>
+				</nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="topics">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <a href="../../index.html">Главная</a> › 
+                <a href="../level-a1.html">Уровень A1</a> › 
+                <span>Тема 3: Zahlen von 0 bis 100</span>
+            </div>
+
+            <h2 class="section-title">Тема 3: Zahlen von 0 bis 100 (Числа от 0 до 100)</h2>
+            
+            <div class="topic-content">
+                <!-- Подробные правила -->
+                <div class="rules">
+                    <h3>📚 Правила и объяснения</h3>
+                    <p><strong>В этой теме мы изучаем немецкие числительные от 0 до 100:</strong></p>
+                    
+                    <h4>🔢 Основные числительные (0-12):</h4>
+                    <ul>
+                        <li><strong>0</strong> - null</li>
+                        <li><strong>1</strong> - eins</li>
+                        <li><strong>2</strong> - zwei</li>
+                        <li><strong>3</strong> - drei</li>
+                        <li><strong>4</strong> - vier</li>
+                        <li><strong>5</strong> - fünf</li>
+                        <li><strong>6</strong> - sechs</li>
+                        <li><strong>7</strong> - sieben</li>
+                        <li><strong>8</strong> - acht</li>
+                        <li><strong>9</strong> - neun</li>
+                        <li><strong>10</strong> - zehn</li>
+                        <li><strong>11</strong> - elf</li>
+                        <li><strong>12</strong> - zwölf</li>
+                    </ul>
+
+                    <h4>🔢 Числительные от 13 до 19:</h4>
+                    <ul>
+                        <li>Образуются по схеме: число + zehn</li>
+                        <li><strong>13</strong> - dreizehn</li>
+                        <li><strong>14</strong> - vierzehn</li>
+                        <li><strong>15</strong> - fünfzehn</li>
+                        <li><strong>16</strong> - sechzehn</li>
+                        <li><strong>17</strong> - siebzehn</li>
+                        <li><strong>18</strong> - achtzehn</li>
+                        <li><strong>19</strong> - neunzehn</li>
+                    </ul>
+
+                    <h4>🔢 Десятки:</h4>
+                    <ul>
+                        <li><strong>20</strong> - zwanzig</li>
+                        <li><strong>30</strong> - dreißig</li>
+                        <li><strong>40</strong> - vierzig</li>
+                        <li><strong>50</strong> - fünfzig</li>
+                        <li><strong>60</strong> - sechzig</li>
+                        <li><strong>70</strong> - siebzig</li>
+                        <li><strong>80</strong> - achtzig</li>
+                        <li><strong>90</strong> - neunzig</li>
+                    </ul>
+
+                    <h4>🔢 Составные числа (21-99):</h4>
+                    <ul>
+                        <li>Образуются по схеме: единицы + und + десятки</li>
+                        <li><strong>21</strong> - einundzwanzig (один + и + двадцать)</li>
+                        <li><strong>32</strong> - zweiunddreißig (два + и + тридцать)</li>
+                        <li><strong>47</strong> - siebenundvierzig (семь + и + сорок)</li>
+                        <li><strong>99</strong> - neunundneunzig (девять + и + девяносто)</li>
+                    </ul>
+
+                    <h4>🎯 Грамматические правила:</h4>
+                    <ul>
+                        <li><strong>Порядок слов:</strong> При образовании составных чисел единицы всегда идут перед десятками</li>
+                        <li><strong>Соединительный союз:</strong> Между единицами и десятками всегда ставится "und"</li>
+                        <li><strong>Особые случаи:</strong> Числа 1, 6, 7 имеют особые формы в составе (ein-, sech-, sieb-)</li>
+                        <li><strong>Правописание:</strong> Все числительные пишутся слитно</li>
+                    </ul>
+
+                    <h4>⚠️ Частые ошибки:</h4>
+                    <ul>
+                        <li>Неправильный порядок единиц и десятков</li>
+                        <li>Забывают союз "und"</li>
+                        <li>Неправильные формы для 1, 6, 7</li>
+                        <li>Ошибки в правописании (например, dreißig, а не dreizig)</li>
+                    </ul>
+                </div>
+
+                <!-- Упражнение 1 -->
+                <div class="exercise difficulty-easy">
+                    <h3>Упражнение 1: Напишите числа словами</h3>
+                    <div class="question">
+                        <p>Напишите следующие числа немецкими словами:</p>
+                        <div class="fill-blank">
+                            <p>5 <input type="text" class="blank-input" id="ex1-1" placeholder="..."></p>
+                            <p>12 <input type="text" class="blank-input" id="ex1-2" placeholder="..."></p>
+                            <p>20 <input type="text" class="blank-input" id="ex1-3" placeholder="..."></p>
+                            <p>33 <input type="text" class="blank-input" id="ex1-4" placeholder="..."></p>
+                            <p>47 <input type="text" class="blank-input" id="ex1-5" placeholder="..."></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex1')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex1')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex1-result"></div>
+                    <div class="correct-answer" id="correct-answer-ex1">
+                        <strong>Правильные ответы:</strong><br>
+                        1. fünf<br>
+                        2. zwölf<br>
+                        3. zwanzig<br>
+                        4. dreiunddreißig<br>
+                        5. siebenundvierzig
+                    </div>
+                </div>
+
+                <!-- Упражнение 2 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 2: Переведите числа на немецкий</h3>
+                    <div class="question">
+                        <p>Переведите следующие числа на немецкий язык:</p>
+                        <div class="fill-blank">
+                            <p>восемь <input type="text" class="blank-input" id="ex2-1" placeholder="..."></p>
+                            <p>одиннадцать <input type="text" class="blank-input" id="ex2-2" placeholder="..."></p>
+                            <p>двадцать пять <input type="text" class="blank-input" id="ex2-3" placeholder="..."></p>
+                            <p>сорок два <input type="text" class="blank-input" id="ex2-4" placeholder="..."></p>
+                            <p>девяносто девять <input type="text" class="blank-input" id="ex2-5" placeholder="..."></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex2')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex2')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex2-result"></div>
+                    <div class="correct-answer" id="correct-answer-ex2">
+                        <strong>Правильные ответы:</strong><br>
+                        1. acht<br>
+                        2. elf<br>
+                        3. fünfundzwanzig<br>
+                        4. zweiundvierzig<br>
+                        5. neunundneunzig
+                    </div>
+                </div>
+
+                <!-- Упражнение 3 -->
+                <div class="exercise difficulty-easy">
+                    <h3>Упражнение 3: Выберите правильный вариант</h3>
+                    <div class="question">
+                        <p>Выберите правильный вариант написания числа:</p>
+                        
+                        <div class="options">
+                            <p><strong>1. Число 16:</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex3-1" id="ex3-1-1" value="correct">
+                                <label for="ex3-1-1">sechzehn</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex3-1" id="ex3-1-2" value="incorrect">
+                                <label for="ex3-1-2">sechszehn</label>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <p><strong>2. Число 30:</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex3-2" id="ex3-2-1" value="correct">
+                                <label for="ex3-2-1">dreißig</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex3-2" id="ex3-2-2" value="incorrect">
+                                <label for="ex3-2-2">dreizig</label>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <p><strong>3. Число 21:</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex3-3" id="ex3-3-1" value="correct">
+                                <label for="ex3-3-1">einundzwanzig</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex3-3" id="ex3-3-2" value="incorrect">
+                                <label for="ex3-3-2">zwanzigeins</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex3')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex3')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex3-result"></div>
+                </div>
+
+                <!-- Упражнение 4 -->
+				<div class="exercise difficulty-medium">
+					<h3>Упражнение 4: Сопоставьте числа с написанием</h3>
+					<div class="question">
+						<p>Найдите пары: число и его написание на немецком (выберите элементы в любом порядке):</p>
+						<div class="match-exercise" id="ex4-match">
+							<div class="match-column">
+								<div class="match-item" data-id="17" onclick="selectMatch(this)">17</div>
+								<div class="match-item" data-id="50" onclick="selectMatch(this)">50</div>
+								<div class="match-item" data-id="63" onclick="selectMatch(this)">63</div>
+								<div class="match-item" data-id="88" onclick="selectMatch(this)">88</div>
+							</div>
+							<div class="match-column">
+								<div class="match-item" data-id="dreiundsechzig" onclick="selectMatch(this)">dreiundsechzig</div>
+								<div class="match-item" data-id="siebzehn" onclick="selectMatch(this)">siebzehn</div>
+								<div class="match-item" data-id="achtundachtzig" onclick="selectMatch(this)">achtundachtzig</div>
+								<div class="match-item" data-id="fünfzig" onclick="selectMatch(this)">fünfzig</div>
+							</div>
+						</div>
+						<p class="hint">💡 <strong>Подсказка:</strong> Выбирайте элементы в любом порядке - система сама определит правильные пары</p>
+					</div>
+					<div class="exercise-controls">
+						<button class="check-btn" onclick="checkExercise('ex4')">Проверить</button>
+						<button class="reset-btn" onclick="resetExercise('ex4')">Сбросить</button>
+					</div>
+					<div class="result" id="ex4-result"></div>
+				</div>
+
+                <!-- Упражнение 5 -->
+                <div class="exercise difficulty-hard">
+                    <h3>Упражнение 5: Заполните пропуски в тексте</h3>
+                    <div class="question">
+                        <p>Заполните пропуски в тексте правильными числительными:</p>
+                        <div class="text-with-gaps">
+                            <p>In meiner Klasse sind <input type="text" class="blank-input" id="ex5-1" placeholder="..."> Schüler. Davon sind <input type="text" class="blank-input" id="ex5-2" placeholder="..."> Mädchen und <input type="text" class="blank-input" id="ex5-3" placeholder="..."> Jungen. Unser Lehrer ist <input type="text" class="blank-input" id="ex5-4" placeholder="..."> Jahre alt. Er hat <input type="text" class="blank-input" id="ex5-5" placeholder="..."> Bücher in seinem Regal.</p>
+                        </div>
+                        <p class="hint">💡 <strong>Подсказка:</strong> Используйте числа: 25, 13, 12, 42, 67</p>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex5')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex5')">Сбросить</button>
+                        <button class="keyboard-btn" onclick="toggleKeyboard()">⌨️ Немецкая клавиатура</button>
+                    </div>
+                    <div class="result" id="ex5-result"></div>
+                    <div class="correct-answer" id="correct-answer-ex5">
+                        <strong>📝 Правильные ответы:</strong><br>
+                        1. fünfundzwanzig<br>
+                        2. dreizehn<br>
+                        3. zwölf<br>
+                        4. zweiundvierzig<br>
+                        5. siebenundsechzig
+                    </div>
+                </div>
+
+                <!-- Упражнение 6 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 6: Найдите и исправьте ошибки</h3>
+                    <div class="question">
+                        <p>В следующих числах есть ошибки. Напишите исправленные версии:</p>
+                        <div class="fill-blank">
+                            <p>1. siebenzen <input type="text" class="sentence-input" id="ex6-1" placeholder="Исправленное число"></p>
+                            <p>2. vierundzwanzig <input type="text" class="sentence-input" id="ex6-2" placeholder="Исправленное число"></p>
+                            <p>3. neunundfünfzig <input type="text" class="sentence-input" id="ex6-3" placeholder="Исправленное число"></p>
+                            <p>4. einunddreizig <input type="text" class="sentence-input" id="ex6-4" placeholder="Исправленное число"></p>
+                            <p>5. hundert <input type="text" class="sentence-input" id="ex6-5" placeholder="Исправленное число"></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex6')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex6')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex6-result"></div>
+                    <div class="correct-answer" id="correct-answer-ex6">
+                        <strong>Правильные ответы:</strong><br>
+                        1. siebzehn<br>
+                        2. vierundzwanzig (правильно)<br>
+                        3. neunundfünfzig (правильно)<br>
+                        4. einunddreißig<br>
+                        5. hundert (правильно)
+                    </div>
+                </div>
+
+                <!-- Упражнение 7 -->
+                <div class="exercise difficulty-easy">
+                    <h3>Упражнение 7: Выберите подходящее число</h3>
+                    <div class="question">
+                        <p>Выберите правильное число для завершения предложений:</p>
+                        
+                        <div class="options">
+                            <p><strong>1. Eine Stunde hat ... Minuten.</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex7-1" id="ex7-1-1" value="correct">
+                                <label for="ex7-1-1">sechzig</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-1" id="ex7-1-2" value="incorrect">
+                                <label for="ex7-1-2">fünfzig</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-1" id="ex7-1-3" value="incorrect">
+                                <label for="ex7-1-3">siebzig</label>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <p><strong>2. Ein Tag hat ... Stunden.</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex7-2" id="ex7-2-1" value="incorrect">
+                                <label for="ex7-2-1">zwanzig</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-2" id="ex7-2-2" value="correct">
+                                <label for="ex7-2-2">vierundzwanzig</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-2" id="ex7-2-3" value="incorrect">
+                                <label for="ex7-2-3">dreißig</label>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <p><strong>3. Ein Jahr hat ... Monate.</strong></p>
+                            <div class="option">
+                                <input type="radio" name="ex7-3" id="ex7-3-1" value="correct">
+                                <label for="ex7-3-1">zwölf</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-3" id="ex7-3-2" value="incorrect">
+                                <label for="ex7-3-2">zehn</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex7-3" id="ex7-3-3" value="incorrect">
+                                <label for="ex7-3-3">elf</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex7')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex7')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex7-result"></div>
+                </div>
+
+                <!-- Упражнение 8 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 8: Заполните таблицу чисел</h3>
+                    <div class="question">
+                        <p>Заполните таблицу недостающими числами:</p>
+                        <table class="conjugation-table">
+                            <tr>
+                                <th>Число</th>
+                                <th>Немецкое написание</th>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td><input type="text" class="blank-input" id="ex8-1" placeholder="..."></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="blank-input" id="ex8-2" placeholder="..."></td>
+                                <td>neununddreißig</td>
+                            </tr>
+                            <tr>
+                                <td>55</td>
+                                <td><input type="text" class="blank-input" id="ex8-3" placeholder="..."></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="blank-input" id="ex8-4" placeholder="..."></td>
+                                <td>einundsiebzig</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td><input type="text" class="blank-input" id="ex8-5" placeholder="..."></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex8')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex8')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex8-result"></div>
+                    <div class="correct-answer" id="correct-answer-ex8">
+                        <strong>Правильные ответы:</strong><br>
+                        1. vierzehn<br>
+                        2. 39<br>
+                        3. fünfundfünfzig<br>
+                        4. 71<br>
+                        5. (ein)hundert
+                    </div>
+                </div>
+
+                <!-- Упражнение 9 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 9: Аудирование - Выберите услышанное число</h3>
+                    <div class="question">
+                        <p>Прослушайте число и выберите правильный вариант:</p>
+                        <div class="audio-exercise">
+                            <button class="audio-btn" onclick="playAudio('ex9')">🔊 Проиграть аудио</button>
+                        </div>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="ex9" id="ex9-1" value="correct">
+                                <label for="ex9-1">vierundzwanzig</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex9" id="ex9-2" value="incorrect">
+                                <label for="ex9-2">vierzehn</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex9" id="ex9-3" value="incorrect">
+                                <label for="ex9-3">vierundvierzig</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex9')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex9')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex9-result"></div>
+                </div>
+
+                <!-- Упражнение 10 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 10: Расставьте числа по порядку</h3>
+                    <div class="question">
+                        <p>Перетащите числа в правильном порядке от меньшего к большему:</p>
+                        <div class="drag-container" id="ex10-target">
+                            <p>Перетащите числа сюда в правильном порядке...</p>
+                        </div>
+                        <div class="drag-items">
+                            <div class="drag-item" draggable="true" data-correct="1">dreiunddreißig</div>
+                            <div class="drag-item" draggable="true" data-correct="2">siebenundvierzig</div>
+                            <div class="drag-item" draggable="true" data-correct="3">neunundfünfzig</div>
+                            <div class="drag-item" draggable="true" data-correct="4">einundsiebzig</div>
+                            <div class="drag-item" draggable="true" data-correct="5">achtundachtzig</div>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex10')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex10')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex10-result"></div>
+                </div>
+
+                <!-- Упражнение 11 -->
+                <div class="exercise difficulty-easy">
+                    <h3>Упражнение 11: Выберите правильный перевод</h3>
+                    <div class="question">
+                        <p>Как правильно сказать "семьдесят восемь" по-немецки?</p>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="ex11" id="ex11-1" value="correct">
+                                <label for="ex11-1">achtundsiebzig</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex11" id="ex11-2" value="incorrect">
+                                <label for="ex11-2">siebenundachtzig</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex11" id="ex11-3" value="incorrect">
+                                <label for="ex11-3">achtzigundsieben</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex11')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex11')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex11-result"></div>
+                </div>
+
+                <!-- Упражнение 12 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 12: Заполните числовую последовательность</h3>
+                    <div class="question">
+                        <p>Заполните пропуски в числовой последовательности:</p>
+                        <div class="fill-blank">
+                            <p>zwölf, dreizehn, <input type="text" class="blank-input" id="ex12-1" placeholder="...">, fünfzehn, sechzehn</p>
+                            <p>achtunddreißig, neununddreißig, <input type="text" class="blank-input" id="ex12-2" placeholder="...">, einundvierzig</p>
+                            <p>neunundsechzig, <input type="text" class="blank-input" id="ex12-3" placeholder="...">, einundsiebzig, zweiundsiebzig</p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex12')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex12')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex12-result"></div>
+                    <div class="correct-answer" id="correct-answer-ex12">
+                        <strong>Правильные ответы:</strong><br>
+                        1. vierzehn<br>
+                        2. vierzig<br>
+                        3. siebzig
+                    </div>
+                </div>
+
+                <!-- Упражнение 13 -->
+                <div class="exercise difficulty-hard">
+                    <h3>Упражнение 13: Решите математические задачи</h3>
+                    <div class="question">
+                        <p>Решите математические задачи и напишите ответы немецкими словами:</p>
+                        <div class="fill-blank">
+                            <p>zwanzig + fünfzehn = <input type="text" class="blank-input" id="ex13-1" placeholder="..."></p>
+                            <p>vierzig - achtzehn = <input type="text" class="blank-input" id="ex13-2" placeholder="..."></p>
+                            <p>dreißig × drei = <input type="text" class="blank-input" id="ex13-3" placeholder="..."></p>
+                            <p>fünfundsiebzig ÷ fünf = <input type="text" class="blank-input" id="ex13-4" placeholder="..."></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex13')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex13')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex13-result"></div>
+                    <div class="correct-answer" id="correct-answer-ex13">
+                        <strong>Правильные ответы:</strong><br>
+                        1. fünfunddreißig<br>
+                        2. zweiundzwanzig<br>
+                        3. neunzig<br>
+                        4. fünfzehn
+                    </div>
+                </div>
+
+                <!-- Упражнение 14 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 14: Ответьте на вопросы с числами</h3>
+                    <div class="question">
+                        <p>Ответьте на вопросы, используя немецкие числительные:</p>
+                        <div class="fill-blank">
+                            <p>Wie alt sind Sie? <input type="text" class="sentence-input" id="ex14-1" placeholder="Ваш ответ"></p>
+                            <p>Wie viele Tage hat eine Woche? <input type="text" class="sentence-input" id="ex14-2" placeholder="Ваш ответ"></p>
+                            <p>Wie viele Finger hat ein Mensch? <input type="text" class="sentence-input" id="ex14-3" placeholder="Ваш ответ"></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex14')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex14')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex14-result"></div>
+                </div>
+
+                <!-- Упражнение 15 -->
+                <div class="exercise difficulty-hard">
+                    <h3>Упражнение 15: Быстрый тест на числа</h3>
+                    <div class="question">
+                        <div class="timer" id="ex15-timer">Время: 60 секунд</div>
+                        <p>Напишите следующие числа немецкими словами как можно быстрее:</p>
+                        <div class="fill-blank">
+                            <p>19 <input type="text" class="blank-input" id="ex15-1" placeholder="..."></p>
+                            <p>27 <input type="text" class="blank-input" id="ex15-2" placeholder="..."></p>
+                            <p>46 <input type="text" class="blank-input" id="ex15-3" placeholder="..."></p>
+                            <p>83 <input type="text" class="blank-input" id="ex15-4" placeholder="..."></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex15')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex15')">Сбросить</button>
+                        <button class="keyboard-btn" onclick="startTimer('ex15')">⏱️ Начать таймер</button>
+                    </div>
+                    <div class="result" id="ex15-result"></div>
+                </div>
+
+                <!-- Упражнение 16 -->
+                <div class="exercise difficulty-easy">
+                    <h3>Упражнение 16: Выберите правильное число из списка</h3>
+                    <div class="question">
+                        <p>Выберите подходящие числа из выпадающих списков:</p>
+                        <div class="fill-blank">
+                            <p>
+                                <select class="dropdown-input" id="ex16-1">
+                                    <option value="">Выберите...</option>
+                                    <option value="neunzehn">neunzehn</option>
+                                    <option value="neunundneunzig">neunundneunzig</option>
+                                    <option value="neun">neun</option>
+                                </select>
+                                - это 19
+                            </p>
+                            <p>
+                                <select class="dropdown-input" id="ex16-2">
+                                    <option value="">Выберите...</option>
+                                    <option value="sechsundsechzig">sechsundsechzig</option>
+                                    <option value="sechzig">sechzig</option>
+                                    <option value="sechzehn">sechzehn</option>
+                                </select>
+                                - это 66
+                            </p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex16')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex16')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex16-result"></div>
+                </div>
+
+                <!-- Упражнение 17 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 17: Распределите числа по группам</h3>
+                    <div class="question">
+                        <p>Перетащите числа в правильные категории:</p>
+                        <div class="drag-containers">
+                            <div class="drag-container">
+                                <strong>Числа от 0 до 20</strong>
+                                <div id="ex17-group1"></div>
+                            </div>
+                            <div class="drag-container">
+                                <strong>Числа от 21 до 50</strong>
+                                <div id="ex17-group2"></div>
+                            </div>
+                            <div class="drag-container">
+                                <strong>Числа от 51 до 100</strong>
+                                <div id="ex17-group3"></div>
+                            </div>
+                        </div>
+                        <div class="drag-items">
+                            <div class="drag-item" draggable="true" data-category="group1">fünfzehn</div>
+                            <div class="drag-item" draggable="true" data-category="group2">dreiunddreißig</div>
+                            <div class="drag-item" draggable="true" data-category="group3">siebenundsiebzig</div>
+                            <div class="drag-item" draggable="true" data-category="group1">acht</div>
+                            <div class="drag-item" draggable="true" data-category="group2">neunundvierzig</div>
+                            <div class="drag-item" draggable="true" data-category="group3">vierundachtzig</div>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex17')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex17')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex17-result"></div>
+                </div>
+
+                <!-- Упражнение 18 -->
+                <div class="exercise difficulty-easy">
+                    <h3>Упражнение 18: Правда или Ложь</h3>
+                    <div class="question">
+                        <p>Отметьте, являются ли утверждения верными:</p>
+                        <div class="options">
+                            <div class="option">
+                                <input type="checkbox" id="ex18-1" value="true">
+                                <label for="ex18-1">"dreißig" означает 30</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" id="ex18-2" value="false">
+                                <label for="ex18-2">"einundzwanzig" означает 12</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" id="ex18-3" value="true">
+                                <label for="ex18-3">В немецком языке единицы идут перед десятками</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" id="ex18-4" value="false">
+                                <label for="ex18-4">"hundert" означает 1000</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex18')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex18')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex18-result"></div>
+                </div>
+
+                <!-- Упражнение 19 -->
+                <div class="exercise difficulty-hard">
+                    <h3>Упражнение 19: Заполните все пропуски в тексте</h3>
+                    <div class="question">
+                        <p>Заполните все пропуски в тексте о расписании:</p>
+                        <div class="text-with-gaps">
+                            <p>Mein Tag beginnt um <input type="text" class="blank-input" id="ex19-1" placeholder="..."> Uhr. Ich frühstücke <input type="text" class="blank-input" id="ex19-2" placeholder="..."> Minuten. Dann gehe ich zur Arbeit. Ich arbeite <input type="text" class="blank-input" id="ex19-3" placeholder="..."> Stunden pro Tag. Heute habe ich <input type="text" class="blank-input" id="ex19-4" placeholder="..."> E-Mails bekommen. Um <input type="text" class="blank-input" id="ex19-5" placeholder="..."> Uhr mache ich Mittagspause.</p>
+                        </div>
+                        <p class="translation-hint">Слова: sieben, zwanzig, acht, fünfunddreißig, dreizehn</p>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex19')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex19')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex19-result"></div>
+                </div>
+
+                <!-- Упражнение 20 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 20: Переведите на немецкий</h3>
+                    <div class="question">
+                        <p>Переведите следующие предложения с числами на немецкий язык:</p>
+                        <div class="fill-blank">
+                            <p>Мне 25 лет. <input type="text" class="sentence-input" id="ex20-1" placeholder="Немецкий перевод"></p>
+                            <p>У меня есть 3 книги. <input type="text" class="sentence-input" id="ex20-2" placeholder="Немецкий перевод"></p>
+                            <p>Сейчас 14:30. <input type="text" class="sentence-input" id="ex20-3" placeholder="Немецкий перевод"></p>
+                            <p>Он живет в доме номер 67. <input type="text" class="sentence-input" id="ex20-4" placeholder="Немецкий перевод"></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex20')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex20')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex20-result"></div>
+                </div>
+
+                <!-- Упражнение 21 -->
+                <div class="exercise difficulty-easy">
+                    <h3>Упражнение 21: Найдите числа в сетке</h3>
+                    <div class="question">
+                        <p>Найдите 6 числительных по теме в словесной сетке:</p>
+                        <div class="word-search">
+                            <div class="word-grid" id="ex21-grid">
+                                Z W E I U N D F<br>
+                                D R E I S S I G<br>
+                                S E C H S E L F<br>
+                                A C H T Z I G N<br>
+                                Z E H N E U N T<br>
+                                H U N D E R T E<br>
+                            </div>
+                        </div>
+                        <div class="fill-blank">
+                            <p>Найденные слова: <input type="text" class="sentence-input" id="ex21-1" placeholder="Перечислите найденные слова через запятую"></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex21')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex21')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex21-result"></div>
+                </div>
+
+                <!-- Упражнение 22 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 22: Выберите правильное число для ситуации</h3>
+                    <div class="question">
+                        <p>Какое число подходит для каждой ситуации?</p>
+                        <div class="scenario-options">
+                            <div class="scenario">
+                                <p><strong>Ситуация 1:</strong> Сколько дней в феврале високосного года?</p>
+                                <select class="dropdown-input" id="ex22-1">
+                                    <option value="">Выберите число...</option>
+                                    <option value="neunundzwanzig">neunundzwanzig</option>
+                                    <option value="achtundzwanzig">achtundzwanzig</option>
+                                </select>
+                            </div>
+                            <div class="scenario">
+                                <p><strong>Ситуация 2:</strong> Сколько градусов в прямом угле?</p>
+                                <select class="dropdown-input" id="ex22-2">
+                                    <option value="">Выберите число...</option>
+                                    <option value="neunzig">neunzig</option>
+                                    <option value="hundert">hundert</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex22')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex22')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex22-result"></div>
+                </div>
+
+                <!-- Упражнение 23 -->
+                <div class="exercise difficulty-medium">
+                    <h3>Упражнение 23: Завершите предложения</h3>
+                    <div class="question">
+                        <p>Завершите предложения, используя числа из списка:</p>
+                        <p class="translation-hint">Слова: elf, vierzig, sechsundfünfzig, dreiundachtzig, hundert</p>
+                        <div class="fill-blank">
+                            <p>In einem Fußballteam sind <input type="text" class="blank-input" id="ex23-1" placeholder="..."> Spieler.</p>
+                            <p>Meine Oma ist <input type="text" class="blank-input" id="ex23-2" placeholder="..."> Jahre alt.</p>
+                            <p>Ein Meter hat <input type="text" class="blank-input" id="ex23-3" placeholder="..."> Zentimeter.</p>
+                            <p>Die Temperatur heute ist <input type="text" class="blank-input" id="ex23-4" placeholder="..."> Grad.</p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex23')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex23')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex23-result"></div>
+                </div>
+
+                <!-- Упражнение 24 -->
+                <div class="exercise difficulty-hard">
+                    <h3>Упражнение 24: Выберите правильный вариант с объяснением</h3>
+                    <div class="question">
+                        <p>Выберите грамматически правильный вариант и объясните свой выбор:</p>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="ex24" id="ex24-1" value="correct">
+                                <label for="ex24-1">"siebenundsechzig" - Правильный порядок: единицы + und + десятки</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex24" id="ex24-2" value="incorrect">
+                                <label for="ex24-2">"sechzigundsieben" - Неправильный порядок слов</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="ex24" id="ex24-3" value="incorrect">
+                                <label for="ex24-3">"siebensechzig" - Отсутствует союз "und"</label>
+                            </div>
+                        </div>
+                        <div class="fill-blank">
+                            <p>Объяснение вашего выбора: <input type="text" class="sentence-input" id="ex24-explanation" placeholder="Напишите краткое объяснение"></p>
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex24')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex24')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex24-result"></div>
+                </div>
+
+                <!-- Упражнение 25 -->
+                <div class="exercise difficulty-hard">
+                    <h3>Упражнение 25: Финальный тест по теме</h3>
+                    <div class="question">
+                        <p>Пройдите финальный тест, чтобы проверить свои знания:</p>
+                        <div class="final-test">
+                            <p><strong>1. Как пишется число 17?</strong></p>
+                            <select class="dropdown-input" id="ex25-1">
+                                <option value="">Выберите...</option>
+                                <option value="correct">siebzehn</option>
+                                <option value="incorrect">siebenzehn</option>
+                                <option value="incorrect">siebten</option>
+                            </select>
+
+                            <p><strong>2. Как сказать "сорок пять" по-немецки?</strong></p>
+                            <input type="text" class="sentence-input" id="ex25-2" placeholder="Напишите число">
+
+                            <p><strong>3. Выберите правильное написание:</strong></p>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="ex25-3" id="ex25-3-1" value="correct">
+                                    <label for="ex25-3-1">dreiunddreißig</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="ex25-3" id="ex25-3-2" value="incorrect">
+                                    <label for="ex25-3-2">dreizigunddrei</label>
+                                </div>
+                            </div>
+
+                            <p><strong>4. Переведите: "двадцать восемь"</strong></p>
+                            <input type="text" class="sentence-input" id="ex25-4" placeholder="Немецкий перевод">
+
+                            <p><strong>5. Какое число означает "neunundneunzig"?</strong></p>
+                            <input type="text" class="blank-input" id="ex25-5" placeholder="Напишите число">
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button class="check-btn" onclick="checkExercise('ex25')">Проверить</button>
+                        <button class="reset-btn" onclick="resetExercise('ex25')">Сбросить</button>
+                    </div>
+                    <div class="result" id="ex25-result"></div>
+                </div>
+
+            </div>
+
+            <div class="page-navigation">
+                <a href="topic2.html" class="nav-btn">← Тема 2: Wie heißen Sie?</a>
+                <button class="nav-btn complete-topic-btn" onclick="markTopicComplete('a1-t3')">
+                    Завершить тему
+                </button>
+                <a href="topic4.html" class="nav-btn">Следующая тема →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Немецкая клавиатура -->
+    <button class="keyboard-toggle" onclick="toggleKeyboard()">⌨️</button>
+    <div class="keyboard" id="keyboard">
+        <button class="keyboard-close" onclick="toggleKeyboard()">×</button>
+        
+        <!-- Первый ряд -->
+        <div class="keyboard-row">
+            <div class="keyboard-key" data-key="^">^</div>
+            <div class="keyboard-key" data-key="1">1</div>
+            <div class="keyboard-key" data-key="2">2</div>
+            <div class="keyboard-key" data-key="3">3</div>
+            <div class="keyboard-key" data-key="4">4</div>
+            <div class="keyboard-key" data-key="5">5</div>
+            <div class="keyboard-key" data-key="6">6</div>
+            <div class="keyboard-key" data-key="7">7</div>
+            <div class="keyboard-key" data-key="8">8</div>
+            <div class="keyboard-key" data-key="9">9</div>
+            <div class="keyboard-key" data-key="0">0</div>
+            <div class="keyboard-key" data-key="ß">ß</div>
+            <div class="keyboard-key" data-key="´">´</div>
+            <div class="keyboard-key special wide" data-key="backspace">Backspace</div>
+        </div>
+        
+        <!-- Второй ряд -->
+        <div class="keyboard-row">
+            <div class="keyboard-key special wide" data-key="tab">Tab</div>
+            <div class="keyboard-key" data-key="q">q</div>
+            <div class="keyboard-key" data-key="w">w</div>
+            <div class="keyboard-key" data-key="e">e</div>
+            <div class="keyboard-key" data-key="r">r</div>
+            <div class="keyboard-key" data-key="t">t</div>
+            <div class="keyboard-key" data-key="z">z</div>
+            <div class="keyboard-key" data-key="u">u</div>
+            <div class="keyboard-key" data-key="i">i</div>
+            <div class="keyboard-key" data-key="o">o</div>
+            <div class="keyboard-key" data-key="p">p</div>
+            <div class="keyboard-key" data-key="ü">ü</div>
+            <div class="keyboard-key" data-key="+">+</div>
+            <div class="keyboard-key special" data-key="enter">Enter</div>
+        </div>
+        
+        <!-- Третий ряд -->
+        <div class="keyboard-row">
+            <div class="keyboard-key special wide" data-key="caps">Caps</div>
+            <div class="keyboard-key" data-key="a">a</div>
+            <div class="keyboard-key" data-key="s">s</div>
+            <div class="keyboard-key" data-key="d">d</div>
+            <div class="keyboard-key" data-key="f">f</div>
+            <div class="keyboard-key" data-key="g">g</div>
+            <div class="keyboard-key" data-key="h">h</div>
+            <div class="keyboard-key" data-key="j">j</div>
+            <div class="keyboard-key" data-key="k">k</div>
+            <div class="keyboard-key" data-key="l">l</div>
+            <div class="keyboard-key" data-key="ö">ö</div>
+            <div class="keyboard-key" data-key="ä">ä</div>
+            <div class="keyboard-key" data-key="#">#</div>
+        </div>
+        
+        <!-- Четвертый ряд -->
+        <div class="keyboard-row">
+            <div class="keyboard-key special wide" data-key="shift">Shift</div>
+            <div class="keyboard-key" data-key="<"><</div>
+            <div class="keyboard-key" data-key="y">y</div>
+            <div class="keyboard-key" data-key="x">x</div>
+            <div class="keyboard-key" data-key="c">c</div>
+            <div class="keyboard-key" data-key="v">v</div>
+            <div class="keyboard-key" data-key="b">b</div>
+            <div class="keyboard-key" data-key="n">n</div>
+            <div class="keyboard-key" data-key="m">m</div>
+            <div class="keyboard-key" data-key=",">,</div>
+            <div class="keyboard-key" data-key=".">.</div>
+            <div class="keyboard-key" data-key="-">-</div>
+            <div class="keyboard-key special wide" data-key="shift">Shift</div>
+        </div>
+        
+        <!-- Пятый ряд -->
+        <div class="keyboard-row">
+            <div class="keyboard-key special" data-key="ctrl">Ctrl</div>
+            <div class="keyboard-key special" data-key="win">Win</div>
+            <div class="keyboard-key special" data-key="alt">Alt</div>
+            <div class="keyboard-key special extra-wide" data-key="space">Space</div>
+            <div class="keyboard-key special" data-key="altgr">AltGr</div>
+            <div class="keyboard-key special" data-key="fn">Fn</div>
+            <div class="keyboard-key special" data-key="clear">Clear</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">DeutscheSprache</div>
+                <div class="footer-links">
+                    <a href="../../index.html">Главная</a>
+                    <a href="../../about.html">О сайте</a>
+                </div>
+                <p>&copy; 2025 DeutscheSprache. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+	<!-- Модальное окно авторизации -->
+	<div id="authModal" class="modal">
+		<div class="modal-content">
+			<span class="close-modal" id="closeAuthModal">&times;</span>
+			<div class="modal-tabs">
+				<div class="modal-tab active" data-tab="login">Вход</div>
+				<div class="modal-tab" data-tab="register">Регистрация</div>
+			</div>
+			
+			<!-- Форма входа -->
+			<div id="loginTab" class="tab-content active">
+				<h2>Вход в аккаунт</h2>
+				<form id="loginForm">
+					<div class="form-group">
+						<label for="loginUsername">Имя пользователя</label>
+						<input type="text" id="loginUsername" required>
+						<div class="error-message" id="loginUsernameError"></div>
+					</div>
+					<div class="form-group">
+						<label for="loginPassword">Пароль</label>
+						<input type="password" id="loginPassword" required>
+						<div class="error-message" id="loginPasswordError"></div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn">Войти</button>
+					</div>
+				</form>
+			</div>
+
+			<!-- Форма регистрации -->
+			<div id="registerTab" class="tab-content">
+				<h2>Регистрация</h2>
+				<form id="registerForm">
+					<div class="form-group">
+						<label for="registerUsername">Имя пользователя</label>
+						<input type="text" id="registerUsername" required>
+						<div class="error-message" id="registerUsernameError"></div>
+					</div>
+					<div class="form-group">
+						<label for="registerPassword">Пароль</label>
+						<input type="password" id="registerPassword" required>
+						<div class="error-message" id="registerPasswordError"></div>
+					</div>
+					<div class="form-group">
+						<label for="confirmPassword">Подтвердите пароль</label>
+						<input type="password" id="confirmPassword" required>
+						<div class="error-message" id="confirmPasswordError"></div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn">Зарегистрироваться</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Модальное окно подтверждения выхода -->
+	<div id="logoutModal" class="modal">
+		<div class="modal-content">
+			<h2>Подтверждение выхода</h2>
+			<p>Вы уверены, что хотите выйти из аккаунта?</p>
+			<div class="form-actions">
+				<button id="confirmLogout" class="btn btn-red">Да, выйти</button>
+				<button id="cancelLogout" class="btn">Отмена</button>
+			</div>
+		</div>
+	</div>
+
+    <script>
+        // Основные функции для работы упражнений
+        let activeInput = null;
+        let isCapsLock = false;
+        let isShiftPressed = false;
+		
+		// Функция для выбора элементов в упражнении 4
+		function selectMatch(element) {
+			// Переключаем класс selected
+			element.classList.toggle('selected');
+			
+			// Меняем стиль при выборе
+			if (element.classList.contains('selected')) {
+				element.style.backgroundColor = 'var(--yellow)';
+				element.style.borderColor = 'var(--yellow)';
+			} else {
+				element.style.backgroundColor = '';
+				element.style.borderColor = '#ddd';
+			}
+		}
+
+        // Функция для нормализации текста
+        function normalizeText(text) {
+            return text
+                .trim()
+                .replace(/\s+/g, ' ')
+                .replace(/\s+$/, '')
+                .replace(/^\s+/, '');
+        }
+
+        // Функция для проверки немецкого правописания чисел
+        function checkGermanNumber(text, correctAnswer) {
+            const normalizedText = normalizeText(text);
+            const normalizedCorrect = normalizeText(correctAnswer);
+            
+            if (normalizedText === normalizedCorrect) {
+                return { isCorrect: true, errors: [] };
+            }
+            
+            const errors = [];
+            
+            // Проверка правильности написания чисел
+            const numberMistakes = {
+                'sechszehn': 'sechzehn',
+                'siebenzehn': 'siebzehn',
+                'sechszig': 'sechzig',
+                'siebenzig': 'siebzig',
+                'dreizig': 'dreißig',
+                'einunddreizig': 'einunddreißig'
+            };
+            
+            for (const [mistake, correction] of Object.entries(numberMistakes)) {
+                if (text.toLowerCase().includes(mistake)) {
+                    errors.push({
+                        type: 'spelling',
+                        message: `Орфографическая ошибка: "${mistake}"`,
+                        example: `Правильно: "${correction}"`
+                    });
+                }
+            }
+            
+            // Проверка порядка слов
+            if (text.includes('und') && !text.includes(correctAnswer.split('und')[0])) {
+                errors.push({
+                    type: 'grammar',
+                    message: 'Неправильный порядок: единицы должны идти перед десятками',
+                    example: `Правильно: "${correctAnswer}"`
+                });
+            }
+            
+            return { isCorrect: false, errors };
+        }
+		
+		// Функция для выбора сопоставления
+		function selectMatch(element) {
+			if (!element.classList.contains('selected')) {
+				element.classList.add('selected');
+			} else {
+				element.classList.remove('selected');
+			}
+		}
+
+    // Основная функция проверки упражнений для темы чисел
+    function checkExercise(exerciseId) {
+        let resultDiv, correctAnswerDiv, message, isCorrect;
+        
+        switch(exerciseId) {
+            case 'ex1':
+                resultDiv = document.getElementById('ex1-result');
+                correctAnswerDiv = document.getElementById('correct-answer-ex1');
+                const answers1 = {
+                    'ex1-1': 'fünf',
+                    'ex1-2': 'zwölf',
+                    'ex1-3': 'zwanzig',
+                    'ex1-4': 'dreiunddreißig',
+                    'ex1-5': 'siebenundvierzig'
+                };
+                
+                let correctCount1 = 0;
+                let totalQuestions1 = Object.keys(answers1).length;
+                
+                for (let id in answers1) {
+                    const userAnswer = normalizeText(document.getElementById(id).value);
+                    const spellingCheck = checkGermanNumber(userAnswer, answers1[id]);
+                    
+                    if (spellingCheck.isCorrect) {
+                        correctCount1++;
+                        document.getElementById(id).classList.add('input-correct');
+                        document.getElementById(id).classList.remove('input-incorrect');
+                    } else {
+                        document.getElementById(id).classList.add('input-incorrect');
+                        document.getElementById(id).classList.remove('input-correct');
+                    }
+                }
+                
+                if (correctCount1 === totalQuestions1) {
+                    message = "✅ Отлично! Все числа написаны правильно.";
+                    isCorrect = true;
+                    correctAnswerDiv.style.display = 'none';
+                } else {
+                    message = `❌ Вы правильно написали ${correctCount1} из ${totalQuestions1} чисел. Попробуйте еще раз!`;
+                    isCorrect = false;
+                    correctAnswerDiv.style.display = 'block';
+                }
+                break;
+                
+            case 'ex2':
+                resultDiv = document.getElementById('ex2-result');
+                correctAnswerDiv = document.getElementById('correct-answer-ex2');
+                const answers2 = {
+                    'ex2-1': 'acht',
+                    'ex2-2': 'elf',
+                    'ex2-3': 'fünfundzwanzig',
+                    'ex2-4': 'zweiundvierzig',
+                    'ex2-5': 'neunundneunzig'
+                };
+                
+                let correctCount2 = 0;
+                let totalQuestions2 = Object.keys(answers2).length;
+                
+                for (let id in answers2) {
+                    const userAnswer = normalizeText(document.getElementById(id).value);
+                    const spellingCheck = checkGermanNumber(userAnswer, answers2[id]);
+                    
+                    if (spellingCheck.isCorrect) {
+                        correctCount2++;
+                        document.getElementById(id).classList.add('input-correct');
+                        document.getElementById(id).classList.remove('input-incorrect');
+                    } else {
+                        document.getElementById(id).classList.add('input-incorrect');
+                        document.getElementById(id).classList.remove('input-correct');
+                    }
+                }
+                
+                if (correctCount2 === totalQuestions2) {
+                    message = "✅ Превосходно! Все переводы правильные.";
+                    isCorrect = true;
+                    correctAnswerDiv.style.display = 'none';
+                } else {
+                    message = `❌ Вы правильно перевели ${correctCount2} из ${totalQuestions2} чисел. Обратите внимание на правильное написание.`;
+                    isCorrect = false;
+                    correctAnswerDiv.style.display = 'block';
+                }
+                break;
+                
+            case 'ex3':
+                resultDiv = document.getElementById('ex3-result');
+                const selected1 = document.querySelector('input[name="ex3-1"]:checked');
+                const selected2 = document.querySelector('input[name="ex3-2"]:checked');
+                const selected3 = document.querySelector('input[name="ex3-3"]:checked');
+                
+                let correctCount3 = 0;
+                if (selected1 && selected1.value === 'correct') correctCount3++;
+                if (selected2 && selected2.value === 'correct') correctCount3++;
+                if (selected3 && selected3.value === 'correct') correctCount3++;
+                
+                // Подсветка правильных/неправильных ответов
+                document.querySelectorAll('input[name="ex3-1"], input[name="ex3-2"], input[name="ex3-3"]').forEach(input => {
+                    const option = input.closest('.option');
+                    if (input.checked) {
+                        if (input.value === 'correct') {
+                            option.classList.add('option-correct');
+                            option.classList.remove('option-incorrect');
+                        } else {
+                            option.classList.add('option-incorrect');
+                            option.classList.remove('option-correct');
+                        }
+                    }
+                });
+                
+                if (correctCount3 === 3) {
+                    message = "✅ Отлично! Все ответы правильные!";
+                    isCorrect = true;
+                } else {
+                    message = `❌ Правильно ${correctCount3} из 3. Обратите внимание на правильное написание чисел.`;
+                    isCorrect = false;
+                }
+                break;
+                
+            case 'ex4':
+				resultDiv = document.getElementById('ex4-result');
+				const matchExercise = document.getElementById('ex4-match');
+				const allItems = matchExercise.querySelectorAll('.match-item');
+				
+				// Правильные пары
+				const correctPairs = {
+					'17': 'siebzehn',
+					'50': 'fünfzig',
+					'63': 'dreiundsechzig',
+					'88': 'achtundachtzig'
+				};
+				
+				// Сначала сбрасываем все стили
+				allItems.forEach(item => {
+					item.classList.remove('correct', 'incorrect');
+					item.style.backgroundColor = '';
+					item.style.borderColor = '';
+				});
+				
+				let correctCount = 0;
+				
+				// Проверяем каждую пару
+				Object.keys(correctPairs).forEach(numberId => {
+					const numberItem = Array.from(allItems).find(item => 
+						item.getAttribute('data-id') === numberId
+					);
+					const germanItem = Array.from(allItems).find(item => 
+						item.getAttribute('data-id') === correctPairs[numberId]
+					);
+					
+					if (numberItem && germanItem) {
+						// Проверяем, выбраны ли оба элемента (имеют ли они класс selected)
+						const isNumberSelected = numberItem.classList.contains('selected');
+						const isGermanSelected = germanItem.classList.contains('selected');
+						
+						if (isNumberSelected && isGermanSelected) {
+							// Правильная пара выбрана
+							correctCount++;
+							numberItem.classList.add('correct');
+							germanItem.classList.add('correct');
+						} else if (isNumberSelected || isGermanSelected) {
+							// Только один элемент из пары выбран - неправильно
+							if (isNumberSelected) numberItem.classList.add('incorrect');
+							if (isGermanSelected) germanItem.classList.add('incorrect');
+						}
+					}
+				});
+				
+				// Проверяем неправильно выбранные элементы (которые не входят в правильные пары)
+				allItems.forEach(item => {
+					if (item.classList.contains('selected') && 
+						!item.classList.contains('correct') && 
+						!item.classList.contains('incorrect')) {
+						item.classList.add('incorrect');
+					}
+				});
+				
+				if (correctCount === 4) {
+					message = "✅ Превосходно! Все сопоставления правильные!";
+					isCorrect = true;
+				} else {
+					message = `❌ Правильно ${correctCount} из 4 пар. Попробуйте еще раз!`;
+					isCorrect = false;
+				}
+				break;
+                
+            case 'ex5':
+                resultDiv = document.getElementById('ex5-result');
+                correctAnswerDiv = document.getElementById('correct-answer-ex5');
+                const answers5 = {
+                    'ex5-1': 'fünfundzwanzig',
+                    'ex5-2': 'dreizehn',
+                    'ex5-3': 'zwölf',
+                    'ex5-4': 'zweiundvierzig',
+                    'ex5-5': 'siebenundsechzig'
+                };
+                
+                let correctCount5 = 0;
+                let totalQuestions5 = Object.keys(answers5).length;
+                
+                for (let id in answers5) {
+                    const userAnswer = normalizeText(document.getElementById(id).value);
+                    const spellingCheck = checkGermanNumber(userAnswer, answers5[id]);
+                    
+                    if (spellingCheck.isCorrect) {
+                        correctCount5++;
+                        document.getElementById(id).classList.add('input-correct');
+                        document.getElementById(id).classList.remove('input-incorrect');
+                    } else {
+                        document.getElementById(id).classList.add('input-incorrect');
+                        document.getElementById(id).classList.remove('input-correct');
+                    }
+                }
+                
+                if (correctCount5 === totalQuestions5) {
+                    message = "✅ Отлично! Все пропуски заполнены правильно!";
+                    isCorrect = true;
+                    correctAnswerDiv.style.display = 'none';
+                } else {
+                    message = `❌ Вы правильно заполнили ${correctCount5} из ${totalQuestions5} пропусков. Используйте числа из подсказки.`;
+                    isCorrect = false;
+                    correctAnswerDiv.style.display = 'block';
+                }
+                break;
+
+            case 'ex6':
+                resultDiv = document.getElementById('ex6-result');
+                correctAnswerDiv = document.getElementById('correct-answer-ex6');
+                const answers6 = {
+                    'ex6-1': 'siebzehn',
+                    'ex6-2': 'vierundzwanzig',
+                    'ex6-3': 'neunundfünfzig',
+                    'ex6-4': 'einunddreißig',
+                    'ex6-5': 'hundert'
+                };
+                
+                let correctCount6 = 0;
+                let totalQuestions6 = Object.keys(answers6).length;
+                
+                for (let id in answers6) {
+                    const userAnswer = normalizeText(document.getElementById(id).value);
+                    const spellingCheck = checkGermanNumber(userAnswer, answers6[id]);
+                    
+                    if (spellingCheck.isCorrect) {
+                        correctCount6++;
+                        document.getElementById(id).classList.add('input-correct');
+                        document.getElementById(id).classList.remove('input-incorrect');
+                    } else {
+                        document.getElementById(id).classList.add('input-incorrect');
+                        document.getElementById(id).classList.remove('input-correct');
+                    }
+                }
+                
+                if (correctCount6 === totalQuestions6) {
+                    message = "✅ Отлично! Все ошибки исправлены правильно!";
+                    isCorrect = true;
+                    correctAnswerDiv.style.display = 'none';
+                } else {
+                    message = `❌ Вы правильно исправили ${correctCount6} из ${totalQuestions6} ошибок. Обратите внимание на правильное написание.`;
+                    isCorrect = false;
+                    correctAnswerDiv.style.display = 'block';
+                }
+                break;
+
+            case 'ex7':
+                resultDiv = document.getElementById('ex7-result');
+                const selected7_1 = document.querySelector('input[name="ex7-1"]:checked');
+                const selected7_2 = document.querySelector('input[name="ex7-2"]:checked');
+                const selected7_3 = document.querySelector('input[name="ex7-3"]:checked');
+                
+                let correctCount7 = 0;
+                if (selected7_1 && selected7_1.value === 'correct') correctCount7++;
+                if (selected7_2 && selected7_2.value === 'correct') correctCount7++;
+                if (selected7_3 && selected7_3.value === 'correct') correctCount7++;
+                
+                document.querySelectorAll('input[name="ex7-1"], input[name="ex7-2"], input[name="ex7-3"]').forEach(input => {
+                    const option = input.closest('.option');
+                    if (input.checked) {
+                        if (input.value === 'correct') {
+                            option.classList.add('option-correct');
+                            option.classList.remove('option-incorrect');
+                        } else {
+                            option.classList.add('option-incorrect');
+                            option.classList.remove('option-correct');
+                        }
+                    }
+                });
+                
+                if (correctCount7 === 3) {
+                    message = "✅ Превосходно! Все ответы правильные!";
+                    isCorrect = true;
+                } else {
+                    message = `❌ Правильно ${correctCount7} из 3. Обратите внимание на правильные числительные.`;
+                    isCorrect = false;
+                }
+                break;
+
+            case 'ex8':
+                resultDiv = document.getElementById('ex8-result');
+                correctAnswerDiv = document.getElementById('correct-answer-ex8');
+                const answers8 = {
+                    'ex8-1': 'vierzehn',
+                    'ex8-2': '39',
+                    'ex8-3': 'fünfundfünfzig',
+                    'ex8-4': '71',
+                    'ex8-5': 'hundert'
+                };
+                
+                let correctCount8 = 0;
+                let totalQuestions8 = Object.keys(answers8).length;
+                
+                for (let id in answers8) {
+                    const userAnswer = normalizeText(document.getElementById(id).value);
+                    if (userAnswer.toLowerCase() === answers8[id].toLowerCase()) {
+                        correctCount8++;
+                        document.getElementById(id).classList.add('input-correct');
+                        document.getElementById(id).classList.remove('input-incorrect');
+                    } else {
+                        document.getElementById(id).classList.add('input-incorrect');
+                        document.getElementById(id).classList.remove('input-correct');
+                    }
+                }
+                
+                if (correctCount8 === totalQuestions8) {
+                    message = "✅ Отлично! Все числа заполнены правильно!";
+                    isCorrect = true;
+                    correctAnswerDiv.style.display = 'none';
+                } else {
+                    message = `❌ Вы правильно заполнили ${correctCount8} из ${totalQuestions8} чисел.`;
+                    isCorrect = false;
+                    correctAnswerDiv.style.display = 'block';
+                }
+                break;
+
+            case 'ex9':
+                resultDiv = document.getElementById('ex9-result');
+                const selected9 = document.querySelector('input[name="ex9"]:checked');
+                
+                if (selected9) {
+                    if (selected9.value === 'correct') {
+                        message = "✅ Правильно! Вы верно распознали число 'vierundzwanzig'!";
+                        isCorrect = true;
+                    } else {
+                        message = "❌ Неправильно. Попробуйте еще раз!";
+                        isCorrect = false;
+                    }
+                    
+                    document.querySelectorAll('input[name="ex9"]').forEach(input => {
+                        const option = input.closest('.option');
+                        if (input.checked) {
+                            if (input.value === 'correct') {
+                                option.classList.add('option-correct');
+                                option.classList.remove('option-incorrect');
+                            } else {
+                                option.classList.add('option-incorrect');
+                                option.classList.remove('option-correct');
+                            }
+                        }
+                    });
+                } else {
+                    message = "Пожалуйста, выберите вариант ответа.";
+                    isCorrect = false;
+                }
+                break;
+
+            case 'ex10':
+				resultDiv = document.getElementById('ex10-result');
+				const target = document.getElementById('ex10-target');
+				const items = target.querySelectorAll('.drag-item');
+				
+				// Проверяем, что все элементы перетащены
+				if (items.length !== 5) {
+					message = "❌ Перетащите все числа в контейнер.";
+					isCorrect = false;
+					break;
+				}
+				
+				let correctCount10 = 0;
+				let total10 = items.length;
+				
+				items.forEach((item, index) => {
+					const correctOrder = parseInt(item.getAttribute('data-correct'));
+					if (correctOrder === index + 1) {
+						correctCount10++;
+						item.classList.add('match-correct');
+						item.classList.remove('match-incorrect');
+					} else {
+						item.classList.add('match-incorrect');
+						item.classList.remove('match-correct');
+					}
+				});
+				
+				if (correctCount10 === total10) {
+					message = "✅ Превосходно! Числа расставлены в правильном порядке!";
+					isCorrect = true;
+				} else {
+					message = `❌ Правильно расставлено ${correctCount10} из ${total10} чисел. Попробуйте еще раз!`;
+					isCorrect = false;
+				}
+				break;
+
+            case 'ex11':
+                resultDiv = document.getElementById('ex11-result');
+                const selected11 = document.querySelector('input[name="ex11"]:checked');
+                
+                if (selected11) {
+                    if (selected11.value === 'correct') {
+                        message = "✅ Правильно! 'achtundsiebzig' - это 78!";
+                        isCorrect = true;
+                    } else {
+                        message = "❌ Неправильно. Вспомните порядок: единицы + und + десятки.";
+                        isCorrect = false;
+                    }
+                    
+                    document.querySelectorAll('input[name="ex11"]').forEach(input => {
+                        const option = input.closest('.option');
+                        if (input.checked) {
+                            if (input.value === 'correct') {
+                                option.classList.add('option-correct');
+                                option.classList.remove('option-incorrect');
+                            } else {
+                                option.classList.add('option-incorrect');
+                                option.classList.remove('option-correct');
+                            }
+                        }
+                    });
+                } else {
+                    message = "Пожалуйста, выберите вариант ответа.";
+                    isCorrect = false;
+                }
+                break;
+
+            case 'ex12':
+                resultDiv = document.getElementById('ex12-result');
+                correctAnswerDiv = document.getElementById('correct-answer-ex12');
+                const answers12 = {
+                    'ex12-1': 'vierzehn',
+                    'ex12-2': 'vierzig',
+                    'ex12-3': 'siebzig'
+                };
+                
+                let correctCount12 = 0;
+                let totalQuestions12 = Object.keys(answers12).length;
+                
+                for (let id in answers12) {
+                    const userAnswer = normalizeText(document.getElementById(id).value);
+                    const spellingCheck = checkGermanNumber(userAnswer, answers12[id]);
+                    
+                    if (spellingCheck.isCorrect) {
+                        correctCount12++;
+                        document.getElementById(id).classList.add('input-correct');
+                        document.getElementById(id).classList.remove('input-incorrect');
+                    } else {
+                        document.getElementById(id).classList.add('input-incorrect');
+                        document.getElementById(id).classList.remove('input-correct');
+                    }
+                }
+                
+                if (correctCount12 === totalQuestions12) {
+                    message = "✅ Отлично! Все последовательности заполнены правильно!";
+                    isCorrect = true;
+                    correctAnswerDiv.style.display = 'none';
+                } else {
+                    message = `❌ Вы правильно заполнили ${correctCount12} из ${totalQuestions12} пропусков.`;
+                    isCorrect = false;
+                    correctAnswerDiv.style.display = 'block';
+                }
+                break;
+
+            case 'ex13':
+                resultDiv = document.getElementById('ex13-result');
+                correctAnswerDiv = document.getElementById('correct-answer-ex13');
+                const answers13 = {
+                    'ex13-1': 'fünfunddreißig',
+                    'ex13-2': 'zweiundzwanzig',
+                    'ex13-3': 'neunzig',
+                    'ex13-4': 'fünfzehn'
+                };
+                
+                let correctCount13 = 0;
+                let totalQuestions13 = Object.keys(answers13).length;
+                
+                for (let id in answers13) {
+                    const userAnswer = normalizeText(document.getElementById(id).value);
+                    const spellingCheck = checkGermanNumber(userAnswer, answers13[id]);
+                    
+                    if (spellingCheck.isCorrect) {
+                        correctCount13++;
+                        document.getElementById(id).classList.add('input-correct');
+                        document.getElementById(id).classList.remove('input-incorrect');
+                    } else {
+                        document.getElementById(id).classList.add('input-incorrect');
+                        document.getElementById(id).classList.remove('input-correct');
+                    }
+                }
+                
+                if (correctCount13 === totalQuestions13) {
+                    message = "✅ Отлично! Все математические задачи решены правильно!";
+                    isCorrect = true;
+                    correctAnswerDiv.style.display = 'none';
+                } else {
+                    message = `❌ Вы правильно решили ${correctCount13} из ${totalQuestions13} задач.`;
+                    isCorrect = false;
+                    correctAnswerDiv.style.display = 'block';
+                }
+                break;
+
+            case 'ex14':
+                resultDiv = document.getElementById('ex14-result');
+                let correctCount14 = 0;
+                const answers14 = ['Ich bin', 'Sieben', 'Zehn'];
+                
+                // Проверяем, что ответы содержат ключевые слова и являются числами
+                const answer14_1 = normalizeText(document.getElementById('ex14-1').value);
+                const answer14_2 = normalizeText(document.getElementById('ex14-2').value);
+                const answer14_3 = normalizeText(document.getElementById('ex14-3').value);
+                
+                if (answer14_1.toLowerCase().includes('bin') && answer14_1.match(/\d+/)) {
+                    correctCount14++;
+                    document.getElementById('ex14-1').classList.add('input-correct');
+                    document.getElementById('ex14-1').classList.remove('input-incorrect');
+                } else {
+                    document.getElementById('ex14-1').classList.add('input-incorrect');
+                    document.getElementById('ex14-1').classList.remove('input-correct');
+                }
+                
+                if (answer14_2.toLowerCase().includes('sieben')) {
+                    correctCount14++;
+                    document.getElementById('ex14-2').classList.add('input-correct');
+                    document.getElementById('ex14-2').classList.remove('input-incorrect');
+                } else {
+                    document.getElementById('ex14-2').classList.add('input-incorrect');
+                    document.getElementById('ex14-2').classList.remove('input-correct');
+                }
+                
+                if (answer14_3.toLowerCase().includes('zehn')) {
+                    correctCount14++;
+                    document.getElementById('ex14-3').classList.add('input-correct');
+                    document.getElementById('ex14-3').classList.remove('input-incorrect');
+                } else {
+                    document.getElementById('ex14-3').classList.add('input-incorrect');
+                    document.getElementById('ex14-3').classList.remove('input-correct');
+                }
+                
+                if (correctCount14 === 3) {
+                    message = "✅ Отлично! Все ответы правильные!";
+                    isCorrect = true;
+                } else {
+                    message = `❌ Правильно ${correctCount14} из 3. Используйте немецкие числительные.`;
+                    isCorrect = false;
+                }
+                break;
+
+            case 'ex15':
+                resultDiv = document.getElementById('ex15-result');
+                const answers15 = {
+                    'ex15-1': 'neunzehn',
+                    'ex15-2': 'siebenundzwanzig',
+                    'ex15-3': 'sechsundvierzig',
+                    'ex15-4': 'dreiundachtzig'
+                };
+                
+                let correctCount15 = 0;
+                let totalQuestions15 = Object.keys(answers15).length;
+                
+                for (let id in answers15) {
+                    const userAnswer = normalizeText(document.getElementById(id).value);
+                    const spellingCheck = checkGermanNumber(userAnswer, answers15[id]);
+                    
+                    if (spellingCheck.isCorrect) {
+                        correctCount15++;
+                        document.getElementById(id).classList.add('input-correct');
+                        document.getElementById(id).classList.remove('input-incorrect');
+                    } else {
+                        document.getElementById(id).classList.add('input-incorrect');
+                        document.getElementById(id).classList.remove('input-correct');
+                    }
+                }
+                
+                if (correctCount15 === totalQuestions15) {
+                    message = "✅ Превосходно! Все ответы правильные и быстрые!";
+                    isCorrect = true;
+                } else {
+                    message = `❌ Правильно ${correctCount15} из ${totalQuestions15}. Попрактикуйтесь еще!`;
+                    isCorrect = false;
+                }
+                break;
+
+            case 'ex16':
+                resultDiv = document.getElementById('ex16-result');
+                const select16_1 = document.getElementById('ex16-1');
+                const select16_2 = document.getElementById('ex16-2');
+                
+                if (select16_1.value === 'neunzehn' && select16_2.value === 'sechsundsechzig') {
+                    message = "✅ Правильно! Отличный выбор чисел!";
+                    isCorrect = true;
+                    select16_1.classList.add('input-correct');
+                    select16_2.classList.add('input-correct');
+                    select16_1.classList.remove('input-incorrect');
+                    select16_2.classList.remove('input-incorrect');
+                } else {
+                    message = "❌ Неправильно. Проверьте соответствие чисел.";
+                    isCorrect = false;
+                    select16_1.classList.add('input-incorrect');
+                    select16_2.classList.add('input-incorrect');
+                    select16_1.classList.remove('input-correct');
+                    select16_2.classList.remove('input-correct');
+                }
+                break;
+
+            case 'ex17':
+				resultDiv = document.getElementById('ex17-result');
+				
+				let correctCount17 = 0;
+				const totalItems17 = 6;
+				
+				// Проверяем распределение по группам
+				const group1 = document.getElementById('ex17-group1');
+				const group2 = document.getElementById('ex17-group2');
+				const group3 = document.getElementById('ex17-group3');
+				
+				const correctDistribution = {
+					'fünfzehn': 'group1',
+					'dreiunddreißig': 'group2', 
+					'siebenundsiebzig': 'group3',
+					'acht': 'group1',
+					'neunundvierzig': 'group2',
+					'vierundachtzig': 'group3'
+				};
+				
+				// Сброс стилей
+				document.querySelectorAll('.drag-item').forEach(item => {
+					item.classList.remove('match-correct', 'match-incorrect');
+				});
+				
+				// Проверяем группу 1 (0-20)
+				const group1Items = group1.querySelectorAll('.drag-item');
+				group1Items.forEach(item => {
+					const text = item.textContent.trim();
+					if (correctDistribution[text] === 'group1') {
+						correctCount17++;
+						item.classList.add('match-correct');
+					} else {
+						item.classList.add('match-incorrect');
+					}
+				});
+				
+				// Проверяем группу 2 (21-50)
+				const group2Items = group2.querySelectorAll('.drag-item');
+				group2Items.forEach(item => {
+					const text = item.textContent.trim();
+					if (correctDistribution[text] === 'group2') {
+						correctCount17++;
+						item.classList.add('match-correct');
+					} else {
+						item.classList.add('match-incorrect');
+					}
+				});
+				
+				// Проверяем группу 3 (51-100)
+				const group3Items = group3.querySelectorAll('.drag-item');
+				group3Items.forEach(item => {
+					const text = item.textContent.trim();
+					if (correctDistribution[text] === 'group3') {
+						correctCount17++;
+						item.classList.add('match-correct');
+					} else {
+						item.classList.add('match-incorrect');
+					}
+				});
+				
+				if (correctCount17 === totalItems17) {
+					message = "✅ Превосходно! Все слова правильно распределены!";
+					isCorrect = true;
+				} else {
+					message = `❌ Правильно распределено ${correctCount17} из ${totalItems17} слов. Попробуйте еще раз!`;
+					isCorrect = false;
+				}
+				break;
+
+            case 'ex18':
+                resultDiv = document.getElementById('ex18-result');
+                const check18_1 = document.getElementById('ex18-1');
+                const check18_2 = document.getElementById('ex18-2');
+                const check18_3 = document.getElementById('ex18-3');
+                const check18_4 = document.getElementById('ex18-4');
+                
+                let correctCount18 = 0;
+                if (check18_1.checked && check18_1.value === 'true') correctCount18++;
+                if (!check18_2.checked && check18_2.value === 'false') correctCount18++;
+                if (check18_3.checked && check18_3.value === 'true') correctCount18++;
+                if (!check18_4.checked && check18_4.value === 'false') correctCount18++;
+                
+                if (correctCount18 === 4) {
+                    message = "✅ Отлично! Все утверждения правильно оценены!";
+                    isCorrect = true;
+                } else {
+                    message = `❌ Правильно ${correctCount18} из 4. Обратите внимание на правила немецких числительных.`;
+                    isCorrect = false;
+                }
+                break;
+
+            case 'ex19':
+                resultDiv = document.getElementById('ex19-result');
+                const answers19 = {
+                    'ex19-1': 'sieben',
+                    'ex19-2': 'zwanzig',
+                    'ex19-3': 'acht',
+                    'ex19-4': 'fünfunddreißig',
+                    'ex19-5': 'dreizehn'
+                };
+                
+                let correctCount19 = 0;
+                let totalQuestions19 = Object.keys(answers19).length;
+                
+                for (let id in answers19) {
+                    const userAnswer = normalizeText(document.getElementById(id).value);
+                    const spellingCheck = checkGermanNumber(userAnswer, answers19[id]);
+                    
+                    if (spellingCheck.isCorrect) {
+                        correctCount19++;
+                        document.getElementById(id).classList.add('input-correct');
+                        document.getElementById(id).classList.remove('input-incorrect');
+                    } else {
+                        document.getElementById(id).classList.add('input-incorrect');
+                        document.getElementById(id).classList.remove('input-correct');
+                    }
+                }
+                
+                if (correctCount19 === totalQuestions19) {
+                    message = "✅ Превосходно! Весь текст заполнен правильно!";
+                    isCorrect = true;
+                } else {
+                    message = `❌ Вы правильно заполнили ${correctCount19} из ${totalQuestions19} пропусков. Используйте слова из списка.`;
+                    isCorrect = false;
+                }
+                break;
+
+            case 'ex20':
+                resultDiv = document.getElementById('ex20-result');
+                const answers20 = {
+                    'ex20-1': 'Ich bin fünfundzwanzig Jahre alt.',
+                    'ex20-2': 'Ich habe drei Bücher.',
+                    'ex20-3': 'Es ist vierzehn Uhr dreißig.',
+                    'ex20-4': 'Er wohnt in Haus Nummer siebenundsechzig.'
+                };
+                
+                let correctCount20 = 0;
+                let totalQuestions20 = Object.keys(answers20).length;
+                
+                for (let id in answers20) {
+                    const userAnswer = normalizeText(document.getElementById(id).value);
+                    // Проверяем наличие ключевых слов
+                    const keywords = {
+                        'ex20-1': ['fünfundzwanzig', 'Jahre'],
+                        'ex20-2': ['drei', 'Bücher'],
+                        'ex20-3': ['vierzehn', 'dreißig'],
+                        'ex20-4': ['siebenundsechzig']
+                    };
+                    
+                    let keywordMatches = 0;
+                    keywords[id].forEach(keyword => {
+                        if (userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
+                            keywordMatches++;
+                        }
+                    });
+                    
+                    if (keywordMatches >= keywords[id].length - 1) { // Допускаем одну ошибку
+                        correctCount20++;
+                        document.getElementById(id).classList.add('input-correct');
+                        document.getElementById(id).classList.remove('input-incorrect');
+                    } else {
+                        document.getElementById(id).classList.add('input-incorrect');
+                        document.getElementById(id).classList.remove('input-correct');
+                    }
+                }
+                
+                if (correctCount20 === totalQuestions20) {
+                    message = "✅ Отлично! Все переводы правильные!";
+                    isCorrect = true;
+                } else {
+                    message = `❌ Правильно ${correctCount20} из ${totalQuestions20}. Проверьте правильность числительных.`;
+                    isCorrect = false;
+                }
+                break;
+
+            case 'ex21':
+                resultDiv = document.getElementById('ex21-result');
+                const userAnswer21 = normalizeText(document.getElementById('ex21-1').value.toLowerCase());
+                const requiredWords = ['zwei', 'dreißig', 'sechs', 'achtzig', 'zehn', 'hundert'];
+                let foundWords = 0;
+                
+                requiredWords.forEach(word => {
+                    if (userAnswer21.includes(word.toLowerCase())) {
+                        foundWords++;
+                    }
+                });
+                
+                if (foundWords >= 4) {
+                    message = `✅ Отлично! Найдено ${foundWords} из 6 слов!`;
+                    isCorrect = true;
+                    document.getElementById('ex21-1').classList.add('input-correct');
+                    document.getElementById('ex21-1').classList.remove('input-incorrect');
+                } else {
+                    message = `❌ Найдено ${foundWords} из 6 слов. Попробуйте найти больше!`;
+                    isCorrect = false;
+                    document.getElementById('ex21-1').classList.add('input-incorrect');
+                    document.getElementById('ex21-1').classList.remove('input-correct');
+                }
+                break;
+
+            case 'ex22':
+                resultDiv = document.getElementById('ex22-result');
+                const select22_1 = document.getElementById('ex22-1');
+                const select22_2 = document.getElementById('ex22-2');
+                
+                if (select22_1.value === 'neunundzwanzig' && select22_2.value === 'neunzig') {
+                    message = "✅ Правильно! Отличное знание чисел в контексте!";
+                    isCorrect = true;
+                    select22_1.classList.add('input-correct');
+                    select22_2.classList.add('input-correct');
+                    select22_1.classList.remove('input-incorrect');
+                    select22_2.classList.remove('input-incorrect');
+                } else {
+                    message = "❌ Неправильно. Вспомните соответствующие числа для этих ситуаций.";
+                    isCorrect = false;
+                    select22_1.classList.add('input-incorrect');
+                    select22_2.classList.add('input-incorrect');
+                    select22_1.classList.remove('input-correct');
+                    select22_2.classList.remove('input-correct');
+                }
+                break;
+
+            case 'ex23':
+                resultDiv = document.getElementById('ex23-result');
+                const answers23 = {
+                    'ex23-1': 'elf',
+                    'ex23-2': 'dreiundachtzig',
+                    'ex23-3': 'hundert',
+                    'ex23-4': 'sechsundfünfzig'
+                };
+                
+                let correctCount23 = 0;
+                let totalQuestions23 = Object.keys(answers23).length;
+                
+                for (let id in answers23) {
+                    const userAnswer = normalizeText(document.getElementById(id).value);
+                    const spellingCheck = checkGermanNumber(userAnswer, answers23[id]);
+                    
+                    if (spellingCheck.isCorrect) {
+                        correctCount23++;
+                        document.getElementById(id).classList.add('input-correct');
+                        document.getElementById(id).classList.remove('input-incorrect');
+                    } else {
+                        document.getElementById(id).classList.add('input-incorrect');
+                        document.getElementById(id).classList.remove('input-correct');
+                    }
+                }
+                
+                if (correctCount23 === totalQuestions23) {
+                    message = "✅ Превосходно! Все предложения завершены правильно!";
+                    isCorrect = true;
+                } else {
+                    message = `❌ Вы правильно завершили ${correctCount23} из ${totalQuestions23} предложений. Используйте слова из списка.`;
+                    isCorrect = false;
+                }
+                break;
+
+            case 'ex24':
+                resultDiv = document.getElementById('ex24-result');
+                const selected24 = document.querySelector('input[name="ex24"]:checked');
+                const explanation = document.getElementById('ex24-explanation').value;
+                
+                if (selected24 && selected24.value === 'correct' && explanation.length > 10) {
+                    message = "✅ Отлично! Правильный выбор с хорошим объяснением!";
+                    isCorrect = true;
+                    
+                    document.querySelectorAll('input[name="ex24"]').forEach(input => {
+                        const option = input.closest('.option');
+                        if (input.checked) {
+                            option.classList.add('option-correct');
+                            option.classList.remove('option-incorrect');
+                        }
+                    });
+                } else if (selected24 && selected24.value === 'correct') {
+                    message = "✅ Правильный выбор, но объяснение слишком короткое.";
+                    isCorrect = true;
+                } else {
+                    message = "❌ Неправильно. Вспомните правила образования составных чисел.";
+                    isCorrect = false;
+                }
+                break;
+
+            case 'ex25':
+                resultDiv = document.getElementById('ex25-result');
+                let correctCount25 = 0;
+                
+                // Вопрос 1
+                const select25_1 = document.getElementById('ex25-1');
+                if (select25_1.value === 'correct') correctCount25++;
+                
+                // Вопрос 2
+                const answer25_2 = normalizeText(document.getElementById('ex25-2').value);
+                if (answer25_2 === 'fünfundvierzig') correctCount25++;
+                
+                // Вопрос 3
+                const selected25_3 = document.querySelector('input[name="ex25-3"]:checked');
+                if (selected25_3 && selected25_3.value === 'correct') correctCount25++;
+                
+                // Вопрос 4
+                const answer25_4 = normalizeText(document.getElementById('ex25-4').value);
+                if (answer25_4 === 'achtundzwanzig') correctCount25++;
+                
+                // Вопрос 5
+                const answer25_5 = normalizeText(document.getElementById('ex25-5').value);
+                if (answer25_5 === '99') correctCount25++;
+                
+                if (correctCount25 === 5) {
+                    message = "🎉 Браво! Вы отлично справились с финальным тестом! Тема чисел освоена!";
+                    isCorrect = true;
+                } else {
+                    message = `✅ Вы правильно ответили на ${correctCount25} из 5 вопросов. Рекомендуется повторить тему.`;
+                    isCorrect = correctCount25 >= 3;
+                }
+                break;
+        }
+        
+        if (resultDiv) {
+            resultDiv.textContent = message;
+            resultDiv.className = 'result ' + (isCorrect ? 'correct' : 'incorrect');
+            resultDiv.style.display = 'block';
+        }
+    }
+
+        // Функция сброса упражнения
+			function resetExercise(exerciseId) {
+				const exerciseElement = document.querySelector(`#${exerciseId}-result`).closest('.exercise');
+				
+				// Сброс полей ввода
+				const inputs = exerciseElement.querySelectorAll('input, textarea, select');
+				inputs.forEach(input => {
+					if (input.type === 'radio' || input.type === 'checkbox') {
+						input.checked = false;
+					} else if (input.tagName === 'SELECT') {
+						input.selectedIndex = 0;
+					} else {
+						input.value = '';
+					}
+					input.classList.remove('input-correct', 'input-incorrect');
+				// Сброс для упражнения 4
+					if (exerciseId === 'ex4') {
+						const matchExercise = document.getElementById('ex4-match');
+						const allItems = matchExercise.querySelectorAll('.match-item');
+						
+						allItems.forEach(item => {
+							item.classList.remove('selected', 'correct', 'incorrect');
+							item.style.backgroundColor = '';
+							item.style.borderColor = '';
+							item.style.cursor = 'pointer';
+						});
+						
+						// Скрываем результат
+						const resultDiv = document.getElementById('ex4-result');
+						if (resultDiv) {
+							resultDiv.style.display = 'none';
+						}
+					}
+				
+				// Сброс классов стилей
+				const options = exerciseElement.querySelectorAll('.option');
+				options.forEach(option => {
+					option.classList.remove('option-correct', 'option-incorrect');
+				});
+				
+				const matches = exerciseElement.querySelectorAll('.match-item');
+				matches.forEach(match => {
+					match.classList.remove('selected', 'match-correct', 'match-incorrect');
+				});
+				
+				// Скрытие результатов
+				const resultDiv = document.getElementById(`${exerciseId}-result`);
+				if (resultDiv) {
+					resultDiv.style.display = 'none';
+				}
+				
+				const correctAnswerDiv = document.getElementById(`correct-answer-${exerciseId}`);
+				if (correctAnswerDiv) {
+					correctAnswerDiv.style.display = 'none';
+				}
+				
+				// Сброс Drag & Drop
+				if (exerciseId === 'ex10') {
+					const dragContainer = document.getElementById('ex10-target');
+					const dragItems = document.querySelector('.drag-items');
+					if (dragContainer && dragItems) {
+						dragContainer.innerHTML = '<p>Перетащите числа сюда в правильном порядке...</p>';
+						// Возвращаем все элементы обратно
+						const items = document.querySelectorAll('.drag-items .drag-item');
+						items.forEach(item => {
+							dragItems.appendChild(item);
+						});
+					}
+				}
+				
+				if (exerciseId === 'ex17') {
+					const group1 = document.getElementById('ex17-group1');
+					const group2 = document.getElementById('ex17-group2'); 
+					const group3 = document.getElementById('ex17-group3');
+					const dragItems = document.querySelector('.drag-items');
+					
+					if (group1 && group2 && group3 && dragItems) {
+						// Очищаем группы
+						group1.innerHTML = '';
+						group2.innerHTML = '';
+						group3.innerHTML = '';
+						
+						// Возвращаем все элементы обратно в drag-items
+						const items = document.querySelectorAll('.drag-item');
+						items.forEach(item => {
+							dragItems.appendChild(item);
+						});
+					}
+				}
+			}
+			if (exerciseId === 'ex4') {
+				const matchExercise = document.getElementById('ex4-match');
+				const allItems = matchExercise.querySelectorAll('.match-item');
+				
+				allItems.forEach(item => {
+					item.classList.remove('selected', 'correct', 'incorrect');
+					item.style.cursor = 'pointer';
+				});
+				
+				selectedLeftItem = null;
+				selectedRightItem = null;
+			}
+
+        // Функции для немецкой клавиатуры
+        function toggleKeyboard() {
+            const keyboard = document.getElementById('keyboard');
+            if (keyboard.style.display === 'block') {
+                keyboard.style.display = 'none';
+            } else {
+                keyboard.style.display = 'block';
+                if (activeInput) {
+                    activeInput.focus();
+                }
+            }
+        }
+
+        function setupKeyboard() {
+            const keyboardKeys = document.querySelectorAll('.keyboard-key');
+            const inputs = document.querySelectorAll('input, textarea');
+            
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    activeInput = this;
+                });
+                
+                input.addEventListener('blur', function() {
+                    activeInput = null;
+                });
+            });
+            
+            keyboardKeys.forEach(key => {
+                key.addEventListener('mousedown', function(e) {
+                    e.preventDefault();
+                    if (!activeInput) return;
+                    
+                    const keyValue = this.getAttribute('data-key');
+                    handleKeyPress(keyValue);
+                });
+            });
+        }
+
+        function handleKeyPress(keyValue) {
+            if (!activeInput) return;
+            
+            const startPos = activeInput.selectionStart;
+            const endPos = activeInput.selectionEnd;
+            const currentValue = activeInput.value;
+            
+            if (keyValue === 'backspace') {
+                if (startPos === endPos) {
+                    activeInput.value = currentValue.substring(0, startPos - 1) + currentValue.substring(endPos);
+                    activeInput.selectionStart = activeInput.selectionEnd = startPos - 1;
+                } else {
+                    activeInput.value = currentValue.substring(0, startPos) + currentValue.substring(endPos);
+                    activeInput.selectionStart = activeInput.selectionEnd = startPos;
+                }
+            } else if (keyValue === 'space') {
+                activeInput.value = currentValue.substring(0, startPos) + ' ' + currentValue.substring(endPos);
+                activeInput.selectionStart = activeInput.selectionEnd = startPos + 1;
+            } else if (keyValue === 'enter') {
+                activeInput.value = currentValue.substring(0, startPos) + '\n' + currentValue.substring(endPos);
+                activeInput.selectionStart = activeInput.selectionEnd = startPos + 1;
+            } else if (keyValue === 'clear') {
+                activeInput.value = '';
+                activeInput.selectionStart = activeInput.selectionEnd = 0;
+            } else if (keyValue === 'caps') {
+                isCapsLock = !isCapsLock;
+                document.querySelectorAll('.keyboard-key[data-key="caps"]').forEach(key => {
+                    key.classList.toggle('active', isCapsLock);
+                });
+            } else if (keyValue === 'shift') {
+                isShiftPressed = !isShiftPressed;
+                document.querySelectorAll('.keyboard-key[data-key="shift"]').forEach(key => {
+                    key.classList.toggle('active', isShiftPressed);
+                });
+            } else {
+                let charToAdd = keyValue;
+                
+                if (isCapsLock || isShiftPressed) {
+                    charToAdd = charToAdd.toUpperCase();
+                }
+                
+                activeInput.value = currentValue.substring(0, startPos) + charToAdd + currentValue.substring(endPos);
+                activeInput.selectionStart = activeInput.selectionEnd = startPos + charToAdd.length;
+                
+                if (isShiftPressed && keyValue !== 'shift') {
+                    isShiftPressed = false;
+                    document.querySelectorAll('.keyboard-key[data-key="shift"]').forEach(key => {
+                        key.classList.remove('active');
+                    });
+                }
+            }
+            
+            activeInput.dispatchEvent(new Event('input', { bubbles: true }));
+            activeInput.focus();
+        }
+
+        // Функция для Drag & Drop
+			function initializeDragDrop() {
+				const dragItems = document.querySelectorAll('.drag-item');
+				const dropZones = document.querySelectorAll('.drag-container');
+				
+				dragItems.forEach(item => {
+					item.setAttribute('draggable', 'true');
+					item.addEventListener('dragstart', handleDragStart);
+					item.addEventListener('dragend', handleDragEnd);
+				});
+				
+				dropZones.forEach(zone => {
+					zone.addEventListener('dragover', handleDragOver);
+					zone.addEventListener('drop', handleDrop);
+					zone.addEventListener('dragenter', handleDragEnter);
+					zone.addEventListener('dragleave', handleDragLeave);
+				});
+			}
+
+			function handleDragStart(e) {
+				e.dataTransfer.setData('text/plain', e.target.id || e.target.textContent);
+				e.target.classList.add('dragging');
+				e.target.style.opacity = '0.4';
+			}
+
+			function handleDragEnd(e) {
+				e.target.classList.remove('dragging');
+				e.target.style.opacity = '1';
+			}
+
+			function handleDragOver(e) {
+				e.preventDefault();
+				e.dataTransfer.dropEffect = 'move';
+			}
+
+			function handleDrop(e) {
+				e.preventDefault();
+				const data = e.dataTransfer.getData('text/plain');
+				
+				// Находим перетаскиваемый элемент
+				let draggable;
+				if (document.getElementById(data)) {
+					draggable = document.getElementById(data);
+				} else {
+					// Если нет ID, ищем по тексту
+					draggable = Array.from(document.querySelectorAll('.drag-item')).find(item => 
+						item.textContent.trim() === data
+					);
+				}
+				
+				const dropzone = e.target.closest('.drag-container');
+				
+				if (dropzone && draggable) {
+					// Удаляем текст-заглушку если он есть
+					if (dropzone.querySelector('p') && !dropzone.querySelector('p').classList.contains('drag-item')) {
+						dropzone.innerHTML = '';
+					}
+					
+					dropzone.appendChild(draggable);
+					dropzone.classList.remove('drag-over');
+					draggable.style.opacity = '1';
+				}
+			}
+
+			function handleDragEnter(e) {
+				e.preventDefault();
+				const dropzone = e.target.closest('.drag-container');
+				if (dropzone) {
+					dropzone.classList.add('drag-over');
+				}
+			}
+
+			function handleDragLeave(e) {
+				const dropzone = e.target.closest('.drag-container');
+				if (dropzone && !dropzone.contains(e.relatedTarget)) {
+					dropzone.classList.remove('drag-over');
+				}
+			}
+
+        // Функция для кнопки "Наверх"
+        function setupScrollToTop() {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Функция для отметки темы как пройденной
+		function markTopicComplete(topicId) {
+			const currentUser = localStorage.getItem('currentUser');
+			const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+			
+			if (!currentUser || !users[currentUser]) {
+				// ЗАМЕНИТЕ alert на красивое уведомление
+				showNotification('Пожалуйста, войдите в систему, чтобы сохранять прогресс!', 'warning');
+				openAuthModal(); // Открываем окно авторизации
+				return;
+			}
+			
+			const level = topicId.split('-')[0]; // 'a1'
+			const topic = topicId; // 'a1-t1'
+			
+			if (!users[currentUser].progress[level].topics[topic]) {
+				users[currentUser].progress[level].topics[topic] = true;
+				users[currentUser].progress[level].completed++;
+				users[currentUser].lastActivity = new Date().toISOString();
+				
+				localStorage.setItem('deutschUsers', JSON.stringify(users));
+				
+				// ЗАМЕНИТЕ alert на красивое уведомление
+				showNotification('Тема отмечена как пройденная! Ваш прогресс обновлен.', 'success');
+				
+				// Обновляем индикатор прогресса темы
+				const topicProgressElement = document.getElementById(`progress-${topicId}`);
+				if (topicProgressElement) {
+					topicProgressElement.style.width = '100%';
+				}
+				
+				// Добавляем зеленое подчеркивание
+				const topicBtn = document.querySelector(`[onclick*="${topicId}"]`);
+				if (topicBtn) {
+					topicBtn.classList.add('completed');
+				}
+				
+				// Обновляем прогресс уровня на главной
+				if (typeof updateMainPageProgress === 'function') {
+					updateMainPageProgress();
+				}
+				
+				// Показываем уведомление о завершении урока
+				if (typeof showLessonCompleteNotification === 'function') {
+					showLessonCompleteNotification();
+				}
+				
+			} else {
+				showNotification('Эта тема уже отмечена как пройденная.', 'info');
+			}
+		}
+
+        // Функция для обновления кнопки завершения темы
+        function updateCompleteButton() {
+            const currentUser = localStorage.getItem('currentUser');
+            const users = JSON.parse(localStorage.getItem('deutschUsers')) || {};
+            const topicId = 'a1-t2';
+            
+            if (currentUser && users[currentUser] && users[currentUser].progress.a1.topics[topicId]) {
+                const completeButton = document.querySelector('.complete-topic-btn');
+                if (completeButton) {
+                    completeButton.textContent = 'Тема уже завершена';
+                    completeButton.disabled = true;
+                    completeButton.classList.add('completed');
+                }
+            }
+        }
+
+        // Функция для показа уведомлений
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <span class="notification-icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ'}</span>
+                    <div class="notification-body">
+                        <div class="notification-text">${message}</div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => notification.classList.add('show'), 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 4000);
+            
+            notification.addEventListener('click', function() {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            });
+        }
+
+        // Функция для открытия модального окна авторизации
+        function openAuthModal() {
+            const modal = document.getElementById('authModal');
+            if (modal) {
+                modal.style.display = 'block';
+                if (typeof window.setupAuthModal === 'function') {
+                    window.setupAuthModal();
+                }
+            }
+        }
+
+        // Функция для проверки авторизации и показа/скрытия контента
+        function checkAuthAndDisplayContent() {
+            const currentUser = localStorage.getItem('currentUser');
+            const topicContent = document.querySelector('.topic-content');
+            const authAlert = document.querySelector('.auth-alert');
+            
+            if (!currentUser) {
+                if (topicContent) topicContent.style.display = 'none';
+                if (!authAlert) createAuthAlert();
+                else authAlert.style.display = 'block';
+                
+                const completeButton = document.querySelector('.complete-topic-btn');
+                if (completeButton) completeButton.style.display = 'none';
+            } else {
+                if (topicContent) topicContent.style.display = 'block';
+                if (authAlert) authAlert.style.display = 'none';
+                
+                const completeButton = document.querySelector('.complete-topic-btn');
+                if (completeButton) completeButton.style.display = 'inline-block';
+            }
+        }
+
+        // Функция для создания сообщения об авторизации
+        function createAuthAlert() {
+            const authAlert = document.createElement('div');
+            authAlert.className = 'auth-alert';
+            authAlert.innerHTML = `
+                <div class="auth-alert-content">
+                    <div class="auth-alert-icon">🔒</div>
+                    <h3>Требуется авторизация</h3>
+                    <p>Для доступа к заданиям и отслеживания прогресса необходимо войти в систему.</p>
+                    <div class="auth-alert-buttons">
+                        <button onclick="openAuthModal()" class="btn auth-alert-btn">
+                            Войти в систему
+                        </button>
+                    </div>
+                    <p class="auth-alert-footer">
+                        Нет аккаунта? <a href="javascript:void(0)" onclick="openAuthModal(); switchToRegisterTab()">Зарегистрируйтесь</a>
+                    </p>
+                </div>
+            `;
+            
+            const topicContent = document.querySelector('.topic-content');
+            if (topicContent) {
+                topicContent.parentNode.insertBefore(authAlert, topicContent);
+            }
+        }
+
+        // Функция для переключения на вкладку регистрации
+        function switchToRegisterTab() {
+            const modal = document.getElementById('authModal');
+            if (modal) {
+                modal.style.display = 'block';
+                const registerTab = document.querySelector('.modal-tab[data-tab="register"]');
+                const loginTab = document.querySelector('.modal-tab[data-tab="login"]');
+                const registerContent = document.getElementById('registerTab');
+                const loginContent = document.getElementById('loginTab');
+                
+                if (registerTab && loginTab && registerContent && loginContent) {
+                    loginTab.classList.remove('active');
+                    registerTab.classList.add('active');
+                    loginContent.classList.remove('active');
+                    registerContent.classList.add('active');
+                }
+            }
+        }
+
+        // Таймер для упражнения 15
+        let exerciseTimer;
+        let timeLeft = 60;
+
+        function startTimer(exerciseId) {
+            const timerElement = document.getElementById(`${exerciseId}-timer`);
+            const exerciseElement = document.querySelector(`#${exerciseId}-result`).closest('.exercise');
+            const inputs = exerciseElement.querySelectorAll('input');
+            
+            if (exerciseTimer) {
+                clearInterval(exerciseTimer);
+            }
+            
+            timeLeft = 60;
+            exerciseTimer = setInterval(() => {
+                timeLeft--;
+                timerElement.textContent = `Время: ${timeLeft} секунд`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(exerciseTimer);
+                    timerElement.textContent = "⏰ Время вышло!";
+                    timerElement.style.color = "var(--red)";
+                    checkExercise(exerciseId);
+                } else if (timeLeft <= 10) {
+                    timerElement.style.color = "var(--red)";
+                } else if (timeLeft <= 30) {
+                    timerElement.style.color = "#FF9800";
+                }
+            }, 1000);
+            
+            if (inputs.length > 0) {
+                inputs[0].focus();
+            }
+        }
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDragDrop();
+            setupKeyboard();
+            setupScrollToTop();
+            checkAuthAndDisplayContent();
+            updateCompleteButton();
+            
+            if (typeof updateAuthInterface === 'function') {
+                updateAuthInterface();
+            }
+        });
+    </script>
+	
+	<!-- Подключение основных скриптов -->
+	<script src="../../js/auth.js"></script>
+	<script src="../../js/progress.js"></script>
+	<script src="../../js/password.js"></script>
+	<script src="../../js/app.js"></script>
+</body>
+</html>
